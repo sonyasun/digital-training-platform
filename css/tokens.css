@@ -1,0 +1,70 @@
+/* 数字实训平台 · 设计令牌（来自 MasterGo 课程中心稿） */
+
+:root {
+  /* 文字/主色 */
+  --text-primary: #303133;
+  /* 文字/辅色 */
+  --text-secondary: #606266;
+  /* 文字/次辅色 */
+  --text-muted: #909399;
+  /* 浅色/00-黑色 */
+  --text-ink: #000000;
+  --text-dark: #3d3d3d;
+  --text-on-primary: #ffffff;
+
+  /* 主题色/主色 */
+  --color-primary: #1677ff;
+  /* 颜色按钮发布色 */
+  --color-success: #28b28b;
+  /* 辅助-黄 */
+  --color-warning: #dca707;
+  --color-sim: #575aff;
+  --color-unauth: #bfbfbf;
+
+  /* 背景色/White Fill · 常用/基础-填充 */
+  --bg-white: #ffffff;
+  /* 背景色/Dark Fill */
+  --bg-page: #ebedf0;
+  /* 背景色/Base Fill */
+  --bg-base: #f0f2f5;
+  /* 颜色/Grey/Grey-3 */
+  --bg-grey-3: #f5f5f5;
+  --bg-search: linear-gradient(90deg, #cee8ff 0%, #f0f7ff 51%, #f8f0f3 99%);
+
+  /* 边框/Lighter Border */
+  --border-lighter: #ebeef5;
+  /* 边框/Light Border */
+  --border-light: #e4e7ed;
+  /* 常用/基础-描边 */
+  --border-base: #dcdfe6;
+  --border-grey-5: #d9d9d9;
+
+  --font-sans: "Noto Sans SC", "Source Han Sans SC", "Source Han Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "DingTalk JinBuTi", "Noto Sans SC", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  --font-12: 12px;
+  --font-14: 14px;
+  --font-16: 16px;
+  --font-18: 18px;
+  --font-20: 20px;
+  --lh-12: 20px;
+  --lh-14: 22px;
+  --lh-16: 24px;
+  --lh-18: 26px;
+  --lh-20: 28px;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 100px;
+
+  --sidebar-w: 200px;
+  --rail-w: 100px;
+  --top-h: 60px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 180ms;
+}

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>课程中心 - 广联达数字实训平台V1.0</title>
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img class="brand__logo" src="assets/brand/logo.png" width="182" height="44" alt="建筑云课 广联达数字实训平台V1.0" />
+        <img class="brand__badge" src="assets/brand/badge-flagship.png" width="56" height="16" alt="旗舰版" />
+      </div>
+
+      <div class="topbar__actions">
+        <div class="topbar__tools">
+          <button type="button" class="tool-btn" data-refresh>
+            <span class="tool-btn__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1 0.9973281145 15.999985000000002 16.0053788855" width="18" height="18"><defs><linearGradient id="grad_paint_16580_023291" x1="0.0574" y1="1.0465" x2="0.9426" y2="-0.0465"><stop offset="0.19" stop-color="#009BFE"/><stop offset="0.87" stop-color="#38E2CA"/></linearGradient></defs><path d="M3.7703974,2.9464062C5.2220445,1.6885353300000001,7.0791864,0.9973281145,8.9999924,1.0000077620998C13.418388,1.0000077620998,16.999985000000002,4.5816045,16.999985000000002,8.9999924C16.999985000000002,10.7087908,16.463986,12.292789,15.551987,13.591988C15.551987,13.591988,12.999989,8.9999924,12.999989,8.9999924C12.999989,8.9999924,15.399987,8.9999924,15.399987,8.9999924C15.400065,7.7452979,15.031346,6.5182428,14.339747,5.4714117C13.648068,4.424572899999999,12.663909,3.6041336,11.50975,3.112102C10.3555117,2.6200783999999997,9.0821524,2.4781665999999998,7.8479619,2.7040223C6.6137547,2.9298702,5.473156,3.5135257,4.5679965,4.382405C4.5679965,4.382405,3.7703974,2.9464062,3.7703974,2.9464062C3.7703974,2.9464062,3.7703974,2.9464062,3.7703974,2.9464062Z
+M14.229589,15.053586C12.777908,16.311425,10.9207907,17.002707,8.9999924,16.999985000000002C4.5815969,16.999985000000002,1,13.418388,1,8.9999924C1,7.2912016,1.5359995400000002,5.7072034,2.4479986,4.4080045000000005C2.4479986,4.4080045000000005,4.9999962,8.9999924,4.9999962,8.9999924C4.9999962,8.9999924,2.5999985,8.9999924,2.5999985,8.9999924C2.5998944,10.2547121,2.9685981999999997,11.48175,3.6602695,12.528629C4.3519328,13.575429,5.3360519,14.395907,6.4902511,14.887906C7.6444497,15.379907,8.9178247,15.521827,10.1519909,15.295987C11.38623,15.070147,12.526789,14.486468,13.431989,13.617589C13.431989,13.617589,14.229589,15.053586,14.229589,15.053586C14.229589,15.053586,14.229589,15.053586,14.229589,15.053586Z" fill="url(#grad_paint_16580_023291)"/></svg></span>
+            刷新
+          </button>
+          <button type="button" class="tool-btn tool-btn--link">移动端</button>
+          <button type="button" class="tool-btn">
+            <span class="tool-btn__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.800001 17.629082" width="25.30000114440918" height="17.600000381469727"><defs><linearGradient id="grad_paint_16580_023291" x1="0.0574" y1="1.0465" x2="0.9426" y2="-0.0465"><stop offset="0.19" stop-color="#009BFE"/><stop offset="0.87" stop-color="#38E2CA"/></linearGradient></defs><path d="M0,13.2L0,1.1Q0,1.0459605,0.0052968003,0.99218118Q0.010593601,0.93840182,0.021136189,0.88540059Q0.031678781,0.83239949,0.047365628,0.78068686Q0.063052475,0.72897422,0.083732508,0.67904818Q0.10441256,0.6291222,0.12988661,0.58146358Q0.15536067,0.53380495,0.18538341,0.48887271Q0.21540618,0.44394052,0.24968851,0.40216741Q0.28397083,0.3603943,0.32218254,0.32218254Q0.3603943,0.28397083,0.40216744,0.24968851Q0.44394052,0.21540619,0.48887274,0.18538342Q0.53380501,0.15536067,0.58146358,0.12988661Q0.6291222,0.10441256,0.67904818,0.083732508Q0.72897422,0.063052475,0.78068686,0.047365628Q0.83239949,0.031678781,0.88540059,0.021136189Q0.93840182,0.010593601,0.99218118,0.0052968003Q1.0459605,0,1.1,0L18.700001,0Q18.754044,0,18.807821,0.0052968003Q18.861601,0.010593601,18.9146,0.021136189Q18.967602,0.031678781,19.019316,0.047365628Q19.071028,0.063052475,19.120953,0.083732508Q19.170879,0.10441256,19.218538,0.12988661Q19.266197,0.15536067,19.311127,0.18538341Q19.35606,0.21540618,19.397833,0.24968851Q19.439606,0.28397083,19.477818,0.32218254Q19.516029,0.3603943,19.550312,0.40216744Q19.584595,0.44394052,19.614616,0.48887274Q19.644638,0.53380501,19.670113,0.58146358Q19.695587,0.6291222,19.716267,0.67904818Q19.736946,0.72897422,19.752634,0.78068686Q19.768322,0.83239949,19.778864,0.88540059Q19.789408,0.93840182,19.794704,0.99218118Q19.800001,1.0459605,19.800001,1.1L19.800001,13.2Q19.800001,13.25404,19.794704,13.307819Q19.789408,13.361599,19.778864,13.414598Q19.768322,13.4676,19.752636,13.519313Q19.736946,13.571026,19.716267,13.620951Q19.695587,13.670877,19.670113,13.718536Q19.644638,13.766195,19.614616,13.811127Q19.584595,13.85606,19.550312,13.897832Q19.516029,13.939606,19.477818,13.977817Q19.439606,14.016029,19.397833,14.050311Q19.35606,14.084594,19.311127,14.114615Q19.266195,14.14464,19.218536,14.170115Q19.170877,14.195587,19.120951,14.216267Q19.071026,14.236948,19.019314,14.252634Q18.967602,14.268321,18.9146,14.278863Q18.861601,14.289406,18.807821,14.294703Q18.754044,14.3,18.700001,14.3L10.560127,14.3L10.560127,16.170013L13.570466,16.170013Q13.642319,16.170013,13.71279,16.184031Q13.783262,16.198048,13.849646,16.225544Q13.916029,16.25304,13.975772,16.292959Q14.035516,16.332878,14.086324,16.383688Q14.137131,16.434494,14.17705,16.494238Q14.216969,16.553982,14.244466,16.620365Q14.271963,16.686749,14.285981,16.757221Q14.299999,16.827694,14.3,16.899548Q14.299999,16.971399,14.285981,17.04187Q14.271963,17.112343,14.244466,17.178726Q14.216969,17.24511,14.17705,17.304853Q14.137131,17.364597,14.086323,17.415405Q14.035515,17.466213,13.975771,17.506132Q13.916027,17.546051,13.849645,17.573547Q13.783262,17.601046,13.71279,17.615065Q13.642319,17.629082,13.570466,17.629082L6.2295341,17.629082Q6.1576815,17.629082,6.0872087,17.615063Q6.0167365,17.601046,5.9503531,17.573547Q5.8839698,17.546051,5.8242264,17.506132Q5.764483,17.466213,5.7136755,17.415405Q5.6628675,17.364597,5.6229486,17.304853Q5.5830288,17.24511,5.555532,17.178726Q5.5280352,17.112343,5.5140171,17.041872Q5.5,16.971399,5.5,16.899548Q5.5,16.827694,5.5140171,16.757221Q5.5280352,16.686749,5.555532,16.620365Q5.5830288,16.553982,5.6229477,16.494238Q5.6628671,16.434494,5.713675,16.383688Q5.7644825,16.332878,5.8242259,16.292959Q5.8839693,16.25304,5.9503527,16.225544Q6.016736,16.198048,6.0872087,16.184031Q6.1576815,16.170013,6.2295341,16.170013L9.130127,16.170013L9.130127,14.3L1.1,14.3Q1.0459605,14.3,0.99218118,14.294703Q0.93840182,14.289406,0.88540059,14.278863Q0.83239949,14.268321,0.78068686,14.252634Q0.72897422,14.236948,0.67904818,14.216267Q0.6291222,14.195587,0.58146358,14.170113Q0.53380495,14.144638,0.48887271,14.114614Q0.44394052,14.084593,0.40216741,14.050311Q0.3603943,14.016028,0.32218254,13.977816Q0.28397083,13.939604,0.24968851,13.897831Q0.21540619,13.856058,0.18538342,13.811125Q0.15536067,13.766193,0.12988661,13.718534Q0.10441256,13.670876,0.083732508,13.62095Q0.063052475,13.571025,0.047365628,13.519313Q0.031678781,13.4676,0.021136189,13.414598Q0.010593601,13.361599,0.0052968003,13.307819Q0,13.25404,0,13.2Z
+M2.1999512,11.000012L2.1999512,3.3000121Q2.1999512,3.2459726,2.2052481,3.1921933Q2.2105451,3.1384139,2.2210875,3.0854125Q2.2316301,3.0324116,2.2473168,2.9806991Q2.2630038,2.9289865,2.2836835,2.8790603Q2.3043637,2.8291345,2.3298378,2.7814758Q2.3553119,2.7338171,2.3853343,2.6888847Q2.4153571,2.6439528,2.4496396,2.6021795Q2.483922,2.5604064,2.5221336,2.5221946Q2.5603454,2.483983,2.6021185,2.4497006Q2.6438916,2.4154181,2.6888237,2.3853953Q2.7337561,2.3553724,2.7814145,2.3298984Q2.8290734,2.3044243,2.8789992,2.2837443Q2.9289253,2.2630644,2.980638,2.2473776Q3.0323505,2.2316909,3.0853515,2.2211483Q3.1383529,2.2106059,3.1921322,2.2053092Q3.2459116,2.2000122,3.2999511,2.2000122L16.49995,2.2000122Q16.553991,2.2000122,16.607771,2.2053092Q16.661549,2.2106059,16.71455,2.2211483Q16.767551,2.2316909,16.819263,2.2473776Q16.870975,2.2630644,16.9209,2.2837443Q16.970827,2.3044243,17.018486,2.3298984Q17.066145,2.3553724,17.111076,2.3853953Q17.15601,2.4154181,17.197783,2.4497006Q17.239555,2.483983,17.277767,2.5221946Q17.315979,2.5604064,17.350262,2.6021795Q17.384544,2.6439528,17.414566,2.6888847Q17.444592,2.7338171,17.470066,2.7814758Q17.495541,2.8291345,17.516218,2.8790603Q17.5369,2.9289865,17.552586,2.9806991Q17.568274,3.0324116,17.578815,3.0854125Q17.589359,3.1384139,17.594658,3.1921933Q17.599955,3.2459726,17.599953,3.3000121L17.599953,11.000012Q17.599955,11.054052,17.594658,11.107831Q17.589359,11.161611,17.578815,11.214611Q17.568274,11.267612,17.552586,11.319325Q17.5369,11.371038,17.516218,11.420963Q17.495541,11.47089,17.470066,11.51855Q17.444592,11.566208,17.414568,11.611139Q17.384546,11.656073,17.350266,11.697845Q17.315983,11.739619,17.277769,11.77783Q17.239559,11.816042,17.197784,11.850325Q17.156012,11.884606,17.111078,11.914628Q17.066147,11.944652,17.018488,11.970125Q16.970829,11.9956,16.9209,12.016279Q16.870975,12.03696,16.819263,12.052647Q16.767551,12.068334,16.71455,12.078876Q16.661549,12.089418,16.607771,12.094716Q16.553991,12.100013,16.49995,12.100013L3.2999511,12.100013Q3.2459116,12.100013,3.1921322,12.094716Q3.1383529,12.089418,3.0853515,12.078876Q3.0323505,12.068334,2.9806378,12.052647Q2.928925,12.036959,2.878999,12.016278Q2.8290732,11.9956,2.7814145,11.970126Q2.7337561,11.944653,2.6888235,11.914629Q2.6438913,11.884607,2.6021185,11.850325Q2.5603454,11.816042,2.5221336,11.77783Q2.483922,11.739619,2.4496396,11.697846Q2.4153574,11.656073,2.3853345,11.611139Q2.3553119,11.566208,2.3298378,11.518549Q2.3043637,11.47089,2.2836835,11.420963Q2.2630038,11.371038,2.2473168,11.319324Q2.2316298,11.267612,2.2210872,11.214611Q2.2105448,11.161611,2.2052479,11.107832Q2.1999512,11.054052,2.1999512,11.000012Z" fill="url(#grad_paint_16580_023291)"/></svg></span>
+            Windows版客户端下载
+          </button>
+          <button type="button" class="tool-btn">创建桌面快捷方式</button>
+        </div>
+        <div class="user">
+          <span class="user__avatar">
+            <span class="user__avatar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="564.9443780274378 10.592799215435662 39.21086414720003 42.009125" width="32" height="32"><defs><linearGradient id="grad_paint_14451_48940" x1="0.0000" y1="0.5000" x2="1.0000" y2="0.5000"><stop offset="0" stop-color="#ABD69E"/><stop offset="0.99" stop-color="#01B59B"/></linearGradient></defs><path d="M575.6739731746378,19.555255915435662C575.6739731746378,14.612700515435662,579.6531061746379,10.592799215435662,584.5455341746379,10.592799215435662C589.4379631746378,10.592799215435662,593.4170911746378,14.612700515435662,593.4170911746378,19.555255915435662C593.4170911746378,24.490420215435662,589.4379631746378,28.510321215435663,584.5455341746379,28.510321215435663C579.6531061746379,28.510321215435663,575.6739731746378,24.490420215435662,575.6739731746378,19.555255915435662Z
+M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.7959992746378,52.59388221543566,569.0800037746378,52.59277221543566L600.0110661746378,52.59277221543566C602.2985721746378,52.60192421543566,604.1552421746378,50.72622621543566,604.1461711746379,48.41528221543566C604.1461711746379,41.09519321543566,599.8105081746378,34.58519821543566,593.0918151746378,31.840419215435663C591.7394561746378,31.28653621543566,590.2220221746378,31.313596215435663,588.8898481746378,31.915343215435662C586.1579361746378,33.175347215435664,582.9364521746378,33.175347215435664,580.2038761746378,31.915343215435662C578.8769181746378,31.31368021543566,577.3640871746378,31.28660921543566,576.0168731746378,31.840419215435663C573.8091769746378,32.73322221543566,571.8057609746378,34.07314021543566,570.1299949746378,35.77766121543566C566.7874470746378,39.15277921543566,564.9462171896281,43.64542721543566,564.9462171896281,48.41528221543566Z" fill="url(#grad_paint_14451_48940)"/></svg></span>
+          </span>
+          <span class="user__name">李老师</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell">
+      <aside class="sidebar">
+        <img class="sidebar__deco" src="assets/brand/sidebar-deco.png" alt="" />
+        <nav class="sidebar__nav" aria-label="主导航">
+          <a class="nav-item" href="#home">
+            <span class="nav-item__main">
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-home.png" data-icon="assets/icons/nav-home.png" data-icon-active="assets/icons/nav-home-active.png" width="24" height="24" alt="" /></span></span>
+              首页
+            </span>
+          </a>
+          <div class="nav-group is-open" data-nav-group="course">
+          <a class="nav-item nav-item--course-parent is-open" href="#course" data-nav-toggle="course">
+            <span class="nav-item__main">
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-course.png" data-icon="assets/icons/nav-course.png" width="24" height="24" alt="" /></span></span>
+              课程中心
+            </span>
+            <span class="nav-item__caret"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1.05 1.55c.28-.3.74-.32 1.04-.04L6 4.95l3.91-3.44c.3-.28.76-.26 1.04.04.27.3.25.76-.05 1.04L6.52 6.55c-.3.26-.74.26-1.04 0L1.1 2.59c-.3-.28-.32-.74-.05-1.04Z" fill="#909399"/></svg></span>
+          </a>
+            <div class="nav-sub">
+            <a class="nav-sub__item" href="#campus" data-sub-item><span class="nav-sub__label">院校课程中心</span></a>
+            <a class="nav-sub__item is-active" href="#major-lib" data-sub-item><span class="nav-sub__label">专业资源库</span></a>
+            <a class="nav-sub__item" href="#sim-lab" data-sub-item><span class="nav-sub__label">虚仿实验</span></a>
+            <a class="nav-sub__item" href="#teacher" data-sub-item><span class="nav-sub__label">教师发展中心</span></a>
+            <a class="nav-sub__item" href="#job" data-sub-item><span class="nav-sub__label">就业中心</span></a>
+            <a class="nav-sub__item" href="#industry" data-sub-item><span class="nav-sub__label">行业培训</span></a>
+            </div>
+          </div>
+          <div class="nav-group" data-nav-group="teach">
+          <a class="nav-item nav-item--teach-parent" href="#teach" data-nav-toggle="teach">
+            <span class="nav-item__main">
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-teach.png" data-icon="assets/icons/nav-teach.png" width="24" height="24" alt="" /></span></span>
+              我的教学
+            </span>
+            <span class="nav-item__caret"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1.05 1.55c.28-.3.74-.32 1.04-.04L6 4.95l3.91-3.44c.3-.28.76-.26 1.04.04.27.3.25.76-.05 1.04L6.52 6.55c-.3.26-.74.26-1.04 0L1.1 2.59c-.3-.28-.32-.74-.05-1.04Z" fill="#909399"/></svg></span>
+          </a>
+            <div class="nav-sub">
+            <a class="nav-sub__item" href="prepare.html" data-sub-item><span class="nav-sub__label">备课中心</span></a>
+            <a class="nav-sub__item" href="classes.html" data-sub-item><span class="nav-sub__label">我的班课</span></a>
+            </div>
+          </div>
+          <a class="nav-item nav-item--practice" href="#practice">
+            <span class="nav-item__main">
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-practice.png" data-icon="assets/icons/nav-practice.png" data-icon-active="assets/icons/nav-practice-active.png" width="24" height="24" alt="" /></span></span>
+              实训中心
+            </span>
+            <span class="nav-item__caret"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1.05 1.55c.28-.3.74-.32 1.04-.04L6 4.95l3.91-3.44c.3-.28.76-.26 1.04.04.27.3.25.76-.05 1.04L6.52 6.55c-.3.26-.74.26-1.04 0L1.1 2.59c-.3-.28-.32-.74-.05-1.04Z" fill="#909399"/></svg></span>
+          </a>
+          <a class="nav-item nav-item--exam" href="#exam">
+            <span class="nav-item__main">
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-exam.png" data-icon="assets/icons/nav-exam.png" data-icon-active="assets/icons/nav-exam-active.png" width="24" height="24" alt="" /></span></span>
+              考试中心
+            </span>
+            <span class="nav-item__caret"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1.05 1.55c.28-.3.74-.32 1.04-.04L6 4.95l3.91-3.44c.3-.28.76-.26 1.04.04.27.3.25.76-.05 1.04L6.52 6.55c-.3.26-.74.26-1.04 0L1.1 2.59c-.3-.28-.32-.74-.05-1.04Z" fill="#909399"/></svg></span>
+          </a>
+          <a class="nav-item nav-item--resource" href="#resource">
+            <span class="nav-item__main">
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-resource.png" data-icon="assets/icons/nav-resource.png" data-icon-active="assets/icons/nav-resource-active.png" width="24" height="24" alt="" /></span></span>
+              资源中心
+            </span>
+          </a>
+          <a class="nav-item nav-item--ai" href="#ai">
+            <span class="nav-item__main">
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-ai.png" data-icon="assets/icons/nav-ai.png" data-icon-active="assets/icons/nav-ai-active.png" width="24" height="24" alt="" /></span></span>
+              AI助教
+            </span>
+          </a>
+          <a class="nav-item" href="#settings">
+            <span class="nav-item__main">
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-settings.png" data-icon="assets/icons/nav-settings.png" data-icon-active="assets/icons/nav-settings-active.png" width="24" height="24" alt="" /></span></span>
+              设置
+            </span>
+          </a>
+          <a class="nav-item nav-item--manage" href="#manage">
+            <span class="nav-item__main">
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-manage.png" data-icon="assets/icons/nav-manage.png" data-icon-active="assets/icons/nav-manage-active.png" width="24" height="24" alt="" /></span></span>
+              课程管理
+            </span>
+          </a>
+        </nav>
+        <div class="sidebar__foot">
+          <a class="foot-item" href="#plugin">
+            <span class="foot-item__icon"><img src="assets/icons/nav-settings.png" width="16" height="16" alt="" /></span>
+            服务插件1.0.1
+          </a>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="search-hero">
+          <div class="search-hero__deco-layer" aria-hidden="true">
+            <span class="search-hero__deco search-hero__deco--a"></span>
+            <span class="search-hero__deco search-hero__deco--b"></span>
+            <span class="search-hero__deco search-hero__deco--c"></span>
+            <span class="search-hero__deco search-hero__deco--d"></span>
+          </div>
+          <div class="hero-copy">
+            <h1 class="hero-copy__title">实训资源库</h1>
+            <p class="hero-copy__desc">实训平台历史资源，厚积薄发，筑基实战。</p>
+          </div>
+          <div class="search-box">
+            <div class="search-box__field">
+              <input class="search-box__input" type="search" placeholder="搜一搜" data-course-search />
+              <button type="button" class="search-box__submit" data-search-submit aria-label="搜一搜">
+                <span class="search-box__submit-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0.54547119140625 23.923265 23.270922" width="24" height="24"><path d="M10.636364,0.54547119140625C16.51091,0.54547119140625,21.272728,5.30728959140625,21.272728,11.18183519140625C21.272728,12.01965319140625,21.175636,12.84547219140625,20.985273,13.64728919140625C20.846098,14.23351519140625,20.258043,14.59592019140625,19.671818,14.45674519140625C19.085592,14.31756919140625,18.723186,13.72951419140625,18.862364,13.14328919140625C19.014,12.50619719140625,19.09091,11.84947019140625,19.09091,11.18183419140625C19.09091,6.51274439140625,15.305454,2.72728919140625,10.636364,2.72728919140625C5.9672728,2.72728919140625,2.1818182,6.51274439140625,2.1818182,11.18183519140625C2.1818182,15.85092719140625,5.9672728,19.63638119140625,10.636364,19.63638119140625C13.003637,19.63638119140625,15.211636,18.66001719140625,16.799999,16.96856319140625C17.194508,16.54816419140625,17.848021,16.50730419140625,18.291819,16.87529019140625C18.361637,16.91729019140625,18.428183,16.96801719140625,18.488728,17.02638019140625L23.485638,21.84710919140625C23.917118,22.26318019140625,23.923265,22.95231419140625,23.499273,23.37601819140625L23.485638,23.38965619140625C23.064972,23.81032519140625,22.384829,23.81639319140625,21.956728,23.40329219140625L17.611637,19.21201919140625C15.678181,20.89562219140625,13.200102,21.82151019140625,10.636364,21.81819919140625C4.7618184,21.81819919140625,0,17.05638119140625,0,11.18183519140625C0,5.30729009140625,4.7618184,0.54547119140625,10.636364,0.54547119140625Z
+M12.432,4.76019859140625C14.464363,5.31328969140625,15.882,6.54328919140625,16.586182,8.392379791406249C16.800423,8.95534609140625,16.517849,9.58541109140625,15.954956,9.79984669140625C15.392065,10.01428029140625,14.761902,9.73192409140625,14.547274,9.16910649140625C14.097819,7.98874279140625,13.234909,7.23983379140625,11.859274,6.86565209140625C11.277868,6.70749759140625,10.934754,6.10796599140625,11.092909,5.52656129140625C11.251062,4.94515609140625,11.850595,4.60204319140625,12.432,4.76019859140625Z" fill="#FFFFFF"/></svg></span>
+              </button>
+            </div>
+          </div>
+          <div class="hero-tabs" data-hero-tabs>
+            <button type="button" class="hero-tab is-active">实训资源库</button>
+            <button type="button" class="hero-tab">专业教学库</button>
+            <button type="button" class="hero-tab">院校共享精品课</button>
+            <button type="button" class="hero-tab">竞赛天地</button>
+          </div>
+        </section>
+
+        <section class="filters">
+          <div class="filters__rows">
+            <div class="filter-row" data-filter-row>
+              <span class="filter-row__label">配置项名称：</span>
+              <div class="filter-row__chips">
+                <button type="button" class="filter-chip is-active" data-filter-chip>全部</button>
+                <button type="button" class="filter-chip" data-filter-chip>配置项</button>
+                <button type="button" class="filter-chip" data-filter-chip>配置项</button>
+                <button type="button" class="filter-chip" data-filter-chip>配置项</button>
+                <button type="button" class="filter-chip" data-filter-chip>配置项</button>
+                <button type="button" class="filter-chip" data-filter-chip>配置项</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="course-grid" aria-label="课程列表">
+          <article class="course-card" tabindex="0" data-course-card data-title="数字造价全过程管理" data-tags="市政工程技术 给排水工程技术" data-auth="付费">
+            <div class="course-card__cover">
+              <img src="assets/course/cover-digital-cost.png" alt="" />
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__meta">
+                <h3 class="course-card__title">数字造价全过程管理</h3>
+                <div class="course-card__majors">
+                  <span>市政工程技术</span>
+                  <span>给排水工程技术</span>
+                </div>
+              </div>
+              <div class="course-card__foot">
+                <div class="soft-icons">
+                  <img src="assets/tools/icon-decocost.png" alt="" />
+                  <img src="assets/tools/icon-cloud-cost.png" alt="" />
+                  <img src="assets/tools/icon-gtj.png" alt="" />
+                  <img src="assets/tools/icon-install.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" tabindex="0" data-course-card data-title="建筑工程工艺" data-tags="市政工程技术 给排水工程技术" data-auth="付费">
+            <div class="course-card__cover">
+              <img src="assets/course/cover-arch-craft.png" alt="" />
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__meta">
+                <h3 class="course-card__title">建筑工程工艺</h3>
+                <div class="course-card__majors">
+                  <span>市政工程技术</span>
+                  <span>给排水工程技术</span>
+                </div>
+              </div>
+              <div class="course-card__foot">
+                <div class="soft-icons">
+                  <img src="assets/tools/icon-decocost.png" alt="" />
+                  <img src="assets/tools/icon-cloud-cost.png" alt="" />
+                  <img src="assets/tools/icon-gtj.png" alt="" />
+                  <img src="assets/tools/icon-install.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" tabindex="0" data-course-card data-title="项目工程管理" data-tags="市政工程技术 给排水工程技术" data-auth="付费">
+            <div class="course-card__cover">
+              <img src="assets/course/cover-project-mgmt.png" alt="" />
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__meta">
+                <h3 class="course-card__title">项目工程管理</h3>
+                <div class="course-card__majors">
+                  <span>市政工程技术</span>
+                  <span>给排水工程技术</span>
+                </div>
+              </div>
+              <div class="course-card__foot">
+                <div class="soft-icons">
+                  <img src="assets/tools/icon-decocost.png" alt="" />
+                  <img src="assets/tools/icon-cloud-cost.png" alt="" />
+                  <img src="assets/tools/icon-gtj.png" alt="" />
+                  <img src="assets/tools/icon-install.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" tabindex="0" data-course-card data-title="斑马进度计划" data-tags="市政工程技术 给排水工程技术" data-auth="付费">
+            <div class="course-card__cover">
+              <img src="assets/course/cover-zebra-plan.png" alt="" />
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__meta">
+                <h3 class="course-card__title">斑马进度计划</h3>
+                <div class="course-card__majors">
+                  <span>市政工程技术</span>
+                  <span>给排水工程技术</span>
+                </div>
+              </div>
+              <div class="course-card__foot">
+                <div class="soft-icons">
+                  <img src="assets/tools/icon-decocost.png" alt="" />
+                  <img src="assets/tools/icon-cloud-cost.png" alt="" />
+                  <img src="assets/tools/icon-gtj.png" alt="" />
+                  <img src="assets/tools/icon-install.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" hidden tabindex="0" data-course-card data-title="BIM安装工程计量与计价" data-tags="工程造价专业 建设工程管理专业" data-auth="未授权">
+            <div class="course-card__cover">
+              <img src="assets/course/cover-install.png" alt="" />
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__meta">
+                <h3 class="course-card__title">BIM安装工程计量与计价</h3>
+                <div class="course-card__majors">
+                  <span>工程造价专业</span>
+                  <span>建设工程管理专业</span>
+                </div>
+              </div>
+              <div class="course-card__foot">
+                <div class="soft-icons">
+                  <img src="assets/tools/icon-decocost.png" alt="" />
+                  <img src="assets/tools/icon-cloud-cost.png" alt="" />
+                  <img src="assets/tools/icon-gtj.png" alt="" />
+                  <img src="assets/tools/icon-install.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" hidden tabindex="0" data-course-card data-title="BIM装饰工程计量与计价" data-tags="工程造价专业 建设工程管理专业" data-auth="未授权">
+            <div class="course-card__cover">
+              <img src="assets/course/cover-deco.png" alt="" />
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__meta">
+                <h3 class="course-card__title">BIM装饰工程计量与计价</h3>
+                <div class="course-card__majors">
+                  <span>工程造价专业</span>
+                  <span>建设工程管理专业</span>
+                </div>
+              </div>
+              <div class="course-card__foot">
+                <div class="soft-icons">
+                  <img src="assets/tools/icon-bim5d.png" alt="" />
+                  <img src="assets/tools/icon-decocost.png" alt="" />
+                  <img src="assets/tools/icon-gtj.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" hidden tabindex="0" data-course-card data-title="智能建造概论" data-tags="土木工程专业" data-auth="未授权">
+            <div class="course-card__cover">
+              <img src="assets/course/cover-smart-intro.png" alt="" />
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__meta">
+                <h3 class="course-card__title">智能建造概论</h3>
+                <div class="course-card__majors">
+                  <span>土木工程专业</span>
+                </div>
+              </div>
+              <div class="course-card__foot">
+                <div class="soft-icons">
+                  <img src="assets/tools/icon-bim5d.png" alt="" />
+                  <img src="assets/tools/icon-decocost.png" alt="" />
+                  <img src="assets/tools/icon-gtj.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" hidden tabindex="0" data-course-card data-title="智能建造施工建造虚拟仿真实训课程" data-tags="建设工程管理专业 虚拟仿真" data-auth="已授权">
+            <div class="course-card__cover">
+              <img src="assets/course/cover-sim.png" alt="" />
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__meta">
+                <h3 class="course-card__title">智能建造施工建造虚拟仿真实训课程</h3>
+                <div class="course-card__majors">
+                  <span>建设工程管理专业</span>
+                </div>
+              </div>
+              <div class="course-card__foot">
+                <div class="soft-icons">
+                  <img src="assets/tools/icon-bim5d.png" alt="" />
+                  <img src="assets/tools/icon-decocost.png" alt="" />
+                  <img src="assets/tools/icon-gtj.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <aside class="rail">
+        <a class="assistant" href="#assistant">
+          <img class="assistant__img" src="assets/tools/assistant.png" width="124" height="164" alt="智能助手" />
+        </a>
+        <div class="rail__divider"></div>
+        <div class="tool-list">
+          <a class="tool-item" href="#drive">
+            <span class="tool-item__icon"><img src="assets/tools/icon-lock.png" alt="" /></span>
+            <span class="tool-item__name">广联达新驱动</span>
+          </a>
+          <a class="tool-item" href="#exam-sys">
+            <span class="tool-item__icon"><span class="tool-item__icon-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="29.37597507 208.1248097382543 80.62402493 80.12477661953378" width="50" height="50"><defs><linearGradient id="grad_paint_5270_24010" x1="1.1035" y1="0.7438" x2="-0.1035" y2="0.2562"><stop offset="0.15" stop-color="#82B9FF"/><stop offset="0.75" stop-color="#4B83FE"/></linearGradient></defs><path d="M74.55537799999999,208.1248097382543C80.29640599999999,208.1248097382543,85.787827,209.37285945778808,90.780029,211.86895915778808C93.775349,213.36661815778808,95.023399,217.36037825778808,93.52573799999999,220.3556993577881C92.028076,223.3510183577881,88.283928,224.5990693577881,85.03899799999999,223.10140835778807C81.794071,221.3541373577881,78.29953,220.6053093577881,74.55537799999999,220.6053093577881C61.82527,220.6053093577881,51.591263,230.83931535778808,51.591263,243.56942535778808C51.591263,256.29952835778806,61.82527,266.53354435778806,74.55537799999999,266.53354435778806C87.285488,266.53354435778806,97.519501,256.29952835778806,97.519501,243.56942535778808C97.519501,242.3213753577881,97.519501,241.0733243577881,97.26989,239.8252753577881L97.26989,239.57566235778808C96.770668,236.0811233577881,99.017159,232.83619535778809,102.262085,232.33697335778808C105.75663,231.83775335778807,109.001564,234.08424235778807,109.500771,237.32917235778808C109.750389,239.32605335778808,110,241.5725383577881,110,243.5694213577881C110,263.0389993577881,94.274574,279.0140363577881,74.804993,279.2636473577881C75.553822,281.5101373577881,75.0546,284.0062393577881,73.307327,285.75350735778807C70.81123,288.2495863577881,66.817471,288.2495863577881,64.321369,285.75350735778807L31.8720746,253.3042123577881C29.37597507,250.8081153577881,29.37597507,246.8143553577881,31.8720746,244.3182503577881C33.8689547,242.3213753577881,36.6146646,242.07176735778808,38.8611536,243.0702033577881L38.8611536,243.8190363577881C38.8611565,224.0998483577881,54.836191,208.1248097382543,74.55537799999999,208.1248097382543Z
+M73.05772400000001,231.58814635778808C74.305771,231.58814635778808,75.0546,232.5865863577881,75.0546,233.5850223577881L75.0546,243.0702033577881L84.290176,243.0702033577881C85.538223,243.0702033577881,86.536663,244.0686433577881,86.536663,245.3166943577881C86.536663,246.56474135778808,85.538223,247.56317735778808,84.290176,247.56317735778808L73.05772400000001,247.56317735778808C71.809673,247.56317735778808,70.811234,246.56474135778808,70.811234,245.3166943577881L70.811234,245.0670793577881L70.811234,233.5850223577881C71.06084100000001,232.5865883577881,72.05928,231.58814635778808,73.05772400000001,231.58814635778808Z
+M103.260536,236.5803413577881C101.263641,236.5803413577881,99.765976,238.0780063577881,99.765976,240.07488235778808C99.765976,242.07176435778808,101.263641,243.5694213577881,103.260536,243.5694213577881C105.257416,243.5694213577881,106.755066,242.07176435778808,106.755066,240.07488235778808C106.755066,238.0780063577881,105.257416,236.5803413577881,103.260536,236.5803413577881Z
+M86.78627,213.61622955778807C84.789391,213.61622955778807,83.291737,215.1138887577881,83.291737,217.1107683577881C83.291737,219.1076473577881,84.789391,220.6053093577881,86.78627,220.6053093577881C88.78315,220.6053093577881,90.280811,219.1076483577881,90.280811,217.1107683577881C90.280811,215.1138882577881,88.78315,213.61622955778807,86.78627,213.61622955778807Z" fill="url(#grad_paint_5270_24010)"/></svg></span></span>
+            <span class="tool-item__name">考试系统</span>
+          </a>
+          <a class="tool-item" href="#install-soft">
+            <span class="tool-item__icon"><img src="assets/tools/icon-install.png" alt="" /></span>
+            <span class="tool-item__name">BIM安装计量软件</span>
+          </a>
+          <a class="tool-item" href="#cloud-cost">
+            <span class="tool-item__icon"><img src="assets/tools/icon-cloud-cost.png" alt="" /></span>
+            <span class="tool-item__name">云计价平台</span>
+          </a>
+          <a class="tool-item" href="#civil">
+            <span class="tool-item__icon"><img src="assets/tools/icon-civil.png" alt="" /></span>
+            <span class="tool-item__name">BIM土建计量平台</span>
+          </a>
+        </div>
+        <a class="download" href="#download">
+          <span class="download__icon">
+            <span class="download__bar"></span>
+            <span class="download__shape"><svg xmlns="http://www.w3.org/2000/svg" viewBox="27 922 46 39" width="60" height="60"><defs><linearGradient id="grad_paint_15625_64455" x1="0.5000" y1="-0.0000" x2="0.5000" y2="1.0000"><stop offset="0.04" stop-color="#D900FF"/><stop offset="1" stop-color="#1E00FF"/></linearGradient></defs><path d="M27,951C27,956.52285,31.4771519,961,37,961L63,961C68.52285,961,73,956.52285,73,951L73,922L56.5,927.5714283L56.5,930.3571424L43.5,930.3571424L43.5,927.5714283L27,922L27,951Z" fill="url(#grad_paint_15625_64455)"/></svg></span>
+            <span class="download__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="40 937 21 19" width="60" height="60"><path d="M61,945.2307739L55,945.2307739L54.999984,937.99999797C54.999983,937.44771391,54.552268,937,53.999984,937L46.9999642,937C46.4476771,937,45.9999609,937.44771826,45.9999638,938.000005L46,945.2307739L40,945.2307739L50.5,956L61,945.2307739L61,945.2307739Z" fill="#FFFFFF"/></svg></span>
+          </span>
+          下载中心
+        </a>
+      </aside>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
