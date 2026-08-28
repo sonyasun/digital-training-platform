@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+  (function (d, l) {
+    var href = l.protocol === "file:"
+      ? l.href.replace(/[#?].*$/, "").replace(/[^/]*$/, "")
+      : l.origin + "/";
+    var base = d.createElement("base");
+    base.href = href;
+    d.head.insertBefore(base, d.head.firstChild);
+  })(document, location);
+  </script>
+  <title>节点学习 - 广联达数字实训平台V1.0</title>
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/student-ai-agent.css" />
+  <link rel="stylesheet" href="css/student-ai-study.css" />
+  <link rel="stylesheet" href="css/student-node-study.css" />
+</head>
+<body class="nodestudy-page" data-nodestudy-page>
+  <main class="nodestudy">
+    <nav class="nodestudy-crumb" aria-label="面包屑">
+      <a class="nodestudy-crumb__back" href="student-learning-path.html" aria-label="返回学习路径" data-nodestudy-back>
+        <span aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M10.2 3.2 5.4 8l4.8 4.8" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="nodestudy-crumb__link" href="student-courses.html">我的课程</a>
+      <span class="nodestudy-crumb__sep">/</span>
+      <a class="nodestudy-crumb__link" href="student-course.html">BIM装饰工程计量与计价</a>
+      <span class="nodestudy-crumb__sep">/</span>
+      <a class="nodestudy-crumb__link" href="student-ai-study.html">AI个性化学习</a>
+      <span class="nodestudy-crumb__sep">/</span>
+      <a class="nodestudy-crumb__link" href="student-learning-path.html" data-nodestudy-crumb-path>学习路径</a>
+      <span class="nodestudy-crumb__sep" data-nodestudy-crumb-chapter-sep hidden>/</span>
+      <a class="nodestudy-crumb__link" href="student-learning-path.html" data-nodestudy-crumb-chapter hidden></a>
+      <span class="nodestudy-crumb__sep">/</span>
+      <span class="nodestudy-crumb__current" data-nodestudy-crumb-current aria-current="page">节点学习</span>
+    </nav>
+
+    <div class="nodestudy__layout">
+      <section class="nodestudy-panel" aria-label="学习资源">
+        <header class="nodestudy-panel__head">
+          <div class="nodestudy-panel__title-wrap">
+            <h1 class="nodestudy-panel__title" data-nodestudy-title>—</h1>
+          </div>
+          <div class="nodestudy-panel__meta">
+            <span class="nodestudy-panel__tag" data-nodestudy-type>—</span>
+            <span class="nodestudy-panel__tag" data-nodestudy-mastery>掌握率 —</span>
+            <span class="nodestudy-panel__tag" data-nodestudy-duration>—</span>
+          </div>
+        </header>
+
+        <div class="nodestudy-categories" role="tablist" aria-label="学习模块分类">
+          <button type="button" class="nodestudy-categories__btn is-active" role="tab" aria-selected="true" data-nodestudy-category="study">学习</button>
+          <button type="button" class="nodestudy-categories__btn" role="tab" aria-selected="false" data-nodestudy-category="discuss">研讨</button>
+          <button type="button" class="nodestudy-categories__btn" role="tab" aria-selected="false" data-nodestudy-category="test">测试</button>
+        </div>
+
+        <div class="nodestudy-panel__body">
+          <div class="nodestudy-viewer" data-nodestudy-viewer aria-live="polite">
+            <div class="nodestudy-viewer__placeholder" data-nodestudy-viewer-placeholder>
+              <span class="nodestudy-viewer__icon" data-nodestudy-viewer-icon aria-hidden="true"></span>
+              <p class="nodestudy-viewer__hint" data-nodestudy-viewer-hint>切换上方模块开始学习</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside
+        class="nodestudy-agent saistudy-agent"
+        data-saistudy-agent
+        data-nodestudy-agent
+        data-saistudy-agent-title="AI个性化助手"
+        data-saistudy-agent-placeholder="针对当前资源提问……"
+        aria-label="AI个性化助手"
+      >
+        <div class="saistudy-agent__body">
+          <div class="saistudy-agent__chat" data-nodestudy-agent-chat data-saistudy-agent-chat>
+            <header class="saistudy-agent__lead" data-nodestudy-agent-lead>
+              <strong>正在监控你的学习行为</strong>
+              <p>切换学习、研讨或测试模块时，我会实时同步分析并给出建议。</p>
+            </header>
+            <section class="saistudy-insight" data-nodestudy-insight data-saistudy-agent-insight aria-label="学习监控结论"></section>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="js/role.js" defer></script>
+  <script src="js/student-ai-agent.js" defer></script>
+  <script src="js/student-ai-trail.js" defer></script>
+  <script src="js/student-node-study.js" defer></script>
+</body>
+</html>

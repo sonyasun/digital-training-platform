@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/app.css" />
   <link rel="stylesheet" href="css/prepare.css" />
+  <link rel="preload" as="image" href="assets/prepare/cover-quota.webp" fetchpriority="high" />
 </head>
 <body>
   <div class="app">
@@ -32,19 +33,41 @@ M2.1999512,11.000012L2.1999512,3.3000121Q2.1999512,3.2459726,2.2052481,3.1921933
           </button>
           <button type="button" class="tool-btn">创建桌面快捷方式</button>
         </div>
-        <div class="user">
-          <span class="user__avatar">
-            <span class="user__avatar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="564.9443780274378 10.592799215435662 39.21086414720003 42.009125" width="32" height="32"><defs><linearGradient id="grad_paint_14451_48940" x1="0.0000" y1="0.5000" x2="1.0000" y2="0.5000"><stop offset="0" stop-color="#ABD69E"/><stop offset="0.99" stop-color="#01B59B"/></linearGradient></defs><path d="M575.6739731746378,19.555255915435662C575.6739731746378,14.612700515435662,579.6531061746379,10.592799215435662,584.5455341746379,10.592799215435662C589.4379631746378,10.592799215435662,593.4170911746378,14.612700515435662,593.4170911746378,19.555255915435662C593.4170911746378,24.490420215435662,589.4379631746378,28.510321215435663,584.5455341746379,28.510321215435663C579.6531061746379,28.510321215435663,575.6739731746378,24.490420215435662,575.6739731746378,19.555255915435662Z
+        <div class="user-menu" data-user-menu>
+          <button type="button" class="user user-menu__trigger" data-user-menu-trigger aria-expanded="false" aria-haspopup="true">
+            <span class="user__avatar">
+              <span class="user__avatar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="564.9443780274378 10.592799215435662 39.21086414720003 42.009125" width="32" height="32"><defs><linearGradient id="grad_paint_14451_48940" x1="0.0000" y1="0.5000" x2="1.0000" y2="0.5000"><stop offset="0" stop-color="#ABD69E"/><stop offset="0.99" stop-color="#01B59B"/></linearGradient></defs><path d="M575.6739731746378,19.555255915435662C575.6739731746378,14.612700515435662,579.6531061746379,10.592799215435662,584.5455341746379,10.592799215435662C589.4379631746378,10.592799215435662,593.4170911746378,14.612700515435662,593.4170911746378,19.555255915435662C593.4170911746378,24.490420215435662,589.4379631746378,28.510321215435663,584.5455341746379,28.510321215435663C579.6531061746379,28.510321215435663,575.6739731746378,24.490420215435662,575.6739731746378,19.555255915435662Z
 M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.7959992746378,52.59388221543566,569.0800037746378,52.59277221543566L600.0110661746378,52.59277221543566C602.2985721746378,52.60192421543566,604.1552421746378,50.72622621543566,604.1461711746379,48.41528221543566C604.1461711746379,41.09519321543566,599.8105081746378,34.58519821543566,593.0918151746378,31.840419215435663C591.7394561746378,31.28653621543566,590.2220221746378,31.313596215435663,588.8898481746378,31.915343215435662C586.1579361746378,33.175347215435664,582.9364521746378,33.175347215435664,580.2038761746378,31.915343215435662C578.8769181746378,31.31368021543566,577.3640871746378,31.28660921543566,576.0168731746378,31.840419215435663C573.8091769746378,32.73322221543566,571.8057609746378,34.07314021543566,570.1299949746378,35.77766121543566C566.7874470746378,39.15277921543566,564.9462171896281,43.64542721543566,564.9462171896281,48.41528221543566Z" fill="url(#grad_paint_14451_48940)"/></svg></span>
-          </span>
-          <span class="user__name">李老师</span>
+            </span>
+            <span class="user__name">李老师</span>
+          </button>
+          <div class="user-menu__panel" data-user-menu-panel hidden role="menu" aria-label="账号">
+            <div class="user-menu__head">
+              <div class="user-menu__top">
+                <div class="user-menu__name-row">
+                  <span class="user-menu__name">李老师</span>
+                  <button type="button" class="user-menu__edit" aria-label="编辑个人信息">
+                    <img src="assets/icons/user-edit.svg" width="16" height="16" alt="" />
+                  </button>
+                </div>
+                <button type="button" class="user-menu__pwd">修改密码</button>
+              </div>
+              <div class="user-menu__phone">
+                <span class="user-menu__phone-label">手机号</span>
+                <button type="button" class="user-menu__copy" aria-label="复制手机号">
+                  <img src="assets/icons/user-copy.svg" width="16" height="16" alt="" />
+                </button>
+              </div>
+            </div>
+            <button type="button" class="user-menu__logout" role="menuitem">退出登录</button>
+          </div>
         </div>
       </div>
     </header>
 
     <div class="shell">
       <aside class="sidebar">
-        <img class="sidebar__deco" src="assets/brand/sidebar-deco.png" alt="" />
+        <img class="sidebar__deco" src="assets/brand/sidebar-deco.webp" alt="" loading="lazy" decoding="async" />
         <nav class="sidebar__nav" aria-label="主导航">
           <a class="nav-item" href="#home">
             <span class="nav-item__main">
@@ -69,7 +92,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
             <a class="nav-sub__item" href="#industry" data-sub-item><span class="nav-sub__label">行业培训</span></a>
             </div>
           </div>
-          <div class="nav-group is-open" data-nav-group="teach">
+          <div class="nav-group is-open" data-nav-group="teach" data-role="teacher">
           <a class="nav-item nav-item--teach-parent is-open" href="#teach" data-nav-toggle="teach">
             <span class="nav-item__main">
               <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-teach.png" data-icon="assets/icons/nav-teach.png" width="24" height="24" alt="" /></span></span>
@@ -131,8 +154,6 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
 
       <main class="main main--prepare">
         <section class="prep-hero">
-          <img class="prep-hero__deco" src="assets/prepare/hero-deco.png" alt="" />
-          <img class="prep-hero__deco prep-hero__deco--right" src="assets/prepare/hero-deco.png" alt="" />
           <div class="prep-hero__copy">
             <h1 class="prep-hero__title">备课中心</h1>
             <p class="prep-hero__desc">多元资源整合，助力教师轻松备课</p>
@@ -140,7 +161,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
           <a class="prep-hero__go" href="index.html"><span class="prep-hero__go-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 7.33h7.2L8.13 5.07a.67.67 0 1 1 .94-.94l3.6 3.6a.67.67 0 0 1 0 .94l-3.6 3.6a.67.67 0 1 1-.94-.94L10.4 8.67H3.2a.67.67 0 0 1 0-1.34Z" fill="currentColor"/></svg></span>立即前往“课程中心”选取课程</a>
         </section>
 
-        <div class="prep-toolbar">
+        <div class="prep-toolbar" data-role="teacher">
           <button type="button" class="prep-toolbar__btn"><span aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 2.67c.37 0 .67.3.67.66v4h4a.67.67 0 1 1 0 1.34h-4v4a.67.67 0 1 1-1.34 0v-4h-4a.67.67 0 1 1 0-1.34h4v-4c0-.36.3-.66.67-.66Z" fill="currentColor"/></svg></span> 新建课程</button>
           <button type="button" class="prep-toolbar__btn prep-toolbar__btn--ai"><span aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 2.67c.37 0 .67.3.67.66v4h4a.67.67 0 1 1 0 1.34h-4v4a.67.67 0 1 1-1.34 0v-4h-4a.67.67 0 1 1 0-1.34h4v-4c0-.36.3-.66.67-.66Z" fill="currentColor"/></svg></span> 新建AI个性化课程<span class="prep-toolbar__ai">AI</span></button>
         </div>
@@ -148,7 +169,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
         <div class="prep-list">
           <article class="prep-card">
             <a class="prep-card__hit" href="prepare-edit.html" aria-label="进入工程定额原理与市场化计价"></a>
-            <div class="prep-card__cover"><img src="assets/prepare/cover-quota.png" alt="" /></div>
+            <div class="prep-card__cover"><img src="assets/prepare/cover-quota.webp" alt="" fetchpriority="high" decoding="async" width="640" height="360" /></div>
             <div class="prep-card__body">
               <div class="prep-card__head">
                 <div class="prep-card__title-wrap">
@@ -169,7 +190,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
           </article>
           <article class="prep-card">
             <a class="prep-card__hit" href="prepare-edit.html" aria-label="进入BIM市政计量与计价"></a>
-            <div class="prep-card__cover"><img src="assets/prepare/cover-municipal.png" alt="" /></div>
+            <div class="prep-card__cover"><img src="assets/prepare/cover-municipal.webp" alt="" loading="lazy" decoding="async" width="640" height="360" /></div>
             <div class="prep-card__body">
               <div class="prep-card__head">
                 <div class="prep-card__title-wrap">
@@ -190,7 +211,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
           </article>
           <article class="prep-card">
             <a class="prep-card__hit" href="prepare-edit.html" aria-label="进入BIM安装工程计量与计价"></a>
-            <div class="prep-card__cover"><img src="assets/prepare/cover-install.png" alt="" /></div>
+            <div class="prep-card__cover"><img src="assets/prepare/cover-install.webp" alt="" loading="lazy" decoding="async" width="640" height="360" /></div>
             <div class="prep-card__body">
               <div class="prep-card__head">
                 <div class="prep-card__title-wrap">
@@ -214,7 +235,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
 
       <aside class="rail">
         <a class="assistant" href="#assistant">
-          <img class="assistant__img" src="assets/tools/assistant.png" width="124" height="164" alt="智能助手" />
+          <img class="assistant__img" src="assets/tools/assistant.webp" width="124" height="164" alt="智能助手" loading="lazy" decoding="async" />
         </a>
         <div class="rail__divider"></div>
         <div class="tool-list">
@@ -253,6 +274,7 @@ M86.78627,213.61622955778807C84.789391,213.61622955778807,83.291737,215.11388875
       </aside>
     </div>
   </div>
-  <script src="js/app.js"></script>
+  <script src="js/role.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

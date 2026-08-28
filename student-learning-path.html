@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+  (function (d, l) {
+    var href = l.protocol === "file:"
+      ? l.href.replace(/[#?].*$/, "").replace(/[^/]*$/, "")
+      : l.origin + "/";
+    var base = d.createElement("base");
+    base.href = href;
+    d.head.insertBefore(base, d.head.firstChild);
+  })(document, location);
+  </script>
+  <title>个性化学习路径 - 广联达数字实训平台V1.0</title>
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/student-ai-agent.css" />
+  <link rel="stylesheet" href="css/student-ai-study.css" />
+  <link rel="stylesheet" href="css/student-learning-path.css" />
+</head>
+<body class="slpath-page" data-slpath-page>
+  <main class="slpath">
+    <!-- 面包屑 -->
+    <nav class="slpath-crumb" aria-label="面包屑">
+      <a class="slpath-crumb__back" href="student-ai-study.html" aria-label="返回 AI 个性化学习">
+        <span class="slpath-crumb__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M10.2 3.2 5.4 8l4.8 4.8" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="slpath-crumb__link" href="student-courses.html">我的课程</a>
+      <span class="slpath-crumb__sep" aria-hidden="true">/</span>
+      <a class="slpath-crumb__link" href="student-course.html">BIM装饰工程计量与计价</a>
+      <span class="slpath-crumb__sep" aria-hidden="true">/</span>
+      <a class="slpath-crumb__link" href="student-ai-study.html">AI个性化学习</a>
+      <span class="slpath-crumb__sep" aria-hidden="true">/</span>
+      <span class="slpath-crumb__current" data-slpath-crumb-path-current aria-current="page">学习路径</span>
+      <a class="slpath-crumb__link" data-slpath-crumb-path-link href="student-learning-path.html" hidden>学习路径</a>
+      <span class="slpath-crumb__sep" data-slpath-crumb-chapter-sep aria-hidden="true" hidden>/</span>
+      <span class="slpath-crumb__current" data-slpath-crumb-chapter-current aria-current="page" hidden></span>
+    </nav>
+
+    <!-- 主布局：课程地图 + AI 助手 -->
+    <div class="slpath__layout">
+      <section class="slpath-map" aria-label="课程地图总览">
+        <div class="slpath-map__head">
+          <div class="slpath-map__head-main">
+            <button type="button" class="slpath-map__overview-btn is-current" data-slpath-map-overview-btn aria-label="课程地图总览">
+              <span class="slpath-map__overview-btn-icon" data-slpath-map-overview-icon aria-hidden="true">
+                <svg viewBox="0 0 16 16" width="16" height="16"><path d="M10.2 3.2 5.4 8l4.8 4.8" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span data-slpath-map-overview-label>课程地图总览</span>
+            </button>
+          </div>
+          <div class="slpath-map-theme" data-slpath-map-theme role="group" aria-label="地图主题">
+            <button type="button" class="slpath-map-theme__btn is-active" data-slpath-map-theme-option="city" aria-pressed="true">未来城市</button>
+            <button type="button" class="slpath-map-theme__btn" data-slpath-map-theme-option="island" aria-pressed="false">岛屿探险</button>
+          </div>
+        </div>
+        <div id="course-overview-map-root" class="slpath-map__mount" data-slpath-map-root></div>
+      </section>
+
+      <aside
+        class="slpath-agent saistudy-agent"
+        data-saistudy-agent
+        data-slpath-agent
+        data-saistudy-agent-title="AI个性化助手"
+        data-saistudy-agent-placeholder="有什么问题，随时问我……"
+        aria-label="AI个性化助手"
+      >
+        <div class="saistudy-agent__body">
+          <div class="saistudy-agent__chat" data-slpath-agent-chat data-saistudy-agent-chat>
+            <header class="saistudy-agent__lead" data-slpath-agent-lead>
+              <strong>欢迎回来，张同学！</strong>
+              <p class="saistudy-agent__lead-intro">结合《BIM装饰工程计量与计价》当前学习路径，我为你梳理了关键学习数据，建议继续推进当前节点学习。</p>
+              <div class="saistudy-agent__stats" aria-label="学习数据">
+                <button type="button" class="saistudy-agent__stat saistudy-agent__stat--goal">
+                  <span class="saistudy-agent__stat-top">
+                    <span class="saistudy-agent__stat-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" width="14" height="14"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="3.4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/></svg>
+                    </span>
+                    <span class="saistudy-agent__stat-label">课程目标</span>
+                  </span>
+                  <span class="saistudy-agent__stat-value"><b>3</b> 个</span>
+                  <span class="saistudy-agent__stat-foot">已达成1, 点击查看详情</span>
+                </button>
+                <div class="saistudy-agent__stat saistudy-agent__stat--progress">
+                  <span class="saistudy-agent__stat-top">
+                    <span class="saistudy-agent__stat-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" width="14" height="14"><path d="M2 11.5 5.2 7.8 7.8 10.2 13.5 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.2 4H13.5V7.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="saistudy-agent__stat-label">学习进度</span>
+                  </span>
+                  <span class="saistudy-agent__stat-value"><b>18</b> / 32</span>
+                  <span class="saistudy-agent__stat-foot">已完成 56%</span>
+                </div>
+              </div>
+              <p class="saistudy-agent__lead-analysis">当前路径进度为 52%。上次完成「模型协作与冲突检测」，掌握率 72% 已达标。建议优先学习「当前节点」：它是后续模型评估的前置基础，你最近相关练习正确率为 63%，先补强可避免阻断后续学习。按当前节点继续即可，有疑问可以随时提问。</p>
+              <div class="saistudy-agent__lead-actions">
+                <button type="button" class="saistudy-agent__lead-action">查看我的学情<span class="saistudy-agent__lead-action-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M6.2 3.2 10.8 8 6.2 12.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+                <button type="button" class="saistudy-agent__lead-action">调整我的选修偏好<span class="saistudy-agent__lead-action-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M6.2 3.2 10.8 8 6.2 12.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+                <a class="saistudy-agent__lead-action" href="student-node-study.html">开始当前节点<span class="saistudy-agent__lead-action-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M6.2 3.2 10.8 8 6.2 12.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+              </div>
+            </header>
+
+            <section class="saistudy-insight" data-slpath-insight data-saistudy-agent-insight aria-label="课程地图分析结论" hidden></section>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="js/role.js" defer></script>
+  <script src="js/student-ai-agent.js" defer></script>
+  <script src="js/student-ai-trail.js" defer></script>
+  <script src="js/student-learning-path.js" defer></script>
+  <script src="js/course-overview-map.bundle.js" defer></script>
+</body>
+</html>

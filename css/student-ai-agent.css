@@ -1,0 +1,500 @@
+/**
+ * 学生端 · AI 助手面板公共样式
+ * 与 js/student-ai-agent.js 配套：顶栏、底栏输入框、chat 区结构。
+ * 视觉基准：student-node-study.html（4D 模拟 / 节点学习页右侧 chat）
+ * 各页引入此文件即可同步顶/底栏样式，勿在页面 CSS 中重复覆盖。
+ */
+
+/* 面板壳层 */
+.saistudy-agent {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  max-height: none;
+  overflow: hidden;
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 6px 18px rgba(57, 72, 130, 0.06),
+    inset 0 1px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.saistudy-agent__head,
+.saistudy-agent__foot {
+  flex-shrink: 0;
+}
+
+/* 顶栏 · 紧凑标签区 */
+.saistudy-agent__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px 8px;
+  border-bottom: 1px solid rgba(210, 218, 237, 0.4);
+}
+
+.saistudy-agent__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.saistudy-agent__avatar {
+  display: block;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 12px;
+  filter: drop-shadow(0 4px 10px rgba(87, 90, 255, 0.18));
+}
+
+.saistudy-agent__title {
+  margin: 0;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+/* 中间 chat 区 */
+.saistudy-agent__body {
+  flex: 1;
+  min-height: 0;
+  padding: 12px 12px;
+  overflow: auto;
+}
+
+.saistudy-agent__chat {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 4px 0 12px;
+}
+
+.saistudy-agent__lead {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(207, 215, 234, 0.78);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(248, 249, 252, 0.96), rgba(241, 244, 250, 0.9));
+  box-shadow:
+    0 8px 22px rgba(71, 85, 105, 0.04),
+    inset 0 1px rgba(255, 255, 255, 0.9);
+  animation: saistudy-agent-in 0.3s cubic-bezier(0.22, 0.8, 0.24, 1);
+}
+
+.saistudy-agent__lead > strong {
+  display: block;
+  font-size: 17px;
+  line-height: 26px;
+  font-weight: var(--font-weight-medium);
+  color: #1f2937;
+  letter-spacing: 0.01em;
+}
+
+.saistudy-agent__lead-intro {
+  margin: 8px 0 0;
+  font-size: var(--font-14);
+  line-height: 1.55;
+  color: #6b7280;
+}
+
+.saistudy-agent__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.saistudy-agent__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  margin: 0;
+  padding: 11px 11px 9px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: #fff;
+  text-align: left;
+  cursor: default;
+  font: inherit;
+  color: inherit;
+  transition:
+    border-color var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+}
+
+.saistudy-agent__stat--goal {
+  border-color: rgba(96, 165, 250, 0.45);
+  background: linear-gradient(180deg, #f3f8ff 0%, #ffffff 72%);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06);
+  cursor: pointer;
+}
+
+.saistudy-agent__stat--progress {
+  border-color: rgba(52, 211, 153, 0.42);
+  background: linear-gradient(180deg, #f1fbf6 0%, #ffffff 72%);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.06);
+}
+
+.saistudy-agent__stat--goal:hover {
+  border-color: rgba(37, 99, 235, 0.55);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
+  transform: translateY(-1px);
+}
+
+.saistudy-agent__stat-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.saistudy-agent__stat-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+.saistudy-agent__stat--goal .saistudy-agent__stat-icon {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.saistudy-agent__stat--progress .saistudy-agent__stat-icon {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.1);
+}
+
+.saistudy-agent__stat--goal .saistudy-agent__stat-label {
+  color: #2563eb;
+}
+
+.saistudy-agent__stat--progress .saistudy-agent__stat-label {
+  color: #059669;
+}
+
+.saistudy-agent__stat-label {
+  font-size: var(--font-min);
+  line-height: var(--lh-12);
+  font-weight: var(--font-weight-medium);
+}
+
+.saistudy-agent__stat-value {
+  margin-top: 8px;
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  color: #334155;
+}
+
+.saistudy-agent__stat-value b {
+  margin-right: 2px;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+  font-family: var(--font-num, var(--font-sans));
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.saistudy-agent__stat-foot {
+  margin-top: 10px;
+  padding-top: 7px;
+  border-top: 1px dashed rgba(148, 163, 184, 0.5);
+  font-size: var(--font-min);
+  line-height: var(--lh-12);
+  color: #94a3b8;
+}
+
+.saistudy-agent__lead-analysis {
+  margin: 14px 0 0;
+  padding: 10px 11px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  font-size: var(--font-14);
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.saistudy-agent__lead-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.saistudy-agent__lead-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(226, 232, 240, 0.98);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  font-weight: var(--font-weight-regular);
+  color: #1f2937;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    border-color var(--duration) var(--ease),
+    background var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+}
+
+.saistudy-agent__lead-action-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: #94a3b8;
+  transition: color var(--duration) var(--ease), transform var(--duration) var(--ease);
+}
+
+.saistudy-agent__lead-action-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.saistudy-agent__lead-action:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+  transform: translateY(-1px);
+}
+
+.saistudy-agent__lead-action:hover .saistudy-agent__lead-action-icon {
+  color: #60a5fa;
+  transform: translateX(2px);
+}
+
+.saistudy-agent__lead-action:active {
+  transform: translateY(0);
+}
+
+.saistudy-agent__lead-action:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 1px;
+}
+
+.saistudy-agent__user {
+  align-self: flex-end;
+  max-width: 80%;
+  margin: 0 0 0 auto;
+  padding: 9px 14px;
+  border-radius: 12px 12px 4px;
+  border: 0;
+  background: linear-gradient(51deg, #1677ff 8%, #8800ff 100%);
+  box-shadow: 0 4px 12px rgba(22, 119, 255, 0.24);
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-on-primary);
+  animation: saistudy-agent-in 0.3s cubic-bezier(0.22, 0.8, 0.24, 1);
+}
+
+/* 覆盖各页 button/div { color: inherit }，保证白字可读 */
+.saistudy-agent .saistudy-agent__user {
+  color: var(--text-on-primary);
+}
+
+/* 底栏 · 输入框 */
+.saistudy-agent__foot {
+  padding: 0 12px 12px;
+}
+
+.saistudy-composer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 5px 4px 4px;
+  border: 1px solid rgba(159, 141, 240, 0.35);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.saistudy-composer__add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #6675d5;
+  cursor: pointer;
+  transition:
+    background var(--duration) var(--ease),
+    color var(--duration) var(--ease);
+}
+
+.saistudy-agent .saistudy-composer__add {
+  color: #6675d5;
+}
+
+.saistudy-composer__add:hover {
+  background: rgba(102, 117, 213, 0.12);
+  color: #4f46e5;
+}
+
+.saistudy-composer__add:active {
+  transform: translateY(1px);
+}
+
+.saistudy-composer__add svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.saistudy-composer__add:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.saistudy-composer__file {
+  display: none;
+}
+
+.saistudy-composer:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.saistudy-composer__input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 4px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  color: #3b4663;
+}
+
+.saistudy-composer__input::placeholder {
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  color: #96a0b4;
+}
+
+.saistudy-composer__send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  transition:
+    background var(--duration) var(--ease),
+    color var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+  width: 48px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  color: #fff;
+  background: linear-gradient(51deg, #1677ff 8%, #8800ff 100%);
+}
+
+/* 覆盖各页 button { color: inherit }，保证发送图标为白色 */
+.saistudy-agent .saistudy-composer__send {
+  color: #fff;
+}
+
+.saistudy-composer__send:hover {
+  box-shadow: 0 4px 12px rgba(22, 119, 255, 0.28);
+}
+
+.saistudy-composer__send:active {
+  transform: translateY(1px);
+}
+
+.saistudy-composer__send svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}
+
+.saistudy-agent .saistudy-composer__send svg,
+.saistudy-agent .saistudy-composer__send svg path {
+  color: #fff;
+  fill: currentColor;
+}
+
+.saistudy-composer__send:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring), 0 4px 12px rgba(22, 119, 255, 0.28);
+}
+
+.saistudy-agent__note {
+  margin: 8px 0 0;
+  font-size: var(--font-min);
+  line-height: var(--lh-12);
+  text-align: center;
+  color: #96a0b4;
+}
+
+.saistudy-agent__note span {
+  color: #6675d5;
+}
+
+@keyframes saistudy-agent-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .saistudy-agent {
+    height: auto;
+    min-height: clamp(420px, 55vh, 640px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saistudy-agent__lead,
+  .saistudy-agent__user {
+    animation: none;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "digital-training-platform",
+  "private": true,
+  "scripts": {
+    "optimize-images": "python3 scripts/optimize_images.py",
+    "build:learning-map": "vite build --config vite.learning-map.config.mjs",
+    "build:course-overview-map": "vite build --config vite.course-overview-map.config.mjs",
+    "predeploy": "npm run build:learning-map && npm run build:course-overview-map && rsync -a --delete --exclude node_modules --exclude .git --exclude .cursor --exclude dist --exclude package.json --exclude package-lock.json --exclude .DS_Store ./ dist/ && cp .assetsignore dist/.assetsignore && rm -rf dist/assets/mastergo dist/assets/course/cover-robot.png dist/assets/tools/assistant.gif dist/assets/prepare/ai-digital-human.png dist/assets/prepare/graph-loading-robot.png dist/assets/prepare/graph-loading-hero.png dist/assets/prepare/hero-deco.png dist/assets/brand/sidebar-deco.png dist/assets/tools/assistant.png dist/assets/prepare/graph-loading-ip.png dist/assets/prepare/cover-*.png dist/assets/course/cover-*.png dist/assets/classes/cover-*.png dist/assets/login/bg.png dist/assets/login/deco-layer.png dist/assets/login/hero.png",
+    "deploy": "npm run predeploy && node node_modules/wrangler/bin/wrangler.js pages deploy dist --project-name=digital-training-platform --branch=main --commit-dirty=true"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "gsap": "^3.12.7",
+    "sharp": "^0.35.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vue": "^3.5.13",
+    "wrangler": "^4.24.0"
+  },
+  "allowScripts": {}
+}

@@ -1,0 +1,806 @@
+/* 学生端 · AI 个性化学习（独立页，对齐 scourse-* / login-page 结构约定） */
+
+.saistudy-page {
+  margin: 0;
+  height: 100dvh;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  font-weight: var(--font-weight-regular);
+  font-variant-numeric: tabular-nums;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  background: var(--bg-base);
+}
+
+.saistudy-page button,
+.saistudy-page input {
+  font: inherit;
+  color: inherit;
+}
+
+.saistudy-page *,
+.saistudy-page *::before,
+.saistudy-page *::after {
+  box-sizing: border-box;
+}
+
+.saistudy {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: clamp(16px, 3vw, 32px) clamp(12px, 2vw, 24px) clamp(20px, 3vw, 40px);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(167, 139, 250, 0.22), transparent 42%),
+    radial-gradient(circle at 88% 8%, rgba(125, 211, 252, 0.18), transparent 38%),
+    linear-gradient(180deg, var(--color-ai-bg-page-top) 0%, var(--color-ai-bg-page-mid) 48%, var(--bg-base) 100%);
+}
+
+/* 面包屑返回 · 玻璃态圆钮（AI 学习流各页共用） */
+.saistudy-crumb__back,
+.slpath-crumb__back,
+.nodestudy-crumb__back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.78);
+  color: #64748b;
+  text-decoration: none;
+  box-shadow:
+    0 2px 8px rgba(71, 85, 105, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  transition:
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    background var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+}
+
+.saistudy-crumb__back:hover,
+.slpath-crumb__back:hover,
+.nodestudy-crumb__back:hover {
+  color: #4755e8;
+  border-color: rgba(87, 90, 255, 0.22);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 4px 12px rgba(71, 85, 105, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98);
+}
+
+.saistudy-crumb__back:active,
+.slpath-crumb__back:active,
+.nodestudy-crumb__back:active {
+  transform: translateY(1px);
+}
+
+.saistudy-crumb__back:focus-visible,
+.slpath-crumb__back:focus-visible,
+.nodestudy-crumb__back:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.saistudy-crumb__back span,
+.slpath-crumb__back span,
+.nodestudy-crumb__back span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+/* 面包屑 · 对齐 student-course.css scourse-crumb */
+.saistudy-crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: clamp(12px, 1.5vw, 16px);
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+}
+
+.saistudy-crumb__link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+
+.saistudy-crumb__link:hover {
+  color: var(--color-primary);
+}
+
+.saistudy-crumb__link:focus-visible {
+  outline: none;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--focus-ring);
+}
+
+.saistudy-crumb__sep {
+  color: var(--text-muted);
+}
+
+.saistudy-crumb__current {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* 主布局：与 learning-path 页统一 70% / 30% */
+.saistudy__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+  gap: clamp(16px, 2vw, 24px);
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+/* 左侧 · 路径预览区 */
+.saistudy-visual {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.8vw, 20px);
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+}
+
+.saistudy-hero {
+  flex-shrink: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.saistudy-hero__title {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.3;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.saistudy-hero__desc {
+  margin: 0;
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  color: var(--text-secondary);
+}
+
+.saistudy-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  color: var(--color-sim);
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  font-weight: var(--font-weight-medium);
+}
+
+.saistudy-hero__badge-icon {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.saistudy-map {
+  position: relative;
+  isolation: isolate;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  border: 1px solid rgba(167, 139, 250, 0.22);
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.82) 0%, rgba(248, 250, 255, 0.58) 48%, rgba(240, 253, 250, 0.32) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    0 20px 56px rgba(87, 90, 255, 0.1),
+    0 0 0 1px rgba(87, 90, 255, 0.04);
+}
+
+.saistudy-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(167, 139, 250, 0.32) 0%,
+    rgba(125, 211, 252, 0.22) 38%,
+    rgba(255, 255, 255, 0.1) 72%,
+    rgba(52, 211, 153, 0.18) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.saistudy-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 14% 8%, rgba(167, 139, 250, 0.14), transparent 38%),
+    radial-gradient(circle at 88% 92%, rgba(52, 211, 153, 0.1), transparent 34%);
+  pointer-events: none;
+}
+
+.saistudy-map__mount,
+#learning-map-root {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+}
+
+/* 右侧 AI 助手：撑满列高，保证底栏输入框可见 */
+.saistudy__layout > .saistudy-agent,
+.saistudy__layout > .slpath-agent {
+  height: 100%;
+  min-height: 0;
+}
+
+.saistudy-agent.is-composer-hidden .saistudy-agent__foot {
+  display: none;
+}
+
+/* 嵌入地图区：仅辅助/标签类文案使用最小 12px */
+.saistudy-map :deep(.v2-metric__label),
+.saistudy-map :deep(.v2-metric__hint),
+.saistudy-map :deep(.v2-assistant__badge),
+.saistudy-map :deep(.v2-step__content small) {
+  font-size: var(--font-min) !important;
+  line-height: var(--lh-12) !important;
+}
+
+.saistudy-map :deep(.v2-assistant__text) {
+  font-size: var(--font-14) !important;
+  line-height: var(--lh-14) !important;
+}
+
+/* 地图节点标签 */
+.saistudy-map :deep(.v2-node__label-text) {
+  font-size: 14px !important;
+}
+
+.saistudy-map :deep(.v2-node__label-sub) {
+  font-size: 15px !important;
+}
+
+.saistudy-map :deep(.v2-step__content strong) {
+  font-size: var(--font-16);
+  line-height: var(--lh-16);
+}
+
+/* 右侧 · 分析结论卡片（saistudy-insight）— chat 顶/底栏见 student-ai-agent.css */
+.saistudy-insight {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(207, 215, 234, 0.78);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(248, 249, 252, 0.96), rgba(241, 244, 250, 0.9));
+  box-shadow:
+    0 8px 22px rgba(71, 85, 105, 0.04),
+    inset 0 1px rgba(255, 255, 255, 0.9);
+  animation: saistudy-insight-in 0.3s cubic-bezier(0.22, 0.8, 0.24, 1);
+  text-align: left;
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  color: #475569;
+}
+
+/* 辅助文字 12px */
+.saistudy-insight__subtitle,
+.saistudy-insight__tag,
+.saistudy-insight__tone,
+.saistudy-insight__step-desc,
+.saistudy-insight__detail-key,
+.saistudy-insight__label {
+  font-size: var(--font-min);
+  line-height: var(--lh-12);
+}
+
+.saistudy-insight.is-analyzing .saistudy-insight__head {
+  position: relative;
+}
+
+.saistudy-insight.is-analyzing .saistudy-insight__progress-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 48%,
+    transparent 100%
+  );
+  animation: saistudy-insight-shimmer 1.6s ease-in-out infinite;
+}
+
+.saistudy-insight__dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 4px;
+  vertical-align: baseline;
+}
+
+.saistudy-insight__dots i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #6366f1;
+  animation: saistudy-insight-dot 1.2s ease-in-out infinite;
+}
+
+.saistudy-insight__dots i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.saistudy-insight__dots i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.saistudy-insight__dots[hidden] {
+  display: none;
+}
+
+.saistudy-insight__head {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.72);
+}
+
+.saistudy-insight__head-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.saistudy-insight__tone {
+  flex-shrink: 0;
+  max-width: 42%;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(219, 234, 254, 0.88);
+  font-weight: var(--font-weight-medium);
+  color: #2563eb;
+  text-align: right;
+}
+
+.saistudy-insight__step-desc {
+  margin: 0 0 8px;
+  color: #94a3b8;
+}
+
+.saistudy-insight__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(226, 232, 240, 0.9);
+}
+
+.saistudy-insight__detail-row {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(248, 250, 252, 0.88);
+}
+
+.saistudy-insight__detail-row + .saistudy-insight__detail-row {
+  margin-top: 0;
+}
+
+.saistudy-insight__detail-key {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: var(--font-weight-medium);
+  color: #64748b;
+}
+
+.saistudy-insight__detail-value {
+  margin: 0;
+  color: #475569;
+}
+
+.saistudy-insight__result {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(226, 232, 240, 0.72);
+}
+
+.saistudy-insight__result-text {
+  margin: 0;
+  color: #334155;
+}
+
+.saistudy-insight__result .saistudy-insight__actions {
+  margin-top: 12px;
+}
+
+.saistudy-insight__title {
+  display: block;
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  font-weight: var(--font-weight-medium);
+  color: #213152;
+}
+
+.saistudy-insight__subtitle {
+  margin: 4px 0 0;
+  color: #8290a9;
+}
+
+.saistudy-insight__progress {
+  position: relative;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(226, 232, 240, 0.85);
+  overflow: hidden;
+}
+
+.saistudy-insight__progress-fill {
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6366f1, #575aff 35%, #19b6c8 68%, #34d399);
+  box-shadow: 0 0 8px rgba(87, 90, 255, 0.22);
+  transition: width 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: width;
+}
+
+.saistudy-insight__item.is-entering,
+.saistudy-insight__detail-row.is-entering,
+.saistudy-insight__result.is-entering {
+  animation: saistudy-insight-in 0.42s cubic-bezier(0.22, 0.8, 0.24, 1) both;
+}
+
+.saistudy-insight__item--step.saistudy-insight__item--pending {
+  border-color: rgba(199, 210, 254, 0.95);
+  background: linear-gradient(135deg, rgba(238, 242, 255, 0.92), rgba(248, 250, 255, 0.78));
+}
+
+.saistudy-insight__item--step.saistudy-insight__item--done {
+  border-color: rgba(209, 250, 229, 0.92);
+  background: rgba(236, 253, 245, 0.62);
+}
+
+.saistudy-insight__item[hidden] {
+  display: none;
+}
+
+.saistudy-insight__actions[hidden] {
+  display: none;
+}
+
+.saistudy-insight__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.saistudy-insight__item {
+  padding: 10px 12px;
+  border: 1px solid rgba(221, 230, 249, 0.86);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.saistudy-insight__item + .saistudy-insight__item {
+  margin-top: 10px;
+}
+
+/* AI 分析页 · 带状态图标的步骤项 */
+.saistudy-insight__item--step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px 10px 10px;
+}
+
+.saistudy-insight__status {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: rgba(226, 232, 240, 0.9);
+}
+
+.saistudy-insight__item--step.saistudy-insight__item--pending .saistudy-insight__status {
+  border: 2px solid rgba(99, 102, 241, 0.22);
+  border-top-color: #6366f1;
+  background: transparent;
+  animation: saistudy-insight-spin 0.75s linear infinite;
+}
+
+.saistudy-insight__item--step.saistudy-insight__item--done .saistudy-insight__status {
+  position: relative;
+  border: none;
+  background: linear-gradient(135deg, #34d399, #10b981);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.28);
+}
+
+.saistudy-insight__item--step.saistudy-insight__item--done .saistudy-insight__status::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+}
+
+.saistudy-insight__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.saistudy-insight__item--warn {
+  border-color: rgba(254, 226, 226, 0.9);
+  background: rgba(254, 242, 242, 0.55);
+}
+
+.saistudy-insight__item--ok {
+  border-color: rgba(209, 250, 229, 0.9);
+  background: rgba(236, 253, 245, 0.55);
+}
+
+.saistudy-insight__label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: var(--font-weight-medium);
+  color: #5368e8;
+}
+
+/* 分析步骤标题为主体 14px */
+.saistudy-insight__item--step .saistudy-insight__label {
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+}
+
+.saistudy-insight__item--warn .saistudy-insight__label {
+  color: #dc2626;
+}
+
+.saistudy-insight__item--ok .saistudy-insight__label {
+  color: #059669;
+}
+
+.saistudy-insight__item--step .saistudy-insight__label {
+  color: #475569;
+}
+
+.saistudy-insight__item--step.saistudy-insight__item--pending .saistudy-insight__label {
+  color: #4f46e5;
+}
+
+.saistudy-insight__item--step.saistudy-insight__item--done .saistudy-insight__label {
+  color: #059669;
+}
+
+.saistudy-insight__value {
+  margin: 0;
+  color: #475569;
+}
+
+.saistudy-insight__value strong {
+  font-family: var(--font-num, var(--font-sans));
+  font-weight: var(--font-weight-medium);
+  font-variant-numeric: tabular-nums;
+  color: #1e293b;
+}
+
+.saistudy-insight__tag {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 6px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(254, 226, 226, 0.72);
+  color: #b45309;
+}
+
+.saistudy-insight__tag--ok {
+  background: rgba(209, 250, 229, 0.72);
+  color: #047857;
+}
+
+.saistudy-insight__actions {
+  margin-top: 14px;
+}
+
+.saistudy-insight__enter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: linear-gradient(51deg, #1677ff 8%, #8800ff 100%);
+  font-size: var(--font-14);
+  line-height: var(--lh-14);
+  font-weight: var(--font-weight-medium);
+  color: #fff;
+  text-decoration: none;
+  transition:
+    box-shadow var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+}
+
+.saistudy-insight__enter:hover {
+  box-shadow: 0 8px 20px rgba(77, 142, 233, 0.28);
+}
+
+.saistudy-insight__enter:active {
+  transform: translateY(1px);
+}
+
+.saistudy-insight__enter:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring), 0 8px 20px rgba(77, 142, 233, 0.28);
+}
+
+.saistudy-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes saistudy-insight-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes saistudy-insight-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes saistudy-insight-shimmer {
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes saistudy-insight-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saistudy-insight__item.is-entering,
+  .saistudy-insight__detail-row.is-entering,
+  .saistudy-insight__result.is-entering,
+  .saistudy-insight.is-analyzing .saistudy-insight__progress-fill::after,
+  .saistudy-insight__dots i,
+  .saistudy-insight__item--step.saistudy-insight__item--pending .saistudy-insight__status {
+    animation: none;
+  }
+
+  .saistudy-insight__progress-fill {
+    transition: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .saistudy-page {
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .saistudy {
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  .saistudy__layout {
+    flex: none;
+    min-height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .saistudy-visual {
+    min-height: clamp(360px, 52vh, 560px);
+    height: auto;
+  }
+
+  .saistudy-map {
+    min-height: clamp(360px, 52vh, 560px);
+    height: auto;
+  }
+
+  .saistudy__layout > .saistudy-agent,
+  .saistudy__layout > .slpath-agent {
+    height: auto;
+    min-height: clamp(420px, 55vh, 640px);
+  }
+}
+
+@media (max-width: 768px) {
+  .saistudy-map {
+    min-height: 480px;
+  }
+
+  .saistudy-map :deep(.v2-step__content strong) {
+    font-size: var(--font-min);
+  }
+}
+
+@media (max-width: 480px) {
+  .saistudy-crumb {
+    flex-wrap: wrap;
+  }
+
+  .saistudy-map {
+    min-height: 420px;
+  }
+}

@@ -203,6 +203,49 @@
     });
   }
 
+  function initUserMenu() {
+    var menu = qs("[data-user-menu]");
+    if (!menu) return;
+    var trigger = qs("[data-user-menu-trigger]", menu);
+    var panel = qs("[data-user-menu-panel]", menu);
+    if (!trigger || !panel) return;
+
+    function closeMenu() {
+      panel.hidden = true;
+      trigger.setAttribute("aria-expanded", "false");
+    }
+
+    function openMenu() {
+      panel.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+    }
+
+    function toggleMenu() {
+      if (panel.hidden) openMenu();
+      else closeMenu();
+    }
+
+    trigger.addEventListener("click", function (event) {
+      event.stopPropagation();
+      toggleMenu();
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!menu.contains(event.target)) closeMenu();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeMenu();
+    });
+
+    var logout = qs(".user-menu__logout", menu);
+    if (logout) {
+      logout.addEventListener("click", function () {
+        window.location.href = "login.html";
+      });
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initFilterRows();
     initPurchasedToggle();
@@ -211,5 +254,6 @@
     initRefresh();
     initNav();
     initHeroTabs();
+    initUserMenu();
   });
 })();

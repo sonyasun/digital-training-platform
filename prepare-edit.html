@@ -32,19 +32,41 @@ M2.1999512,11.000012L2.1999512,3.3000121Q2.1999512,3.2459726,2.2052481,3.1921933
           </button>
           <button type="button" class="tool-btn">创建桌面快捷方式</button>
         </div>
-        <div class="user">
-          <span class="user__avatar">
-            <span class="user__avatar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="564.9443780274378 10.592799215435662 39.21086414720003 42.009125" width="32" height="32"><defs><linearGradient id="grad_paint_14451_48940" x1="0.0000" y1="0.5000" x2="1.0000" y2="0.5000"><stop offset="0" stop-color="#ABD69E"/><stop offset="0.99" stop-color="#01B59B"/></linearGradient></defs><path d="M575.6739731746378,19.555255915435662C575.6739731746378,14.612700515435662,579.6531061746379,10.592799215435662,584.5455341746379,10.592799215435662C589.4379631746378,10.592799215435662,593.4170911746378,14.612700515435662,593.4170911746378,19.555255915435662C593.4170911746378,24.490420215435662,589.4379631746378,28.510321215435663,584.5455341746379,28.510321215435663C579.6531061746379,28.510321215435663,575.6739731746378,24.490420215435662,575.6739731746378,19.555255915435662Z
+        <div class="user-menu" data-user-menu>
+          <button type="button" class="user user-menu__trigger" data-user-menu-trigger aria-expanded="false" aria-haspopup="true">
+            <span class="user__avatar">
+              <span class="user__avatar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="564.9443780274378 10.592799215435662 39.21086414720003 42.009125" width="32" height="32"><defs><linearGradient id="grad_paint_14451_48940" x1="0.0000" y1="0.5000" x2="1.0000" y2="0.5000"><stop offset="0" stop-color="#ABD69E"/><stop offset="0.99" stop-color="#01B59B"/></linearGradient></defs><path d="M575.6739731746378,19.555255915435662C575.6739731746378,14.612700515435662,579.6531061746379,10.592799215435662,584.5455341746379,10.592799215435662C589.4379631746378,10.592799215435662,593.4170911746378,14.612700515435662,593.4170911746378,19.555255915435662C593.4170911746378,24.490420215435662,589.4379631746378,28.510321215435663,584.5455341746379,28.510321215435663C579.6531061746379,28.510321215435663,575.6739731746378,24.490420215435662,575.6739731746378,19.555255915435662Z
 M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.7959992746378,52.59388221543566,569.0800037746378,52.59277221543566L600.0110661746378,52.59277221543566C602.2985721746378,52.60192421543566,604.1552421746378,50.72622621543566,604.1461711746379,48.41528221543566C604.1461711746379,41.09519321543566,599.8105081746378,34.58519821543566,593.0918151746378,31.840419215435663C591.7394561746378,31.28653621543566,590.2220221746378,31.313596215435663,588.8898481746378,31.915343215435662C586.1579361746378,33.175347215435664,582.9364521746378,33.175347215435664,580.2038761746378,31.915343215435662C578.8769181746378,31.31368021543566,577.3640871746378,31.28660921543566,576.0168731746378,31.840419215435663C573.8091769746378,32.73322221543566,571.8057609746378,34.07314021543566,570.1299949746378,35.77766121543566C566.7874470746378,39.15277921543566,564.9462171896281,43.64542721543566,564.9462171896281,48.41528221543566Z" fill="url(#grad_paint_14451_48940)"/></svg></span>
-          </span>
-          <span class="user__name">李老师</span>
+            </span>
+            <span class="user__name">李老师</span>
+          </button>
+          <div class="user-menu__panel" data-user-menu-panel hidden role="menu" aria-label="账号">
+            <div class="user-menu__head">
+              <div class="user-menu__top">
+                <div class="user-menu__name-row">
+                  <span class="user-menu__name">李老师</span>
+                  <button type="button" class="user-menu__edit" aria-label="编辑个人信息">
+                    <img src="assets/icons/user-edit.svg" width="16" height="16" alt="" />
+                  </button>
+                </div>
+                <button type="button" class="user-menu__pwd">修改密码</button>
+              </div>
+              <div class="user-menu__phone">
+                <span class="user-menu__phone-label">手机号</span>
+                <button type="button" class="user-menu__copy" aria-label="复制手机号">
+                  <img src="assets/icons/user-copy.svg" width="16" height="16" alt="" />
+                </button>
+              </div>
+            </div>
+            <button type="button" class="user-menu__logout" role="menuitem">退出登录</button>
+          </div>
         </div>
       </div>
     </header>
 
     <div class="shell">
       <aside class="sidebar">
-        <img class="sidebar__deco" src="assets/brand/sidebar-deco.png" alt="" />
+        <img class="sidebar__deco" src="assets/brand/sidebar-deco.webp" alt="" loading="lazy" decoding="async" />
         <nav class="sidebar__nav" aria-label="主导航">
           <a class="nav-item" href="#home">
             <span class="nav-item__main">
@@ -139,7 +161,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
 
         <section class="pedit-head">
           <div class="pedit-head__inner">
-            <div class="pedit-cover"><img src="assets/prepare/cover-quota.png" alt="" /></div>
+            <div class="pedit-cover"><img src="assets/prepare/cover-quota.webp" alt="" width="640" height="360" decoding="async" /></div>
             <div class="pedit-meta">
               <h1 class="pedit-title">工程定额原理与市场化计价</h1>
               <div class="pedit-majors"><span>工程造价专业</span><span>建设工程管理专业</span></div>
@@ -391,35 +413,59 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
             <span class="pedit-res-tile__name">其他</span>
           </button>
           </div>
-          <div class="pedit-add__agent">
-            <div class="pedit-add__agent-panel">
-              <div class="pedit-add__agent-title">
-                <span class="pedit-add__agent-title-text">AI智能体</span>
-              </div>
-              <div class="pedit-add__agent-grid">
-                <button type="button" class="pedit-agent" data-add-item="ai-graph">
-                  <span class="pedit-agent__mark pedit-agent__mark--graph" aria-hidden="true"><img src="assets/prepare/icon-ai-graph.png" width="28" height="28" alt="" /></span>
-                  <span class="pedit-agent__label">图谱学习</span>
-                </button>
-                <button type="button" class="pedit-agent" data-add-item="ai-scenario">
-                  <img class="pedit-agent__icon" src="assets/prepare/icon-ai-badge.png" width="22" height="22" alt="" aria-hidden="true" />
-                  <span class="pedit-agent__label">情景导师</span>
-                </button>
-                <button type="button" class="pedit-agent" data-add-item="ai-seminar">
-                  <img class="pedit-agent__icon" src="assets/prepare/icon-ai-badge.png" width="22" height="22" alt="" aria-hidden="true" />
-                  <span class="pedit-agent__label">研讨导师</span>
-                </button>
-              </div>
-              <div class="pedit-add__agent-grid pedit-add__agent-grid--pair">
-                <button type="button" class="pedit-agent" data-add-item="ai-study">
-                  <img class="pedit-agent__icon" src="assets/prepare/icon-ai-badge.png" width="22" height="22" alt="" aria-hidden="true" />
-                  <span class="pedit-agent__label">学习助手</span>
-                </button>
-                <button type="button" class="pedit-agent" data-add-item="ai-practice">
-                  <img class="pedit-agent__icon" src="assets/prepare/icon-ai-badge.png" width="22" height="22" alt="" aria-hidden="true" />
-                  <span class="pedit-agent__label">实训助手</span>
-                </button>
-              </div>
+          <h2 class="pedit-add__title">创建AI智能体</h2>
+          <div class="pedit-add__agent-grid">
+            <button type="button" class="pedit-agent" data-add-item="ai-graph">
+              <span class="pedit-agent__mark pedit-agent__mark--graph" aria-hidden="true"><img src="assets/prepare/icon-ai-graph.png" width="28" height="28" alt="" /></span>
+              <span class="pedit-agent__label">图谱学习</span>
+              <span class="pedit-tile__plus" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"><path d="M3.4.4h1.2v3H7.6v1.2H4.6v3H3.4v-3H.4V3.4h3V.4Z" fill="#606266"/></svg></span>
+            </button>
+            <button type="button" class="pedit-agent" data-add-item="ai-scenario">
+              <img class="pedit-agent__icon" src="assets/prepare/icon-ai-badge.png" width="22" height="22" alt="" aria-hidden="true" />
+              <span class="pedit-agent__label">情景导师</span>
+              <span class="pedit-tile__plus" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"><path d="M3.4.4h1.2v3H7.6v1.2H4.6v3H3.4v-3H.4V3.4h3V.4Z" fill="#606266"/></svg></span>
+            </button>
+            <button type="button" class="pedit-agent" data-add-item="ai-seminar">
+              <img class="pedit-agent__icon" src="assets/prepare/icon-ai-badge.png" width="22" height="22" alt="" aria-hidden="true" />
+              <span class="pedit-agent__label">研讨导师</span>
+              <span class="pedit-tile__plus" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"><path d="M3.4.4h1.2v3H7.6v1.2H4.6v3H3.4v-3H.4V3.4h3V.4Z" fill="#606266"/></svg></span>
+            </button>
+          </div>
+          <div class="pedit-add__agent-grid pedit-add__agent-grid--pair">
+            <button type="button" class="pedit-agent" data-add-item="ai-study">
+              <img class="pedit-agent__icon" src="assets/prepare/icon-ai-badge.png" width="22" height="22" alt="" aria-hidden="true" />
+              <span class="pedit-agent__label">学习助手</span>
+              <span class="pedit-tile__plus" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"><path d="M3.4.4h1.2v3H7.6v1.2H4.6v3H3.4v-3H.4V3.4h3V.4Z" fill="#606266"/></svg></span>
+            </button>
+            <button type="button" class="pedit-agent" data-add-item="ai-practice">
+              <img class="pedit-agent__icon" src="assets/prepare/icon-ai-badge.png" width="22" height="22" alt="" aria-hidden="true" />
+              <span class="pedit-agent__label">实训助手</span>
+              <span class="pedit-tile__plus" aria-hidden="true"><svg viewBox="0 0 8 8" width="8" height="8"><path d="M3.4.4h1.2v3H7.6v1.2H4.6v3H3.4v-3H.4V3.4h3V.4Z" fill="#606266"/></svg></span>
+            </button>
+          </div>
+          <div class="pedit-add__divider" aria-hidden="true"></div>
+          <div class="pedit-ai-help">
+            <div class="pedit-ai-help__title">
+              <span class="pedit-ai-help__spark" aria-hidden="true"><img src="assets/prepare/icon-ai-help-spark.svg" width="10" height="12" alt="" /></span>
+              <span class="pedit-ai-help__title-text">AI可以帮你</span>
+            </div>
+            <div class="pedit-ai-help__grid">
+              <button type="button" class="pedit-ai-help__item" data-add-item="ai-quiz">
+                <span class="pedit-ai-help__icon" aria-hidden="true"><img src="assets/prepare/icon-ai-help-quiz.png" width="50" height="50" alt="" /></span>
+                <span class="pedit-ai-help__label">AI出题</span>
+              </button>
+              <button type="button" class="pedit-ai-help__item" data-add-item="ai-draw">
+                <span class="pedit-ai-help__icon" aria-hidden="true"><img src="assets/prepare/icon-ai-help-draw.png" width="50" height="50" alt="" /></span>
+                <span class="pedit-ai-help__label">AI绘图</span>
+              </button>
+              <button type="button" class="pedit-ai-help__item" data-add-item="ai-digital-human">
+                <span class="pedit-ai-help__icon" aria-hidden="true"><img src="assets/prepare/icon-ai-help-digital.png" width="50" height="50" alt="" /></span>
+                <span class="pedit-ai-help__label">创建数字人<br />微课</span>
+              </button>
+              <button type="button" class="pedit-ai-help__item" data-add-item="ai-ppt">
+                <span class="pedit-ai-help__icon" aria-hidden="true"><img src="assets/prepare/icon-ai-help-ppt.png" width="50" height="50" alt="" /></span>
+                <span class="pedit-ai-help__label">制作PPT<br />课件</span>
+              </button>
             </div>
           </div>
         </div>
@@ -484,7 +530,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
                 <span class="pedit-graph-loading__glow pedit-graph-loading__glow--b"></span>
                 <span class="pedit-graph-loading__orbit"></span>
                 <span class="pedit-graph-loading__platform"></span>
-                <img class="pedit-graph-loading__ip" src="assets/prepare/graph-loading-ip.png" width="150" height="139" alt="" />
+                <img class="pedit-graph-loading__ip" src="assets/prepare/graph-loading-ip.webp" width="150" height="139" alt="" decoding="async" />
                 <span class="pedit-graph-loading__scan"></span>
               </div>
             </div>
@@ -528,7 +574,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
 
       <aside class="rail">
         <a class="assistant" href="#assistant">
-          <img class="assistant__img" src="assets/tools/assistant.png" width="124" height="164" alt="智能助手" />
+          <img class="assistant__img" src="assets/tools/assistant.webp" width="124" height="164" alt="智能助手" loading="lazy" decoding="async" />
         </a>
         <div class="rail__divider"></div>
         <div class="tool-list">
@@ -567,7 +613,8 @@ M86.78627,213.61622955778807C84.789391,213.61622955778807,83.291737,215.11388875
       </aside>
     </div>
   </div>
-  <script src="js/app.js"></script>
-  <script src="js/prepare-edit.js"></script>
+  <script src="js/role.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/prepare-edit.js" defer></script>
 </body>
 </html>

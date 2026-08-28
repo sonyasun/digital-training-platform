@@ -26,7 +26,7 @@ alwaysApply: false
 
 - 文案只来自 MasterGo `allTexts` / `rowTexts`，禁止脑补
 - 图片本地化到 `assets/prepare/` 等语义目录，禁止 MasterGo CDN
-- 颜色优先用 DSL `_color`；字号/圆角/间距用 `tokens.css`
+- 颜色优先用 DSL `_color`；字号/圆角/间距用 `tokens.css`（见 `设计规范.md`）
 - 表格行数 = `structureSiblingCount`
 
 ## 视觉验收提问模板

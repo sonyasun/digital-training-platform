@@ -2,6 +2,10 @@
 Thumbs.db
 .idea/
 .vscode/
-dist/
 node_modules/
-assets/mastergo/
+package-lock.json
+dist/
+.tmp-mastergo/
+.env
+.env.*
+!.env.example

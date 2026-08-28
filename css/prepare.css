@@ -18,23 +18,35 @@
   background: linear-gradient(90deg, #e5f1fc 0%, #f3f0ff 56%, #f8f5f0 99%);
 }
 
-.prep-hero__deco {
+.prep-hero::before,
+.prep-hero::after {
+  content: "";
   position: absolute;
+  pointer-events: none;
+  background: url("../assets/prepare/hero-deco.webp") center / cover no-repeat;
+}
+
+.prep-hero::before {
   top: 8px;
   left: 0;
   width: 443px;
   height: 278px;
-  object-fit: cover;
-  pointer-events: none;
 }
 
-.prep-hero__deco--right {
-  left: auto;
+.prep-hero::after {
   right: 0;
   top: -39px;
   width: 252px;
   height: 158px;
   transform: scaleY(-1);
+}
+
+.prep-hero__deco {
+  display: none;
+}
+
+.prep-hero__deco--right {
+  display: none;
 }
 
 .prep-hero__copy {
