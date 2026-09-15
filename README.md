@@ -1,14 +1,22 @@
 # 数字实训平台
 
-静态前端（HTML / CSS / JS）。设计与开发约定见下方规范。
+静态前端（HTML / CSS / JS）。
 
-## 相关
+## 给前端：规范入口（必看）
 
-| 文档 | 用途 |
-|------|------|
-| [设计规范.md](./设计规范.md) | 设计系统（令牌真源 `css/tokens.css`） |
-| [设计还原手册.md](./设计还原手册.md) | MasterGo Prompt / 模型 |
-| [COURSEWARE-STYLE.md](./assets/student/courseware/COURSEWARE-STYLE.md) | 课件视觉 |
+以下文件**均已进 GitHub**，按此顺序读即可：
+
+| 顺序 | 路径 | 说明 |
+|------|------|------|
+| 1 | [设计规范.md](./设计规范.md) | 设计系统：令牌用法、壳层、命名、组件契约 |
+| 2 | [css/tokens.css](./css/tokens.css) | 色 / 字 / 间距 / 圆角 / 阴影 / z-index **真源** |
+| 3 | [设计还原手册.md](./设计还原手册.md) | MasterGo 还原 Prompt、模型选型 |
+| 4 | [.cursor/README.md](./.cursor/README.md) | Cursor rules / skills / prompts 索引 |
+| 5 | [.cursor/rules/design-restore.mdc](./.cursor/rules/design-restore.mdc) | 改页面时的硬约束（Cursor 自动带上） |
+| 6 | [.cursor/skills/mastergo-frontend/SKILL.md](./.cursor/skills/mastergo-frontend/SKILL.md) | 按稿落地步骤 |
+| 7 | [COURSEWARE-STYLE.md](./assets/student/courseware/COURSEWARE-STYLE.md) | 节点学习 iframe 课件视觉 |
+
+用 Cursor 打开本仓库后，项目内 `.cursor/rules` 与 `.cursor/skills` 会参与 Agent；不要依赖个人机上的全局 skills。
 
 ## 预览
 
@@ -49,4 +57,5 @@ npm run predeploy && npm run deploy
 | `css/app.css` | 教师壳层 |
 | `js/` | 页面逻辑 |
 | `assets/` | 品牌 / 图标 / 封面 / 课件 |
+| `.cursor/` | 团队 Cursor 规范（rules / skills / prompts） |
 | `components/` | 学习地图 Vue（需 `npm run build:learning-map`） |
