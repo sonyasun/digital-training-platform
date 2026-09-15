@@ -1,34 +1,17 @@
 ---
-description: 设计还原工作流（MasterGo/HTML/CSS）与模型选用提示
-globs: prepare-edit.html,prepare.html,classes.html,index.html,css/**/*.css,.cursor/skills/mastergo-frontend/**
+description: 设计还原硬约束（编辑 HTML/CSS 时）
+globs: "*.html,css/**/*.css,.cursor/skills/mastergo-frontend/**"
 alwaysApply: false
 ---
 
-# 设计还原工作流
+# 设计还原
 
-## 任务 → 建议模型（用户手动切换）
+真源：`css/tokens.css` · 用法：[设计规范.md](../../设计规范.md) · Prompt：[设计还原手册.md](../../设计还原手册.md) · 步骤：`mastergo-frontend` skill
 
-| 任务 | 模型 |
-|------|------|
-| MasterGo 整页还原、多文件联动 | Composer 2.5 |
-| 贴截图/设计稿做视觉验收 | Gemini 3.x Pro |
-| 样式精修、层次与规范统一 | Claude Sonnet 5 |
-| 换 icon、调间距、小范围 HTML/CSS | Composer 2.5 Fast |
-
-## 执行顺序
-
-1. **Gemini**：对照设计稿列出差异清单（布局/颜色/字号/间距）
-2. **Composer 2.5**：按清单改 HTML/CSS/资源路径
-3. **Sonnet 5**：做最后一轮精致化（hover、阴影、对齐）
-4. **Composer Fast**：收尾微调
-
-## 硬性约束
+## 硬约束
 
 - 文案只来自 MasterGo `allTexts` / `rowTexts`，禁止脑补
-- 图片本地化到 `assets/prepare/` 等语义目录，禁止 MasterGo CDN
-- 颜色优先用 DSL `_color`；字号/圆角/间距用 `tokens.css`（见 `设计规范.md`）
-- 表格行数 = `structureSiblingCount`
-
-## 视觉验收提问模板
-
-见 `.cursor/prompts/design-restore.md`（MasterGo 还原 / CSS 精修 / 视觉验收 复制即用 Prompt）。
+- 图片本地化到 `assets/<语义>/`，禁止 MasterGo CDN
+- 色 / 字 / 间距 / 圆角 / 阴影 / z-index 用 tokens；字号仅 12–20 阶梯；禁止裸写 8/16/24px 间距
+- 表格 / 列表行数 = `structureSiblingCount`
+- 复用壳层；教师 `pedit-*` 与学生前缀互不串用；新能力必须有入口

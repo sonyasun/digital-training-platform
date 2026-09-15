@@ -1,5 +1,5 @@
 /**
- * 学生端 · 节点学习页（左：学习/研讨/测试 · 右：AI 实时监控）
+ * 学生端 · 节点学习页（左：学习/研讨/测试 · 右：AI 实时识别）
  */
 (function () {
   "use strict";
@@ -7,7 +7,7 @@
   var STORAGE_KEY = "slpath-node-study";
   var COURSE_NAME = "BIM装饰工程计量与计价";
   var STUDY_COURSEWARE = {
-    src: "assets/student/courseware/5g-internet-animated-lesson.html",
+    src: "assets/student/courseware/5g-internet-animated-lesson.html?v=20260828o",
     title: "5G互联网技术 · 动画图文精讲",
   };
 
@@ -721,7 +721,7 @@
     insight.hidden = false;
     insight.innerHTML =
       '<header class="saistudy-insight__head">' +
-        '<strong class="saistudy-insight__title">学习行为监控</strong>' +
+        '<strong class="saistudy-insight__title">学习行为识别</strong>' +
         '<p class="saistudy-insight__subtitle" data-nodestudy-insight-subtitle>等待资源加载…</p>' +
         '<div class="saistudy-insight__progress" aria-hidden="true">' +
           '<span class="saistudy-insight__progress-fill" data-nodestudy-insight-progress style="width:0%"></span>' +
@@ -836,7 +836,7 @@
     var lead = qs("[data-nodestudy-agent-lead] p", agentRoot);
     if (lead) {
       lead.textContent = resource
-        ? "正在监控「" + detail.activeCategoryLabel + " · " + resource.title + "」，切换模块或提问我会实时响应。"
+        ? "正在识别「" + detail.activeCategoryLabel + " · " + resource.title + "」，切换模块或提问我会实时响应。"
         : "切换上方「学习 / 研讨 / 测试」模块，我会同步分析你的学习进度。";
     }
   }

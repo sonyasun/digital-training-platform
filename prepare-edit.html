@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>课程编辑 - 广联达数字实训平台V1.0</title>
-  <link rel="stylesheet" href="css/fonts.css" />
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/app.css" />
-  <link rel="stylesheet" href="css/prepare-edit.css" />
+  <link rel="stylesheet" href="css/fonts.css?v=20260914b" />
+  <link rel="stylesheet" href="css/tokens.css?v=20260914b" />
+  <link rel="stylesheet" href="css/app.css?v=20260914b" />
+  <link rel="stylesheet" href="css/prepare-edit.css?v=20260914b" />
 </head>
 <body>
   <div class="app">
@@ -151,14 +151,21 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
         </div>
       </aside>
 
-      <main class="main main--prepare-edit">
-        <nav class="pedit-crumb" aria-label="面包屑">
-          <a class="pedit-crumb__back" href="prepare.html" aria-label="返回备课中心"><span aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M10.2 3.2 5.4 8l4.8 4.8" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-          <a class="pedit-crumb__link" href="prepare.html">备课中心</a>
-          <span class="pedit-crumb__sep">/</span>
-          <span class="pedit-crumb__current">BIM装饰工程计量与计价</span>
+      <main class="main main--prepare-edit" data-pedit-screen="edit">
+        <nav class="ui-crumb" data-pedit-crumb="edit" aria-label="面包屑">
+          <a class="ui-crumb__back" href="prepare.html" aria-label="返回备课中心"><span aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M10.2 3.2 5.4 8l4.8 4.8" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <a class="ui-crumb__link" href="prepare.html">备课中心</a>
+          <span class="ui-crumb__sep">/</span>
+          <span class="ui-crumb__current" data-pedit-crumb-course>工程定额原理与市场化计价</span>
+        </nav>
+        <nav class="ui-crumb" data-pedit-crumb="practice" aria-label="面包屑" hidden>
+          <button type="button" class="ui-crumb__back" data-pedit-practice-close aria-label="返回"><span aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M10.2 3.2 5.4 8l4.8 4.8" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <button type="button" class="ui-crumb__link" data-pedit-practice-close data-pedit-crumb-course-link>工程定额原理与市场化计价</button>
+          <span class="ui-crumb__sep">/</span>
+          <span class="ui-crumb__current" data-pedit-activity-crumb>新增练习</span>
         </nav>
 
+        <div data-pedit-edit-chrome>
         <section class="pedit-head">
           <div class="pedit-head__inner">
             <div class="pedit-cover"><img src="assets/prepare/cover-quota.webp" alt="" width="640" height="360" decoding="async" /></div>
@@ -354,7 +361,690 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
           <section class="pedit-panel" data-pedit-panel="hardware"></section>
           <section class="pedit-panel" data-pedit-panel="review"></section>
         </div>
+        </div>
 
+        <section class="pedit-practice" data-pedit-practice hidden>
+          <div class="pedit-practice__scroll">
+            <div class="pedit-practice__form">
+              <label class="pedit-practice__field">
+                <span class="pedit-practice__label-row">
+                  <span class="pedit-practice__label"><i>*</i><span data-pedit-activity-name-label>练习名称</span></span>
+                  <span class="pedit-practice__counter" data-pedit-practice-name-count>0/50</span>
+                </span>
+                <input class="pedit-practice__input" type="text" maxlength="50" placeholder="请输入不超过50个字的教学活动名称" data-pedit-practice-name />
+                <span class="pedit-practice__field-error" data-pedit-practice-name-error hidden>请填写名称</span>
+              </label>
+              <label class="pedit-practice__field">
+                <span class="pedit-practice__label pedit-practice__label--plain">说明</span>
+                <textarea class="pedit-practice__textarea" rows="3" placeholder="可选，向学生说明练习目的与要求" data-pedit-practice-desc></textarea>
+              </label>
+            </div>
+
+            <div class="pedit-practice__block">
+              <div class="pedit-practice__toolbar" data-pedit-practice-toolbar>
+                <div class="pedit-practice__actions">
+                  <button type="button" class="pedit-practice__chip" data-pedit-bank-open>
+                    <span class="pedit-practice__chip-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 3.2v9.6M3.2 8h9.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
+                    题库选题
+                  </button>
+                  <button type="button" class="pedit-practice__chip" data-pedit-qadd-open>
+                    <span class="pedit-practice__chip-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 3.2v9.6M3.2 8h9.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
+                    添加试题
+                  </button>
+                  <button type="button" class="pedit-practice__chip" data-pedit-res-open hidden>
+                    <span class="pedit-practice__chip-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 3.2v9.6M3.2 8h9.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
+                    添加课程资料
+                  </button>
+                  <button type="button" class="pedit-practice__chip pedit-practice__chip--ai" data-pedit-ai-open>
+                    <span class="pedit-practice__chip-icon" aria-hidden="true"><img src="assets/prepare/icon-ai-help-spark.svg" width="14" height="14" alt="" /></span>
+                    <span class="pedit-practice__ai-text">AI智能出题</span>
+                  </button>
+                  <button type="button" class="pedit-practice__chip" data-pedit-paper-open hidden>
+                    <span class="pedit-practice__chip-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 3.2v9.6M3.2 8h9.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
+                    选择试卷
+                  </button>
+                  <button type="button" class="pedit-practice__chip" data-pedit-paper-create hidden>
+                    <span class="pedit-practice__chip-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 3.2v9.6M3.2 8h9.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
+                    创建试卷
+                  </button>
+                </div>
+                <div class="pedit-practice__toolbar-right" data-pedit-toolbar-meta>
+                  <button type="button" class="pedit-practice__tool-link" data-pedit-score-avg hidden>平均分配</button>
+                  <span class="pedit-practice__meta" data-pedit-q-count>共0题</span>
+                  <span class="pedit-practice__score-total" data-pedit-score-total>总分0分</span>
+                </div>
+              </div>
+
+              <div class="pedit-practice__resources" data-pedit-res-list hidden></div>
+
+              <div class="pedit-practice__empty" data-pedit-q-empty>
+                <span class="pedit-practice__empty-icon" aria-hidden="true"><svg viewBox="0 0 48 48" width="48" height="48"><rect x="8" y="10" width="32" height="28" rx="4" fill="#F0F5FF" stroke="#ADC6FF" stroke-width="1.5"/><path d="M16 20h16M16 26h12M16 32h8" stroke="#8C8C8C" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+                <p class="pedit-practice__empty-title" data-pedit-empty-title>还没有试题</p>
+                <p class="pedit-practice__empty-desc" data-pedit-empty-desc>使用上方按钮，从题库选题、手写添加或 AI 生成</p>
+              </div>
+
+              <div class="pedit-practice__list" data-pedit-q-list hidden></div>
+            </div>
+          </div>
+          <footer class="pedit-practice__foot">
+            <div class="pedit-practice__foot-left">
+              <p class="pedit-practice__hint" data-pedit-practice-hint hidden></p>
+              <p class="pedit-practice__saved" data-pedit-practice-saved hidden></p>
+            </div>
+            <div class="pedit-practice__foot-actions">
+              <button type="button" class="pedit-practice__btn pedit-practice__btn--ghost" data-pedit-practice-close>取消</button>
+              <button type="button" class="pedit-practice__btn pedit-practice__btn--ghost" data-pedit-practice-draft>保存为草稿</button>
+              <button type="button" class="pedit-practice__btn pedit-practice__btn--primary" data-pedit-practice-confirm>确定</button>
+            </div>
+          </footer>
+        </section>
+
+        <div class="pedit-bank" data-pedit-bank hidden>
+          <div class="pedit-bank__backdrop" data-pedit-bank-close tabindex="-1" aria-hidden="true"></div>
+          <div class="pedit-bank__dialog" role="dialog" aria-modal="true" aria-labelledby="pedit-bank-title">
+            <header class="pedit-bank__head">
+              <h2 class="pedit-bank__title" id="pedit-bank-title">题库选择</h2>
+              <button type="button" class="pedit-bank__close" aria-label="关闭" data-pedit-bank-close>
+                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4.1 4.1 11.9 11.9M11.9 4.1 4.1 11.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+            </header>
+            <div class="pedit-bank__body">
+              <aside class="pedit-bank__nav" aria-label="题型分类">
+                <button type="button" class="pedit-bank__nav-item" data-bank-type="single">单选题</button>
+                <button type="button" class="pedit-bank__nav-item is-active" data-bank-type="multi">多选题</button>
+                <button type="button" class="pedit-bank__nav-item" data-bank-type="judge">判断题</button>
+                <button type="button" class="pedit-bank__nav-item" data-bank-type="blank">填空题</button>
+                <button type="button" class="pedit-bank__nav-item" data-bank-type="range">区间填空题</button>
+                <button type="button" class="pedit-bank__nav-item" data-bank-type="attach">附件题</button>
+                <button type="button" class="pedit-bank__nav-item" data-bank-type="qa">问答题</button>
+                <button type="button" class="pedit-bank__nav-item" data-bank-type="essay">论述题</button>
+
+                <button type="button" class="pedit-bank__nav-item pedit-bank__nav-item--branch is-expanded" data-bank-type="practice" data-bank-branch="practice" aria-expanded="true">
+                  <span class="pedit-bank__caret" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M4.2 2.2 8 6l-3.8 3.8" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  实操题
+                </button>
+                <div class="pedit-bank__nav-group" data-bank-branch-panel="practice">
+                  <button type="button" class="pedit-bank__nav-item pedit-bank__nav-item--l3 is-expanded" data-bank-type="bim" data-bank-branch="bim" aria-expanded="true">
+                    <span class="pedit-bank__caret" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M4.2 2.2 8 6l-3.8 3.8" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    BIM 算量实操题
+                  </button>
+                  <div class="pedit-bank__nav-group" data-bank-branch-panel="bim">
+                    <button type="button" class="pedit-bank__nav-item pedit-bank__nav-item--l4" data-bank-type="civil-2021">土建计量实操题（2021）</button>
+                    <button type="button" class="pedit-bank__nav-item pedit-bank__nav-item--l4" data-bank-type="civil-2025">土建计量实操题（2025）</button>
+                  </div>
+
+                  <button type="button" class="pedit-bank__nav-item pedit-bank__nav-item--l3 is-expanded" data-bank-type="gccp" data-bank-branch="gccp" aria-expanded="true">
+                    <span class="pedit-bank__caret" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M4.2 2.2 8 6l-3.8 3.8" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    云计价累（GCCP）实操题
+                  </button>
+                  <div class="pedit-bank__nav-group" data-bank-branch-panel="gccp">
+                    <button type="button" class="pedit-bank__nav-item pedit-bank__nav-item--l4" data-bank-type="estimate">概算计价题</button>
+                    <button type="button" class="pedit-bank__nav-item pedit-bank__nav-item--l4" data-bank-type="budget">预算计价题</button>
+                  </div>
+
+                  <button type="button" class="pedit-bank__nav-item pedit-bank__nav-item--l3" data-bank-type="bimmake">BIMMAKE实操题</button>
+                </div>
+              </aside>
+              <div class="pedit-bank__main">
+                <div class="pedit-bank__toolbar">
+                  <div class="pedit-bank__filters" role="tablist" aria-label="难度筛选">
+                    <button type="button" class="pedit-bank__filter is-active" data-bank-filter="all">全部</button>
+                    <button type="button" class="pedit-bank__filter" data-bank-filter="hard">难</button>
+                    <button type="button" class="pedit-bank__filter" data-bank-filter="mid">中</button>
+                    <button type="button" class="pedit-bank__filter" data-bank-filter="easy">易</button>
+                  </div>
+                  <div class="pedit-bank__search-wrap">
+                    <span class="pedit-bank__count" data-bank-count>共8个</span>
+                    <label class="pedit-bank__search">
+                      <span class="pedit-bank__search-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m11 11 3.2 3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+                      <input type="search" placeholder="搜索资源" data-bank-search />
+                    </label>
+                  </div>
+                </div>
+                <div class="pedit-bank__list">
+                  <label class="pedit-bank-item is-checked" data-bank-id="bank-single-1" data-bank-kind="single" data-bank-level="hard">
+                    <input class="pedit-bank-item__check" type="checkbox" checked data-bank-pick />
+                    <article class="pedit-bank-item__card">
+                      <div class="pedit-bank-item__main">
+                        <div class="pedit-qcard__tags">
+                          <span class="pedit-qcard__tag pedit-qcard__tag--single">单选题</span>
+                          <span class="pedit-qcard__tag pedit-qcard__tag--level">难</span>
+                        </div>
+                        <h3 class="pedit-qcard__title">关于建筑面积的计算，下列说法正确的是？</h3>
+                        <div class="pedit-bank-item__opts">
+                          <p class="pedit-bank-item__opt">A. 建筑物的阳台按一半面积计算</p>
+                          <p class="pedit-bank-item__opt">B. 建筑物的地下室不计入建筑面积</p>
+                          <p class="pedit-bank-item__opt">C. 建筑物的隔墙不计入建筑面积</p>
+                          <p class="pedit-bank-item__opt">D. 建筑物的设备层不计入建筑面积</p>
+                        </div>
+                        <p class="pedit-bank-item__answer">正确答案：C</p>
+                      </div>
+                      <div class="pedit-bank-item__analysis is-open">
+                        <button type="button" class="pedit-qcard__analysis" data-bank-analysis-toggle>
+                          <span>答案解析</span>
+                          <span class="pedit-qcard__analysis-caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 10.4 8 5.6l4.8 4.8" stroke="#8C8C8C" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </button>
+                        <p class="pedit-bank-item__analysis-body">根据建筑面积的计算规则，建筑物的阳台通常按一半面积计算，而地下室、墙体和设备层均需计入建筑面积。</p>
+                      </div>
+                    </article>
+                  </label>
+
+                  <label class="pedit-bank-item" data-bank-id="bank-multi-1" data-bank-kind="multi" data-bank-level="hard">
+                    <input class="pedit-bank-item__check" type="checkbox" data-bank-pick />
+                    <article class="pedit-bank-item__card">
+                      <div class="pedit-bank-item__main">
+                        <div class="pedit-qcard__tags">
+                          <span class="pedit-qcard__tag pedit-qcard__tag--multi">多选题</span>
+                          <span class="pedit-qcard__tag pedit-qcard__tag--level">难</span>
+                        </div>
+                        <h3 class="pedit-qcard__title">关于建筑面积的计算，下列说法正确的是？</h3>
+                        <div class="pedit-bank-item__opts">
+                          <p class="pedit-bank-item__opt">A. 建筑物的阳台按一半面积计算</p>
+                          <p class="pedit-bank-item__opt">B. 建筑物的地下室不计入建筑面积</p>
+                          <p class="pedit-bank-item__opt">C. 建筑物的隔墙不计入建筑面积</p>
+                          <p class="pedit-bank-item__opt">D. 建筑物的设备层不计入建筑面积</p>
+                          <p class="pedit-bank-item__opt">E. 建筑物的设备层不计入建筑面积</p>
+                        </div>
+                        <p class="pedit-bank-item__answer">正确答案：C、D</p>
+                      </div>
+                      <div class="pedit-bank-item__analysis is-open">
+                        <button type="button" class="pedit-qcard__analysis" data-bank-analysis-toggle>
+                          <span>答案解析</span>
+                          <span class="pedit-qcard__analysis-caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 10.4 8 5.6l4.8 4.8" stroke="#8C8C8C" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </button>
+                        <p class="pedit-bank-item__analysis-body">根据建筑面积的计算规则，建筑物的阳台通常按一半面积计算，而地下室、墙体和设备层均需计入建筑面积。</p>
+                      </div>
+                    </article>
+                  </label>
+
+                  <label class="pedit-bank-item" data-bank-id="bank-judge-1" data-bank-kind="judge" data-bank-level="easy">
+                    <input class="pedit-bank-item__check" type="checkbox" data-bank-pick />
+                    <article class="pedit-bank-item__card">
+                      <div class="pedit-bank-item__main">
+                        <div class="pedit-qcard__tags">
+                          <span class="pedit-qcard__tag pedit-qcard__tag--judge">判断题</span>
+                          <span class="pedit-qcard__tag pedit-qcard__tag--level">易</span>
+                        </div>
+                        <h3 class="pedit-qcard__title">关于建筑面积的计算，下列说法正确的是？</h3>
+                        <div class="pedit-bank-item__opts">
+                          <p class="pedit-bank-item__opt">A. 正确</p>
+                          <p class="pedit-bank-item__opt">B. 错误</p>
+                        </div>
+                        <p class="pedit-bank-item__answer">正确答案：A</p>
+                      </div>
+                      <div class="pedit-bank-item__analysis is-open">
+                        <button type="button" class="pedit-qcard__analysis" data-bank-analysis-toggle>
+                          <span>答案解析</span>
+                          <span class="pedit-qcard__analysis-caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 10.4 8 5.6l4.8 4.8" stroke="#8C8C8C" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </button>
+                        <p class="pedit-bank-item__analysis-body">根据建筑面积的计算规则，建筑物的阳台通常按一半面积计算，而地下室、墙体和设备层均需计入建筑面积。</p>
+                      </div>
+                    </article>
+                  </label>
+
+                  <label class="pedit-bank-item" data-bank-id="bank-attach-1" data-bank-kind="attach" data-bank-level="hard">
+                    <input class="pedit-bank-item__check" type="checkbox" data-bank-pick />
+                    <article class="pedit-bank-item__card">
+                      <div class="pedit-bank-item__main">
+                        <div class="pedit-qcard__tags">
+                          <span class="pedit-qcard__tag pedit-qcard__tag--attach">附件题</span>
+                          <span class="pedit-qcard__tag pedit-qcard__tag--level">难</span>
+                        </div>
+                        <h3 class="pedit-qcard__title">根据下列附件绘制对应的模型</h3>
+                        <div class="pedit-qcard__files pedit-qcard__files--stack">
+                          <div class="pedit-qcard__file">
+                            <span class="pedit-qcard__file-icon" aria-hidden="true"><img src="assets/prepare/icon-file-excel.svg" width="24" height="24" alt="" /></span>
+                            <span class="pedit-qcard__file-name">产品清单列表.excel</span>
+                            <span class="pedit-qcard__file-meta">31KB</span>
+                          </div>
+                          <div class="pedit-qcard__file">
+                            <span class="pedit-qcard__file-icon" aria-hidden="true"><img src="assets/prepare/icon-file-excel.svg" width="24" height="24" alt="" /></span>
+                            <span class="pedit-qcard__file-name">产品清单列表.excel</span>
+                            <span class="pedit-qcard__file-meta">31KB</span>
+                          </div>
+                          <div class="pedit-qcard__file">
+                            <span class="pedit-qcard__file-icon" aria-hidden="true"><img src="assets/prepare/icon-file-excel.svg" width="24" height="24" alt="" /></span>
+                            <span class="pedit-qcard__file-name">产品清单列表.excel</span>
+                            <span class="pedit-qcard__file-meta">31KB</span>
+                          </div>
+                          <div class="pedit-qcard__file">
+                            <span class="pedit-qcard__file-icon" aria-hidden="true"><img src="assets/prepare/icon-file-excel.svg" width="24" height="24" alt="" /></span>
+                            <span class="pedit-qcard__file-name">产品清单列表.excel</span>
+                            <span class="pedit-qcard__file-meta">31KB</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pedit-bank-item__analysis is-open">
+                        <button type="button" class="pedit-qcard__analysis" data-bank-analysis-toggle>
+                          <span>答案解析</span>
+                          <span class="pedit-qcard__analysis-caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 10.4 8 5.6l4.8 4.8" stroke="#8C8C8C" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </button>
+                        <p class="pedit-bank-item__analysis-body">请依据附件图纸与清单完成模型绘制，核对构件类型、数量与尺寸是否与附件一致。</p>
+                      </div>
+                    </article>
+                  </label>
+
+                  <label class="pedit-bank-item" data-bank-id="bank-qa-1" data-bank-kind="qa" data-bank-level="hard">
+                    <input class="pedit-bank-item__check" type="checkbox" data-bank-pick />
+                    <article class="pedit-bank-item__card">
+                      <div class="pedit-bank-item__main">
+                        <div class="pedit-qcard__tags">
+                          <span class="pedit-qcard__tag pedit-qcard__tag--qa">问答题</span>
+                          <span class="pedit-qcard__tag pedit-qcard__tag--level">难</span>
+                        </div>
+                        <h3 class="pedit-qcard__title">简述马斯洛需求层次理论的五个等级，并各举一个生活实例。</h3>
+                        <div class="pedit-qcard__files">
+                          <div class="pedit-qcard__files-label">附件：</div>
+                          <div class="pedit-qcard__file">
+                            <span class="pedit-qcard__file-icon" aria-hidden="true"><img src="assets/prepare/icon-file-excel.svg" width="24" height="24" alt="" /></span>
+                            <span class="pedit-qcard__file-name">产品清单列表.excel</span>
+                            <span class="pedit-qcard__file-meta">31KB</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pedit-bank-item__analysis is-open">
+                        <button type="button" class="pedit-qcard__analysis" data-bank-analysis-toggle>
+                          <span>答案解析</span>
+                          <span class="pedit-qcard__analysis-caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 10.4 8 5.6l4.8 4.8" stroke="#8C8C8C" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </button>
+                        <p class="pedit-bank-item__analysis-body">生理、安全、社交、尊重、自我实现五个层次，需结合生活实例分别说明。</p>
+                      </div>
+                    </article>
+                  </label>
+
+                  <label class="pedit-bank-item" data-bank-id="bank-blank-1" data-bank-kind="blank" data-bank-level="hard">
+                    <input class="pedit-bank-item__check" type="checkbox" data-bank-pick />
+                    <article class="pedit-bank-item__card">
+                      <div class="pedit-bank-item__main">
+                        <div class="pedit-qcard__tags">
+                          <span class="pedit-qcard__tag pedit-qcard__tag--blank">填空题</span>
+                          <span class="pedit-qcard__tag pedit-qcard__tag--level">难</span>
+                        </div>
+                        <h3 class="pedit-qcard__title">请简述气候变化对全球经济的主要影响（至少三个方面），并说明发展中国家与发达国家应对策略的差异。</h3>
+                        <div class="pedit-qcard__files">
+                          <div class="pedit-qcard__files-label">附件：</div>
+                          <div class="pedit-qcard__file">
+                            <span class="pedit-qcard__file-icon" aria-hidden="true"><img src="assets/prepare/icon-file-excel.svg" width="24" height="24" alt="" /></span>
+                            <span class="pedit-qcard__file-name">产品清单列表.excel</span>
+                            <span class="pedit-qcard__file-meta">31KB</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pedit-bank-item__analysis is-open">
+                        <button type="button" class="pedit-qcard__analysis" data-bank-analysis-toggle>
+                          <span>答案解析</span>
+                          <span class="pedit-qcard__analysis-caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 10.4 8 5.6l4.8 4.8" stroke="#8C8C8C" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </button>
+                        <p class="pedit-bank-item__analysis-body">可从农业减产、基础设施受损、贸易与供应链波动等方面作答，并对比发达国家与发展中国家的应对差异。</p>
+                      </div>
+                    </article>
+                  </label>
+
+                  <label class="pedit-bank-item" data-bank-id="bank-essay-1" data-bank-kind="essay" data-bank-level="hard">
+                    <input class="pedit-bank-item__check" type="checkbox" data-bank-pick />
+                    <article class="pedit-bank-item__card">
+                      <div class="pedit-bank-item__main">
+                        <div class="pedit-qcard__tags">
+                          <span class="pedit-qcard__tag pedit-qcard__tag--essay">论述题</span>
+                          <span class="pedit-qcard__tag pedit-qcard__tag--level">难</span>
+                        </div>
+                        <h3 class="pedit-qcard__title">人工智能正在迅速改变劳动力市场。请论述 AI 会取代哪些工作、又会创造哪些新机会，并结合具体行业分析其社会影响。</h3>
+                        <div class="pedit-qcard__files">
+                          <div class="pedit-qcard__files-label">附件：</div>
+                          <div class="pedit-qcard__file">
+                            <span class="pedit-qcard__file-icon" aria-hidden="true"><img src="assets/prepare/icon-file-excel.svg" width="24" height="24" alt="" /></span>
+                            <span class="pedit-qcard__file-name">产品清单列表.excel</span>
+                            <span class="pedit-qcard__file-meta">31KB</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pedit-bank-item__analysis is-open">
+                        <button type="button" class="pedit-qcard__analysis" data-bank-analysis-toggle>
+                          <span>答案解析</span>
+                          <span class="pedit-qcard__analysis-caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 10.4 8 5.6l4.8 4.8" stroke="#8C8C8C" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </button>
+                        <p class="pedit-bank-item__analysis-body">论述需兼顾被替代岗位、新增岗位与社会影响，并结合至少一个行业展开分析。</p>
+                      </div>
+                    </article>
+                  </label>
+
+                  <label class="pedit-bank-item is-checked" data-bank-id="bank-practice-1" data-bank-kind="practice" data-bank-level="hard">
+                    <input class="pedit-bank-item__check" type="checkbox" checked data-bank-pick />
+                    <article class="pedit-bank-item__card">
+                      <div class="pedit-bank-item__main">
+                        <div class="pedit-qcard__tags">
+                          <span class="pedit-qcard__tag pedit-qcard__tag--practice"><img src="assets/prepare/icon-practice-type.png" width="16" height="16" alt="" />实操题</span>
+                          <span class="pedit-qcard__tag pedit-qcard__tag--level">难</span>
+                        </div>
+                        <h3 class="pedit-qcard__title">1#办公楼管道工程量计量--电算</h3>
+                        <p class="pedit-qcard__desc">1、使用广联达BIM安装计量软件GQI2021，完成全部楼层的给排水系统管道工程量；
+2、汇总全部楼层工程量；</p>
+                        <div class="pedit-qcard__files">
+                          <div class="pedit-qcard__files-label">附件：</div>
+                          <div class="pedit-qcard__file">
+                            <span class="pedit-qcard__file-icon" aria-hidden="true"><img src="assets/prepare/icon-file-excel.svg" width="24" height="24" alt="" /></span>
+                            <span class="pedit-qcard__file-name">产品清单列表.excel</span>
+                            <span class="pedit-qcard__file-meta">31KB</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pedit-bank-item__analysis">
+                        <button type="button" class="pedit-qcard__analysis" data-bank-analysis-toggle>
+                          <span>答案解析</span>
+                          <span class="pedit-qcard__analysis-caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 5.6 8 10.4l4.8-4.8" stroke="#8C8C8C" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </button>
+                        <p class="pedit-bank-item__analysis-body">按楼层汇总给排水管道工程量，核对系统完整性与计量口径后提交成果。</p>
+                      </div>
+                    </article>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <footer class="pedit-bank__foot">
+              <span class="pedit-bank__selected" data-pedit-bank-selected>已选2题</span>
+              <div class="pedit-bank__foot-actions">
+                <button type="button" class="pedit-bank__btn pedit-bank__btn--ghost" data-pedit-bank-close>取消</button>
+                <button type="button" class="pedit-bank__btn pedit-bank__btn--primary" data-pedit-bank-confirm>确 定</button>
+              </div>
+            </footer>
+          </div>
+        </div>
+
+        <div class="pedit-respick" data-pedit-respick hidden>
+          <div class="pedit-respick__backdrop" data-pedit-respick-close tabindex="-1" aria-hidden="true"></div>
+          <div class="pedit-respick__dialog" role="dialog" aria-modal="true" aria-labelledby="pedit-respick-title">
+            <header class="pedit-respick__head">
+              <h2 class="pedit-respick__title" id="pedit-respick-title">选择课程资源</h2>
+              <button type="button" class="pedit-respick__close" aria-label="关闭" data-pedit-respick-close>
+                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4.1 4.1 11.9 11.9M11.9 4.1 4.1 11.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+            </header>
+            <div class="pedit-respick__body">
+              <aside class="pedit-respick__nav" aria-label="资源类型">
+                <button type="button" class="pedit-respick__nav-item is-active" data-respick-type="micro">
+                  <img src="assets/prepare/material/icon-micro.png" width="20" height="20" alt="" />微课
+                </button>
+                <button type="button" class="pedit-respick__nav-item" data-respick-type="courseware">
+                  <img src="assets/prepare/material/icon-courseware.png" width="20" height="20" alt="" />课件
+                </button>
+                <button type="button" class="pedit-respick__nav-item" data-respick-type="model">
+                  <img src="assets/prepare/material/icon-model.png" width="20" height="20" alt="" />模型
+                </button>
+                <button type="button" class="pedit-respick__nav-item" data-respick-type="drawing">
+                  <img src="assets/prepare/material/icon-drawing.png" width="20" height="20" alt="" />图纸
+                </button>
+                <button type="button" class="pedit-respick__nav-item" data-respick-type="case">
+                  <img src="assets/prepare/material/icon-case.png" width="20" height="20" alt="" />案例
+                </button>
+                <button type="button" class="pedit-respick__nav-item" data-respick-type="other">
+                  <img src="assets/prepare/material/icon-other.png" width="20" height="20" alt="" />其他
+                </button>
+              </aside>
+              <div class="pedit-respick__main">
+                <div class="pedit-respick__toolbar">
+                  <div class="pedit-respick__toolbar-left">
+                    <button type="button" class="pedit-respick__upload" data-pedit-respick-upload>本地上传</button>
+                    <span class="pedit-respick__count" data-respick-count>共0个</span>
+                  </div>
+                  <label class="pedit-respick__search">
+                    <span class="pedit-respick__search-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m11 11 3.2 3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+                    <input type="search" placeholder="请输入名称/关键字" data-respick-search />
+                  </label>
+                </div>
+                <div class="pedit-respick__list" data-respick-list></div>
+              </div>
+            </div>
+            <footer class="pedit-respick__foot">
+              <span class="pedit-respick__selected" data-respick-selected>已选0个</span>
+              <div class="pedit-respick__foot-actions">
+                <button type="button" class="pedit-respick__btn pedit-respick__btn--ghost" data-pedit-respick-close>取消</button>
+                <button type="button" class="pedit-respick__btn pedit-respick__btn--primary" data-pedit-respick-confirm>确 定</button>
+              </div>
+            </footer>
+          </div>
+        </div>
+
+        <div class="pedit-paper" data-pedit-paper hidden>
+          <div class="pedit-paper__backdrop" data-pedit-paper-close tabindex="-1" aria-hidden="true"></div>
+          <div class="pedit-paper__dialog" role="dialog" aria-modal="true" aria-labelledby="pedit-paper-title">
+            <header class="pedit-paper__head">
+              <h2 class="pedit-paper__title" id="pedit-paper-title">选择试卷</h2>
+              <button type="button" class="pedit-paper__close" aria-label="关闭" data-pedit-paper-close>
+                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4.1 4.1 11.9 11.9M11.9 4.1 4.1 11.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+            </header>
+            <div class="pedit-paper__toolbar">
+              <span class="pedit-paper__count" data-paper-count>共0份</span>
+              <label class="pedit-paper__search">
+                <span class="pedit-paper__search-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m11 11 3.2 3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+                <input type="search" placeholder="请输入试卷名称" data-paper-search />
+              </label>
+            </div>
+            <div class="pedit-paper__list" data-paper-list></div>
+            <footer class="pedit-paper__foot">
+              <span class="pedit-paper__selected" data-paper-selected>请选择试卷</span>
+              <div class="pedit-paper__foot-actions">
+                <button type="button" class="pedit-paper__btn pedit-paper__btn--ghost" data-pedit-paper-close>取消</button>
+                <button type="button" class="pedit-paper__btn pedit-paper__btn--primary" data-pedit-paper-confirm>确 定</button>
+              </div>
+            </footer>
+          </div>
+        </div>
+
+        <div class="pedit-qadd" data-pedit-qadd hidden>
+          <div class="pedit-qadd__backdrop" data-pedit-qadd-close tabindex="-1" aria-hidden="true"></div>
+          <div class="pedit-qadd__dialog" role="dialog" aria-modal="true" aria-labelledby="pedit-qadd-title">
+            <header class="pedit-qadd__head">
+              <h2 class="pedit-qadd__title" id="pedit-qadd-title">添加试题</h2>
+              <button type="button" class="pedit-qadd__close" aria-label="关闭" data-pedit-qadd-close>
+                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4.1 4.1 11.9 11.9M11.9 4.1 4.1 11.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+            </header>
+            <div class="pedit-qadd__scroll">
+              <div class="pedit-qadd__row">
+                <label class="pedit-qadd__label"><i>*</i>试题名称<span>:</span></label>
+                <input class="pedit-qadd__input" type="text" placeholder="请输入" data-pedit-qadd-name />
+              </div>
+              <div class="pedit-qadd__row pedit-qadd__row--top">
+                <label class="pedit-qadd__label"><i>*</i>试题内容<span>:</span></label>
+                <div class="pedit-qadd__editor-wrap">
+                  <div class="pedit-qadd__editor">
+                    <div class="pedit-qadd__toolbar" aria-hidden="true">
+                      <img src="assets/prepare/icon-editor-toolbar.png" width="141" height="21" alt="" />
+                    </div>
+                    <textarea class="pedit-qadd__textarea" rows="3" placeholder="" data-pedit-qadd-content></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="pedit-qadd__row">
+                <span class="pedit-qadd__label"><i>*</i>难易度<span>:</span></span>
+                <div class="pedit-qadd__radios" role="radiogroup" aria-label="难易度">
+                  <label class="pedit-qadd__radio is-checked"><input type="radio" name="pedit-qadd-level" value="easy" checked /><span class="pedit-qadd__dot" aria-hidden="true"></span>易</label>
+                  <label class="pedit-qadd__radio"><input type="radio" name="pedit-qadd-level" value="mid" /><span class="pedit-qadd__dot" aria-hidden="true"></span>中</label>
+                  <label class="pedit-qadd__radio"><input type="radio" name="pedit-qadd-level" value="hard" /><span class="pedit-qadd__dot" aria-hidden="true"></span>难</label>
+                </div>
+              </div>
+              <div class="pedit-qadd__row pedit-qadd__row--top">
+                <span class="pedit-qadd__label"><i>*</i>评分设置<span>:</span></span>
+                <div class="pedit-qadd__score-panel">
+                  <div class="pedit-qadd__row pedit-qadd__row--inner">
+                    <label class="pedit-qadd__label"><i>*</i>标准工程<span>:</span></label>
+                    <div class="pedit-dd" data-pedit-dd="std">
+                      <button type="button" class="pedit-qadd__select-btn" data-pedit-dd-trigger data-pedit-qadd-std-label>请选择</button>
+                      <div class="pedit-dd__menu" data-pedit-dd-menu hidden role="listbox">
+                        <button type="button" class="pedit-dd__item" role="option" data-pedit-qadd-std-pick="local">本地上传</button>
+                      </div>
+                    </div>
+                    <input type="file" class="pedit-sr-only" data-pedit-qadd-std-file accept=".gpj,.gcl,.ggj,.zip,.rar,.7z,.gbq5,.GTJ,.GQI" hidden />
+                  </div>
+                  <div class="pedit-qadd__row pedit-qadd__row--inner">
+                    <label class="pedit-qadd__label pedit-qadd__label--optional">下发工程文件<span>:</span></label>
+                    <div class="pedit-dd" data-pedit-dd="deliver">
+                      <button type="button" class="pedit-qadd__select" data-pedit-dd-trigger>
+                        <span data-pedit-qadd-deliver-label>请选择</span>
+                        <span aria-hidden="true"><svg viewBox="0 0 14 14" width="14" height="14"><path d="M2.6 4.8 7 9.2l4.4-4.4" stroke="#8C8C8C" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                      </button>
+                      <div class="pedit-dd__menu" data-pedit-dd-menu hidden role="listbox">
+                        <button type="button" class="pedit-dd__item is-active" role="option" data-pedit-qadd-deliver="none">请选择</button>
+                        <button type="button" class="pedit-dd__item" role="option" data-pedit-qadd-deliver="local">本地上传</button>
+                      </div>
+                    </div>
+                    <input type="file" class="pedit-sr-only" data-pedit-qadd-deliver-file accept=".gpj,.gcl,.ggj,.zip,.rar,.7z,.gbq5,.GTJ,.GQI" hidden />
+                  </div>
+                  <div class="pedit-qadd__range">
+                    <label class="pedit-qadd__label"><i>*</i>评分范围标准<span>:</span></label>
+                    <div class="pedit-qadd__range-box" data-pedit-qadd-range>
+                      <p class="pedit-qadd__range-empty">请选择</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pedit-qadd__row pedit-qadd__row--top">
+                <span class="pedit-qadd__label pedit-qadd__label--optional">附件<span>:</span></span>
+                <div class="pedit-qadd__upload">
+                  <button type="button" class="pedit-qadd__link" data-pedit-qadd-attach>请选择</button>
+                  <input type="file" class="pedit-sr-only" data-pedit-qadd-attach-file multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.png,.jpg,.jpeg,.gif,.zip,.rar,.mp4,.dwg" hidden />
+                  <p class="pedit-qadd__hint">上传图纸等附件，供学生下载。最多可上传10个附件。</p>
+                  <div class="pedit-qadd__files" data-pedit-qadd-files></div>
+                </div>
+              </div>
+              <div class="pedit-qadd__row pedit-qadd__row--top">
+                <label class="pedit-qadd__label pedit-qadd__label--optional">答案解析<span>:</span></label>
+                <div class="pedit-qadd__editor-wrap">
+                  <div class="pedit-qadd__editor">
+                    <div class="pedit-qadd__toolbar" aria-hidden="true">
+                      <img src="assets/prepare/icon-editor-toolbar.png" width="141" height="21" alt="" />
+                    </div>
+                    <textarea class="pedit-qadd__textarea" rows="3" placeholder="" data-pedit-qadd-analysis></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="pedit-qadd__foot">
+              <button type="button" class="pedit-qadd__btn pedit-qadd__btn--ghost" data-pedit-qadd-continue>保存并继续添加</button>
+              <button type="button" class="pedit-qadd__btn pedit-qadd__btn--primary" data-pedit-qadd-confirm>确 定</button>
+            </footer>
+          </div>
+        </div>
+
+
+        <div class="pedit-ai" data-pedit-ai hidden>
+          <div class="pedit-ai__backdrop" data-pedit-ai-close tabindex="-1" aria-hidden="true"></div>
+          <div class="pedit-ai__dialog" role="dialog" aria-modal="true" aria-labelledby="pedit-ai-title">
+            <header class="pedit-ai__head">
+              <div class="pedit-ai__title-wrap">
+                <span class="pedit-ai__spark" aria-hidden="true"><img src="assets/prepare/icon-ai-help-spark.svg" width="15" height="14" alt="" /></span>
+                <h2 class="pedit-ai__title" id="pedit-ai-title">AI智能出题</h2>
+              </div>
+              <button type="button" class="pedit-ai__close" aria-label="关闭" data-pedit-ai-close>
+                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4.1 4.1 11.9 11.9M11.9 4.1 4.1 11.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+            </header>
+            <div class="pedit-ai__body">
+              <section class="pedit-ai__form">
+                <div class="pedit-ai__fields">
+                  <div class="pedit-ai__field-row">
+                    <div class="pedit-ai__field">
+                      <span class="pedit-ai__label"><i>*</i>试题分类<span>:</span></span>
+                      <div class="pedit-dd pedit-dd--fill" data-pedit-dd="ai-type">
+                        <button type="button" class="pedit-ai__select" data-pedit-dd-trigger><span data-pedit-ai-type-label>单选题</span><span aria-hidden="true"><svg viewBox="0 0 14 14" width="14" height="14"><path d="M2.6 4.8 7 9.2l4.4-4.4" stroke="#8C8C8C" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+                        <div class="pedit-dd__menu" data-pedit-dd-menu hidden role="listbox">
+                          <button type="button" class="pedit-dd__item is-active" role="option" data-pedit-ai-type="单选题">单选题</button>
+                          <button type="button" class="pedit-dd__item" role="option" data-pedit-ai-type="多选题">多选题</button>
+                          <button type="button" class="pedit-dd__item" role="option" data-pedit-ai-type="实操题">实操题</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pedit-ai__field">
+                      <span class="pedit-ai__label"><i>*</i>难易度<span>:</span></span>
+                      <div class="pedit-dd pedit-dd--fill" data-pedit-dd="ai-level">
+                        <button type="button" class="pedit-ai__select" data-pedit-dd-trigger><span data-pedit-ai-level-label>易</span><span aria-hidden="true"><svg viewBox="0 0 14 14" width="14" height="14"><path d="M2.6 4.8 7 9.2l4.4-4.4" stroke="#8C8C8C" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+                        <div class="pedit-dd__menu" data-pedit-dd-menu hidden role="listbox">
+                          <button type="button" class="pedit-dd__item is-active" role="option" data-pedit-ai-level="易">易</button>
+                          <button type="button" class="pedit-dd__item" role="option" data-pedit-ai-level="中">中</button>
+                          <button type="button" class="pedit-dd__item" role="option" data-pedit-ai-level="难">难</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <label class="pedit-ai__field pedit-ai__field--count">
+                    <span class="pedit-ai__label"><i>*</i>生成数量<span>:</span></span>
+                    <input class="pedit-ai__input" type="text" value="5" inputmode="numeric" aria-label="生成数量" />
+                  </label>
+                </div>
+                <div class="pedit-ai__prompt">
+                  <textarea class="pedit-ai__textarea" rows="12" placeholder="请在此处输出相关试题资料，例如：&#10;案例事例及输入标准显示在这里" data-pedit-ai-prompt></textarea>
+                  <span class="pedit-ai__count" data-pedit-ai-count>0/5000</span>
+                </div>
+                <div class="pedit-ai__form-actions">
+                  <button type="button" class="pedit-ai__btn pedit-ai__btn--ghost" data-pedit-ai-clear>清空</button>
+                  <button type="button" class="pedit-ai__btn pedit-ai__btn--gen" data-pedit-ai-generate>
+                    <span aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1.2 9.1 5.4 13.2 6.5 9.1 7.6 8 11.8 6.9 7.6 2.8 6.5 6.9 5.4Z" fill="#fff"/><path d="M12.2 9.4 12.7 11.2 14.5 11.7 12.7 12.2 12.2 14 11.7 12.2 9.9 11.7 11.7 11.2Z" fill="#fff"/></svg></span>
+                    生成试题
+                  </button>
+                </div>
+              </section>
+              <section class="pedit-ai__result">
+                <div class="pedit-ai__result-main">
+                  <h3 class="pedit-ai__result-title">AI生成试题</h3>
+                  <div class="pedit-ai__list">
+                    <article class="pedit-ai-card is-checked">
+                      <label class="pedit-ai-card__pick">
+                        <input type="checkbox" checked data-pedit-ai-pick />
+                        <span class="pedit-ai-card__corner" aria-hidden="true"><img src="assets/prepare/icon-ai-card-pick-corner.svg" width="54" height="30" alt="" /></span>
+                        <span class="pedit-ai-card__radio" aria-hidden="true"><img class="pedit-ai-card__check" src="assets/prepare/icon-ai-card-pick-check.svg" width="12" height="10" alt="" /></span>
+                      </label>
+                      <div class="pedit-ai-card__body">
+                        <h4 class="pedit-ai-card__title">1、【TD】桥梁现场浇筑第一道工序</h4>
+                        <div class="pedit-ai-card__opts">
+                          <button type="button" class="pedit-ai-card__opt" data-pedit-ai-opt="A"><span class="pedit-ai-card__box" aria-hidden="true"></span>A、AutoCAD</button>
+                          <button type="button" class="pedit-ai-card__opt" data-pedit-ai-opt="B"><span class="pedit-ai-card__box" aria-hidden="true"></span>B、SketchUp</button>
+                          <button type="button" class="pedit-ai-card__opt is-answer" data-pedit-ai-opt="C"><span class="pedit-ai-card__box is-on" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M2.2 6.2 4.8 8.6 9.6 3.4" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>C、Revit</button>
+                          <button type="button" class="pedit-ai-card__opt" data-pedit-ai-opt="D"><span class="pedit-ai-card__box" aria-hidden="true"></span>D、3ds Max</button>
+                        </div>
+                        <p class="pedit-ai-card__answer" data-pedit-ai-answer>答案：C</p>
+                        <p class="pedit-ai-card__analysis">解析：建筑结构设计软件中，Revit是最常用的软件之一，它具有强大的建模和分析功能，可以用于设计和分析各种建筑结构。</p>
+                        <div class="pedit-ai-card__ops">
+                          <button type="button" class="pedit-ai-card__icon pedit-ai-card__icon--edit" aria-label="编辑"><img src="assets/prepare/icon-ai-card-edit.svg" width="14" height="14" alt="" /></button>
+                          <button type="button" class="pedit-ai-card__icon pedit-ai-card__icon--delete" aria-label="删除"><img src="assets/prepare/icon-ai-card-delete.svg" width="14" height="14" alt="" /></button>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="pedit-ai-card is-checked">
+                      <label class="pedit-ai-card__pick">
+                        <input type="checkbox" checked data-pedit-ai-pick />
+                        <span class="pedit-ai-card__corner" aria-hidden="true"><img src="assets/prepare/icon-ai-card-pick-corner.svg" width="54" height="30" alt="" /></span>
+                        <span class="pedit-ai-card__radio" aria-hidden="true"><img class="pedit-ai-card__check" src="assets/prepare/icon-ai-card-pick-check.svg" width="12" height="10" alt="" /></span>
+                      </label>
+                      <div class="pedit-ai-card__body">
+                        <h4 class="pedit-ai-card__title">1、【TD】桥梁现场浇筑第一道工序</h4>
+                        <div class="pedit-ai-card__opts">
+                          <button type="button" class="pedit-ai-card__opt" data-pedit-ai-opt="A"><span class="pedit-ai-card__box" aria-hidden="true"></span>A、1天</button>
+                          <button type="button" class="pedit-ai-card__opt" data-pedit-ai-opt="B"><span class="pedit-ai-card__box" aria-hidden="true"></span>B、3天</button>
+                          <button type="button" class="pedit-ai-card__opt is-answer" data-pedit-ai-opt="C"><span class="pedit-ai-card__box is-on" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M2.2 6.2 4.8 8.6 9.6 3.4" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>C、7天</button>
+                          <button type="button" class="pedit-ai-card__opt" data-pedit-ai-opt="D"><span class="pedit-ai-card__box" aria-hidden="true"></span>D、14天</button>
+                        </div>
+                        <p class="pedit-ai-card__answer" data-pedit-ai-answer>答案：C</p>
+                        <p class="pedit-ai-card__analysis">解析：当采用硅酸盐水泥时，混凝土的浇水养护时间不得小于7天。</p>
+                        <div class="pedit-ai-card__ops">
+                          <button type="button" class="pedit-ai-card__icon pedit-ai-card__icon--edit" aria-label="编辑"><img src="assets/prepare/icon-ai-card-edit.svg" width="14" height="14" alt="" /></button>
+                          <button type="button" class="pedit-ai-card__icon pedit-ai-card__icon--delete" aria-label="删除"><img src="assets/prepare/icon-ai-card-delete.svg" width="14" height="14" alt="" /></button>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <footer class="pedit-ai__foot">
+                  <p class="pedit-ai__disclaimer"><span aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="6.2" fill="#909399"/><path d="M8 4.8v4.2M8 11.2h.01" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg></span>内容由 AI 智能生成，请仔细甄别</p>
+                  <div class="pedit-ai__foot-actions">
+                    <span class="pedit-ai__selected" data-pedit-ai-selected>已选 <b>2</b> 题</span>
+                    <button type="button" class="pedit-ai__btn pedit-ai__btn--primary" data-pedit-ai-confirm>应用试题</button>
+                  </div>
+                </footer>
+              </section>
+            </div>
+          </div>
+        </div>
 
         <div class="pedit-add" data-pedit-add-panel hidden>
           <h2 class="pedit-add__title">创建教学活动</h2>
@@ -469,9 +1159,10 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
             </div>
           </div>
         </div>
-        <div class="pedit-toast" data-pedit-toast>
+        <div class="pedit-toast" data-pedit-toast hidden>
           <span class="pedit-toast__icon"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="9" fill="#22B34A"/><path d="M8.2 12.1 10.7 14.6 15.8 9.4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-          成功提示的文案
+          <span class="pedit-toast__text" data-pedit-toast-text>成功提示的文案</span>
+          <button type="button" class="pedit-toast__action" data-pedit-toast-action hidden>撤销</button>
         </div>
 
         <div class="pedit-graph-modal" data-pedit-graph-modal hidden>
@@ -613,8 +1304,8 @@ M86.78627,213.61622955778807C84.789391,213.61622955778807,83.291737,215.11388875
       </aside>
     </div>
   </div>
-  <script src="js/role.js" defer></script>
-  <script src="js/app.js" defer></script>
-  <script src="js/prepare-edit.js" defer></script>
+  <script src="js/role.js?v=20260908c" defer></script>
+  <script src="js/app.js?v=20260908c" defer></script>
+  <script src="js/prepare-edit.js?v=20260909b" defer></script>
 </body>
 </html>

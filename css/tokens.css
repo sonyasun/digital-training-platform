@@ -1,58 +1,50 @@
-/* 数字实训平台 · 设计令牌（来自 MasterGo 课程中心稿） */
+/* 数字实训平台 · 设计令牌
+ * 真源：改色值/阶梯只改本文件。文档见 设计规范.md（写角色与用法，不复制 hex）。
+ */
 
 :root {
-  /* 文字/主色 */
+  /* —— 文字色 —— */
   --text-primary: #303133;
-  /* 文字/辅色 */
   --text-secondary: #606266;
-  /* 文字/次辅色 */
   --text-muted: #909399;
-  /* 浅色/00-黑色 */
   --text-ink: #000000;
   --text-dark: #3d3d3d;
   --text-on-primary: #ffffff;
 
-  /* 主题色/主色 */
+  /* —— 品牌 / 功能色 —— */
   --color-primary: #1677ff;
-  /* 颜色按钮发布色 */
   --color-success: #28b28b;
-  /* 辅助-黄 */
   --color-warning: #dca707;
   --color-sim: #575aff;
   --color-unauth: #bfbfbf;
+  --color-danger: #f56c6c;
 
-  /* AI 个性化学习 */
+  /* —— AI（勿另起色相） —— */
   --color-ai-accent: #8800ff;
   --color-ai-bg-soft: #f5f0ff;
   --color-ai-bg-page-top: #f3f0ff;
   --color-ai-bg-page-mid: #eef5ff;
   --gradient-ai-btn: linear-gradient(79deg, var(--color-primary) 13%, var(--color-ai-accent) 100%);
-  --focus-ring: 0 0 0 3px rgba(22, 119, 255, 0.25);
 
-  /* 背景色/White Fill · 常用/基础-填充 */
+  /* —— 背景 / 边框 —— */
   --bg-white: #ffffff;
-  /* 背景色/Dark Fill */
   --bg-page: #ebedf0;
-  /* 背景色/Base Fill */
   --bg-base: #f0f2f5;
-  /* 颜色/Grey/Grey-3 */
   --bg-grey-3: #f5f5f5;
   --bg-search: linear-gradient(90deg, #cee8ff 0%, #f0f7ff 51%, #f8f0f3 99%);
-
-  /* 边框/Lighter Border */
   --border-lighter: #ebeef5;
-  /* 边框/Light Border */
   --border-light: #e4e7ed;
-  /* 常用/基础-描边 */
   --border-base: #dcdfe6;
   --border-grey-5: #d9d9d9;
 
+  /* —— 字体 —— */
   --font-sans: "Noto Sans SC", "Source Han Sans SC", "Source Han Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-num: "OPPO Sans", "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-display: "DingTalk JinBuTi", "Noto Sans SC", sans-serif;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
 
+  /* —— 字号阶梯（禁止非阶梯值；最小 12） —— */
   --font-12: 12px;
   --font-14: 14px;
   --font-16: 16px;
@@ -66,6 +58,7 @@
   --lh-18: 26px;
   --lh-20: 28px;
 
+  /* —— 圆角 —— */
   --radius-sm: 6px;
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -73,10 +66,52 @@
   --radius-2xl: 20px;
   --radius-pill: 100px;
 
+  /* —— 间距（8pt） —— */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+
+  /* —— 控件高度 —— */
+  --control-h-sm: 28px;
+  --control-h-md: 32px;
+  --control-h-lg: 40px;
+
+  /* —— 壳层尺寸 —— */
   --sidebar-w: 200px;
   --rail-w: 100px;
   --top-h: 60px;
+  --drawer-w-sm: 560px;
+  --drawer-w-md: 760px;
+  --drawer-w-lg: 889px;
 
+  /* —— 阴影（最多三档 + 抽屉） —— */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 40px rgba(48, 49, 51, 0.16);
+  --shadow-drawer: -8px 0 32px rgba(15, 23, 42, 0.12);
+  --focus-ring: 0 0 0 3px rgba(22, 119, 255, 0.25);
+  --overlay-scrim: rgba(48, 49, 51, 0.6);
+
+  /* —— 层级 —— */
+  --z-base: 1;
+  --z-sticky: 50;
+  --z-topbar: 100;
+  --z-drawer: 110;
+  --z-dropdown: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+
+  /* —— 断点（@media 须写同名数值，CSS 限制不能 var()） —— */
+  --bp-sm: 800px;
+  --bp-md: 1100px;
+  --bp-lg: 1440px;
+
+  /* —— 动效 —— */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --duration: 180ms;
 }

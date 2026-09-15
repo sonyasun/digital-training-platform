@@ -1,50 +1,52 @@
 # 数字实训平台
 
-独立静态项目，首期落地「课程中心」页。
+静态前端（HTML / CSS / JS）。设计与开发约定见下方规范。
 
-## 设计规范
+## 相关
 
-设计与开发统一参考 → **[设计规范.md](./设计规范.md)**（令牌、布局壳层、命名约定、AI 视觉语言）
+| 文档 | 用途 |
+|------|------|
+| [设计规范.md](./设计规范.md) | 设计系统（令牌真源 `css/tokens.css`） |
+| [设计还原手册.md](./设计还原手册.md) | MasterGo Prompt / 模型 |
+| [COURSEWARE-STYLE.md](./assets/student/courseware/COURSEWARE-STYLE.md) | 课件视觉 |
 
-设计侧 Prompt、模型选型、工作流速查 → **[设计还原手册.md](./设计还原手册.md)**
-
-## 本地预览
+## 预览
 
 ```bash
-cd ~/Desktop/数字实训平台
 python3 -m http.server 5174
 ```
 
-浏览器访问 http://127.0.0.1:5174/
+http://127.0.0.1:5174/
 
-## 线上预览（Cloudflare Pages）
-
-| 地址 | 说明 |
-|------|------|
-| https://digital-training-platform.pages.dev/ | 生产环境（默认进入备课中心） |
-| https://digital-training-platform.pages.dev/index.html | 课程中心 |
-| https://digital-training-platform.pages.dev/prepare.html | 备课中心 |
-- `/classes.html` — 我的班课
-- `/prepare-edit.html` — 课程编辑
-
-### 更新部署
-
-```bash
-cd ~/Desktop/数字实训平台
-rsync -a --delete --exclude node_modules --exclude .git --exclude .cursor --exclude dist --exclude package.json --exclude package-lock.json --exclude .assetsignore --exclude .DS_Store ./ dist/
-npm run deploy
-```
-
-## 目录
+## 页面
 
 | 路径 | 说明 |
 |------|------|
-| `设计规范.md` | **设计系统总览（令牌、壳层、命名、资源）** |
-| `设计还原手册.md` | **设计侧 Cursor Prompt / 模型选型速查** |
 | `index.html` | 课程中心 |
+| `prepare.html` | 备课中心 |
+| `prepare-edit.html` | 课程编辑 |
+| `classes.html` | 我的班课 |
+| `login.html` | 登录 |
+| `student-courses.html` | 学生 · 我的课程 |
+| `student-course.html` | 学生 · 课程详情 |
+| `student-learning-path.html` | 学生 · 学习路径 |
+| `student-node-study.html` | 学生 · 节点学习 |
+| `student-ai-study.html` | 学生 · AI 学习 |
+
+## 部署
+
+生产：https://digital-training-platform.pages.dev/
+
+```bash
+npm run predeploy && npm run deploy
+```
+
+## 关键目录
+
+| 路径 | 说明 |
+|------|------|
 | `css/tokens.css` | 设计令牌 |
-| `css/app.css` | 页面样式 |
-| `js/app.js` | 筛选 / 搜索 / 卡片反馈 |
-| `assets/brand/` | Logo、侧栏装饰 |
-| `assets/course/` | 课程封面 |
-| `assets/tools/` | 软件图标、智能助手 |
+| `css/app.css` | 教师壳层 |
+| `js/` | 页面逻辑 |
+| `assets/` | 品牌 / 图标 / 封面 / 课件 |
+| `components/` | 学习地图 Vue（需 `npm run build:learning-map`） |
