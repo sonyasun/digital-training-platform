@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1588" height="180" viewBox="0 0 1588 180" fill="none">
+  <defs>
+    <linearGradient id="b3a" x1="0" y1="20" x2="1588" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A48B8"/>
+      <stop offset="0.4" stop-color="#1677FF"/>
+      <stop offset="0.75" stop-color="#69B1FF"/>
+      <stop offset="1" stop-color="#FFC069"/>
+    </linearGradient>
+    <linearGradient id="b3b" x1="1220" y1="-20" x2="1400" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="b3c" x1="0" y1="0" x2="0" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="0.4" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1588" height="180" rx="16" fill="url(#b3a)"/>
+  <rect width="1588" height="180" rx="16" fill="url(#b3c)"/>
+  <rect x="1188" y="-36" width="168" height="252" rx="28" transform="rotate(16 1188 -36)" fill="url(#b3b)"/>
+  <rect x="1348" y="8" width="120" height="200" rx="22" transform="rotate(-10 1348 8)" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="1472" y="40" width="88" height="160" rx="18" transform="rotate(8 1472 40)" fill="#FFFFFF" fill-opacity="0.1"/>
+  <circle cx="1308" cy="48" r="18" fill="#FFFFFF" fill-opacity="0.2"/>
+</svg>

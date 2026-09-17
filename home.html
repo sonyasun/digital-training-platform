@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的班课 - 广联达数字实训平台V1.0</title>
-  <link rel="stylesheet" href="css/fonts.css?v=20260914b" />
+  <title>首页 - 广联达数字实训平台V1.0</title>
+  <link rel="stylesheet" href="css/fonts.css?v=20260916w" />
   <link rel="stylesheet" href="css/tokens.css?v=20260914b" />
   <link rel="stylesheet" href="css/app.css?v=20260914b" />
-  <link rel="stylesheet" href="css/classes.css?v=20260914b" />
+  <link rel="stylesheet" href="css/home.css?v=20260917e" />
+  <link rel="preload" as="image" href="assets/home/hero.png" fetchpriority="high" />
 </head>
 <body>
   <div class="app">
@@ -68,9 +69,9 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
       <aside class="sidebar">
         <img class="sidebar__deco" src="assets/brand/sidebar-deco.webp" alt="" loading="lazy" decoding="async" />
         <nav class="sidebar__nav" aria-label="主导航">
-          <a class="nav-item" href="home.html">
+          <a class="nav-item is-active" href="home.html">
             <span class="nav-item__main">
-              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-home.png" data-icon="assets/icons/nav-home.png" data-icon-active="assets/icons/nav-home-active.png" width="24" height="24" alt="" /></span></span>
+              <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-home-active.png" data-icon="assets/icons/nav-home.png" data-icon-active="assets/icons/nav-home-active.png" width="24" height="24" alt="" /></span></span>
               首页
             </span>
           </a>
@@ -91,8 +92,8 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
             <a class="nav-sub__item" href="#industry" data-sub-item><span class="nav-sub__label">行业培训</span></a>
             </div>
           </div>
-          <div class="nav-group is-open" data-nav-group="teach">
-          <a class="nav-item nav-item--teach-parent is-open" href="#teach" data-nav-toggle="teach">
+          <div class="nav-group" data-nav-group="teach" data-role="teacher">
+          <a class="nav-item nav-item--teach-parent" href="#teach" data-nav-toggle="teach">
             <span class="nav-item__main">
               <span class="nav-item__icon-wrap"><span class="nav-item__icon"><img src="assets/icons/nav-teach.png" data-icon="assets/icons/nav-teach.png" width="24" height="24" alt="" /></span></span>
               我的教学
@@ -101,7 +102,7 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
           </a>
             <div class="nav-sub">
             <a class="nav-sub__item" href="prepare.html" data-sub-item><span class="nav-sub__label">备课中心</span></a>
-            <a class="nav-sub__item is-active" href="classes.html" data-sub-item><span class="nav-sub__label">我的班课</span></a>
+            <a class="nav-sub__item" href="classes.html" data-sub-item><span class="nav-sub__label">我的班课</span></a>
             </div>
           </div>
           <a class="nav-item nav-item--practice" href="#practice">
@@ -151,234 +152,302 @@ M564.9462171896281,48.41528221543566C564.9443780274378,50.722689215435665,566.79
         </div>
       </aside>
 
-      <main class="main main--classes">
-        <section class="class-hero">
-          <div class="class-hero__copy">
-            <h1 class="class-hero__title">我的班课</h1>
-            <p class="class-hero__desc">多元资源整合，助力教师轻松备课</p>
+            <main class="main main--home">
+        <div class="home">
+          <section class="home-hero">
+            <img class="home-hero__greet" src="assets/home/greet.png" width="24" height="20" alt="" />
+            <p class="home-hero__text">老师您好！欢迎使用【建筑云课】，数据化教学、全流程管理，随时助您轻松教学～</p>
+          </section>
+
+          <section class="home-banner" data-home-banner aria-roledescription="carousel" aria-label="宣传">
+            <div class="home-banner__viewport">
+              <div class="home-banner__track">
+                <a class="home-banner__slide home-banner__slide--feature is-active" href="#course-bim-cost" data-home-banner-slide>
+                  <span class="home-banner__bg" aria-hidden="true"></span>
+                  <span class="home-banner__shine" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--lg" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--sm" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--mid" aria-hidden="true"></span>
+                  <span class="home-banner__eyebrow">课程推荐 · 新清单系列课程</span>
+                  <span class="home-banner__copy home-banner__copy--feature">
+                    <span class="home-banner__title">BIM安装工程造价数字化运用</span>
+                    <span class="home-banner__desc">从模型提取到安装计价，掌握 BIM 造价数字化全流程</span>
+                  </span>
+                  <span class="home-banner__cta">立即了解</span>
+                </a>
+                <a class="home-banner__slide home-banner__slide--feature" href="#course-bid-contract" data-home-banner-slide>
+                  <span class="home-banner__bg home-banner__bg--bid" aria-hidden="true"></span>
+                  <span class="home-banner__shine" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--lg" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--sm" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--mid" aria-hidden="true"></span>
+                  <span class="home-banner__eyebrow">课程推荐 · 新清单系列课程</span>
+                  <span class="home-banner__copy home-banner__copy--feature">
+                    <span class="home-banner__title">工程招投标与合同管理</span>
+                    <span class="home-banner__desc">读懂招标文件、编好投标策略，把控合同履约关键风险</span>
+                  </span>
+                  <span class="home-banner__cta">立即了解</span>
+                </a>
+                <a class="home-banner__slide home-banner__slide--feature" href="#course-digital-cost" data-home-banner-slide>
+                  <span class="home-banner__bg home-banner__bg--cost" aria-hidden="true"></span>
+                  <span class="home-banner__shine" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--lg" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--sm" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--mid" aria-hidden="true"></span>
+                  <span class="home-banner__eyebrow">课程推荐 · 新清单系列课程</span>
+                  <span class="home-banner__copy home-banner__copy--feature">
+                    <span class="home-banner__title">数字造价技术应用</span>
+                    <span class="home-banner__desc">新清单规则下的数字计价与协同，让算量计价更快更准</span>
+                  </span>
+                  <span class="home-banner__cta">立即了解</span>
+                </a>
+                <a class="home-banner__slide home-banner__slide--feature" href="#course-cost-practice" data-home-banner-slide>
+                  <span class="home-banner__bg home-banner__bg--practice" aria-hidden="true"></span>
+                  <span class="home-banner__shine" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--lg" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--sm" aria-hidden="true"></span>
+                  <span class="home-banner__deco home-banner__deco--mid" aria-hidden="true"></span>
+                  <span class="home-banner__eyebrow">课程推荐 · 新清单系列课程</span>
+                  <span class="home-banner__copy home-banner__copy--feature">
+                    <span class="home-banner__title">数字造价综合实训</span>
+                    <span class="home-banner__desc">贯通算量计价到成果交付，一次练透数字造价综合能力</span>
+                  </span>
+                  <span class="home-banner__cta">立即了解</span>
+                </a>
+              </div>
+            </div>
+            <div class="home-banner__dots" data-home-banner-dots role="tablist" aria-label="宣传分页"></div>
+          </section>
+
+          <div class="home-body">
+            <div class="home-col">
+              <section class="home-card">
+                <div class="home-hd">
+                  <h2 class="home-hd__title">教学进度</h2>
+                  <a class="home-more" href="classes.html">查看更多<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="home-progress">
+                  <article class="home-course home-course--focus">
+                    <img class="home-course__cover" src="assets/home/cover-quota.png" alt="" width="230" height="140" />
+                    <div>
+                      <h3 class="home-course__name">工程定额原理与市场化计价</h3>
+                      <p class="home-course__class">24级土建2班（20人）</p>
+                    </div>
+                    <div class="home-course__foot">
+                      <div class="home-bar"><span class="home-bar__fill"></span></div>
+                      <a class="home-course__go" href="classes.html">开始上课</a>
+                    </div>
+                  </article>
+                  <article class="home-course">
+                    <img class="home-course__cover" src="assets/home/cover-cost.png" alt="" width="230" height="140" />
+                    <div>
+                      <h3 class="home-course__name">BIM全过程造价管理综合实训课程</h3>
+                      <p class="home-course__class">24级土建3班、5班（20人）</p>
+                    </div>
+                    <div class="home-course__foot">
+                      <div class="home-bar"><span class="home-bar__fill"></span></div>
+                      <a class="home-course__go home-course__go--soft" href="classes.html">开始上课</a>
+                    </div>
+                  </article>
+                  <article class="home-course">
+                    <img class="home-course__cover" src="assets/home/cover-bim.png" alt="" width="230" height="140" />
+                    <div>
+                      <h3 class="home-course__name">BIM基础技术建模</h3>
+                      <p class="home-course__class">24级土建2班（20人）</p>
+                    </div>
+                    <div class="home-course__foot">
+                      <div class="home-bar"><span class="home-bar__fill"></span></div>
+                      <a class="home-course__go home-course__go--soft" href="classes.html">开始上课</a>
+                    </div>
+                  </article>
+                </div>
+              </section>
+
+              <section class="home-card">
+                <div class="home-hd"><h2 class="home-hd__title">教学活动</h2></div>
+                <div class="home-acts">
+                  <a class="home-act" href="prepare.html">
+                    <div class="home-act__left">
+                      <span class="home-act__ico" aria-hidden="true"><img src="assets/prepare/activity/icon-homework.png" width="24" height="24" alt="" /></span>
+                      <h3 class="home-act__name">工程定额课后作业</h3>
+                      <span class="home-tag">进行中</span>
+                    </div>
+                    <div class="home-act__done">完成人数 <span class="home-act__num">34<span>/34</span></span></div>
+                  </a>
+                  <a class="home-act" href="prepare.html">
+                    <div class="home-act__left">
+                      <span class="home-act__ico" aria-hidden="true"><img src="assets/prepare/activity/icon-practice.png" width="24" height="24" alt="" /></span>
+                      <h3 class="home-act__name">工程定额练习</h3>
+                      <span class="home-tag">进行中</span>
+                    </div>
+                    <div class="home-act__done">完成人数 <span class="home-act__num">24<span>/34</span></span></div>
+                  </a>
+                  <a class="home-act home-act--end" href="prepare.html">
+                    <div class="home-act__left">
+                      <span class="home-act__ico" aria-hidden="true"><img src="assets/prepare/activity/icon-exam.png" width="24" height="24" alt="" /></span>
+                      <h3 class="home-act__name">工程定额期中考试</h3>
+                      <span class="home-tag home-tag--end">已结束</span>
+                    </div>
+                    <div class="home-act__done">完成人数 <span class="home-act__num">34<span>/34</span></span></div>
+                  </a>
+                </div>
+              </section>
+
+              <section class="home-card">
+                <div class="home-hd">
+                  <h2 class="home-hd__title">应用数据</h2>
+                  <div class="home-period" role="tablist" aria-label="统计周期" data-home-period>
+                    <button type="button" role="tab" data-period="week" aria-selected="false">本周</button>
+                    <button type="button" role="tab" class="is-active" data-period="month" aria-selected="true">本月</button>
+                    <button type="button" role="tab" data-period="term" aria-selected="false">本学期</button>
+                  </div>
+                </div>
+                <div class="home-stats" data-home-stats>
+                  <div class="home-stats__row home-stats__row--ok">
+                    <div class="home-stat"><span class="home-stat__num" data-stat="class">10</span><span class="home-stat__label">上课次数</span></div>
+                    <div class="home-stat"><span class="home-stat__num" data-stat="task">234</span><span class="home-stat__label">发布任务数量</span></div>
+                    <div class="home-stat"><span class="home-stat__num" data-stat="grade">2231</span><span class="home-stat__label">批改任务数量</span></div>
+                  </div>
+                  <div class="home-stats__row home-stats__row--warn">
+                    <div class="home-stat"><span class="home-stat__num" data-stat="loginUser">47</span><span class="home-stat__label">学生登录人数</span></div>
+                    <div class="home-stat"><span class="home-stat__num" data-stat="loginCount">1220</span><span class="home-stat__label">学生登录次数</span></div>
+                    <div class="home-stat"><span class="home-stat__num" data-stat="submit">1330</span><span class="home-stat__label">提交任务数量</span></div>
+                    <div class="home-stat"><span class="home-stat__num" data-stat="duration">230</span><span class="home-stat__label">学习总时长（分钟）</span></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div class="home-col home-col--side">
+              <section class="home-card home-board">
+                <div class="home-board__head">
+                  <h2 class="home-hd__title">学情看板</h2>
+                  <div class="home-board__filters">
+                    <div class="home-select-wrap" data-home-select>
+                      <button type="button" class="home-select" data-home-select-trigger aria-haspopup="listbox" aria-expanded="false">
+                        <span data-home-select-label>工程定额原理与市场化计价</span>
+                        <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1.5 2.2 6 6.2l4.5-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                      </button>
+                      <div class="home-select__menu" data-home-select-menu hidden role="listbox">
+                        <button type="button" class="home-select__option is-active" role="option" aria-selected="true">工程定额原理与市场化计价</button>
+                        <button type="button" class="home-select__option" role="option" aria-selected="false">BIM全过程造价管理综合实训课程</button>
+                        <button type="button" class="home-select__option" role="option" aria-selected="false">BIM基础技术建模</button>
+                      </div>
+                    </div>
+                    <div class="home-select-wrap" data-home-select>
+                      <button type="button" class="home-select" data-home-select-trigger aria-haspopup="listbox" aria-expanded="false">
+                        <span data-home-select-label>25级土建3班</span>
+                        <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1.5 2.2 6 6.2l4.5-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                      </button>
+                      <div class="home-select__menu" data-home-select-menu hidden role="listbox">
+                        <button type="button" class="home-select__option is-active" role="option" aria-selected="true">25级土建3班</button>
+                        <button type="button" class="home-select__option" role="option" aria-selected="false">24级土建2班（20人）</button>
+                        <button type="button" class="home-select__option" role="option" aria-selected="false">24级土建3班、5班（20人）</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="home-graph">
+                  <span class="home-point" style="left:86px;top:108px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">100%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">工程定额的分类体系</span>
+                  </span>
+                  <span class="home-point home-point--lg" style="left:191px;top:94px">
+                    <span class="home-bubble home-bubble--lg" style="width:86px;height:86px"><span class="home-bubble__pct">25%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">工程定额原理模块</span>
+                  </span>
+                  <span class="home-point" style="left:91px;top:210px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">55%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">人工定额（劳动定额）</span>
+                  </span>
+                  <span class="home-point" style="left:204px;top:210px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">49%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">材料消耗定额</span>
+                  </span>
+                  <span class="home-point home-point--lg" style="left:354px;top:180px">
+                    <span class="home-bubble home-bubble--lg" style="width:86px;height:86px"><span class="home-bubble__pct">46%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">基础理论模块</span>
+                  </span>
+                  <span class="home-point" style="left:496px;top:180px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">67%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">基本概念界定</span>
+                  </span>
+                  <span class="home-point home-point--lg" style="left:483px;top:78px">
+                    <span class="home-bubble home-bubble--lg" style="width:86px;height:86px"><span class="home-bubble__pct">36%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">市场化计价体系模块</span>
+                  </span>
+                  <span class="home-point" style="left:600px;top:34px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">76%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">工程量清单计价模式</span>
+                  </span>
+                  <span class="home-point" style="left:618px;top:107px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">99%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">综合单价的编制与确定</span>
+                  </span>
+                  <span class="home-point home-point--lg" style="left:635px;top:197px">
+                    <span class="home-bubble home-bubble--lg" style="width:86px;height:86px"><span class="home-bubble__pct">89%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">工程定额的应用模块</span>
+                  </span>
+                  <span class="home-point" style="left:749px;top:206px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">12%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">定额的套用与换算</span>
+                  </span>
+                  <span class="home-point" style="left:306px;top:295px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">88%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">定额计价与市场化计价的关系</span>
+                  </span>
+                  <span class="home-point" style="left:389px;top:295px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">57%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">工程计价的本质与作用</span>
+                  </span>
+                  <span class="home-point" style="left:606px;top:314px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">89%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">定额计价文件编制</span>
+                  </span>
+                  <span class="home-point" style="left:689px;top:314px">
+                    <span class="home-bubble" style="width:60px;height:60px"><span class="home-bubble__pct">44%</span><span class="home-bubble__tip">得分率</span></span>
+                    <span class="home-node">工程量计算</span>
+                  </span>
+                </div>
+              </section>
+
+              <section class="home-card home-card--reco">
+                <div class="home-hd"><h2 class="home-hd__title">为你推荐</h2></div>
+                <div class="home-reco">
+                  <div class="home-ai">
+                    <img class="home-ai__tag" src="assets/home/tag-ai-tools.png" width="90" height="35" alt="AI工具" />
+                    <div class="home-ai__grid">
+                      <a class="home-ai__item" href="prepare-edit.html"><img class="home-ai__ico" src="assets/prepare/icon-ai-help-quiz.png" alt="" /><span class="home-ai__name">AI出题</span><span class="home-ai__desc">快速出题</span></a>
+                      <a class="home-ai__item" href="prepare-edit.html"><img class="home-ai__ico" src="assets/prepare/icon-ai-help-ppt.png" alt="" /><span class="home-ai__name">智能PPT</span><span class="home-ai__desc">快速生成课件</span></a>
+                      <a class="home-ai__item" href="prepare-edit.html"><img class="home-ai__ico" src="assets/prepare/icon-ai-help-digital.png" alt="" /><span class="home-ai__name">数字人</span><span class="home-ai__desc">数字人课件</span></a>
+                      <a class="home-ai__item" href="prepare-edit.html"><img class="home-ai__ico" src="assets/prepare/icon-ai-help-graph.png" alt="" /><span class="home-ai__name">AI知识图谱</span><span class="home-ai__desc">知识结构化</span></a>
+                      <a class="home-ai__item" href="prepare-edit.html"><img class="home-ai__ico" src="assets/prepare/icon-ai-help-course.png" alt="" /><span class="home-ai__name">个性化课程</span><span class="home-ai__desc">AI新模式教学</span></a>
+                      <a class="home-ai__item" href="prepare-edit.html"><img class="home-ai__ico" src="assets/prepare/icon-ai-help-draw.png" alt="" /><span class="home-ai__name">AI绘画</span><span class="home-ai__desc">绘制建筑图片</span></a>
+                    </div>
+                    <a class="home-ai__more" href="#ai">前往查看更多AI工具</a>
+                  </div>
+                  <div class="home-news">
+                    <a class="home-news__row" href="#news-1"><span class="home-news__tag">【建模大赛】</span><span class="home-news__txt">重磅上线AI建模功能！奖品丰厚，等你来拿！</span></a>
+                    <a class="home-news__row" href="#news-2"><span class="home-news__tag">【最新资讯】</span><span class="home-news__txt">AI问答体验全面升级，输出文字、图片、视频等</span></a>
+                    <a class="home-news__row" href="#news-3"><span class="home-news__tag">【答疑解惑】</span><span class="home-news__txt">右侧工具栏的软件图标显示规则</span></a>
+                    <a class="home-news__row" href="#news-4"><span class="home-news__tag">【经验分享】</span><span class="home-news__txt">如何利用自动评分快速完成实操课的批阅与指导</span></a>
+                  </div>
+                </div>
+              </section>
+            </div>
           </div>
-          <button type="button" class="class-hero__add"><span class="class-hero__add-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 2.67c.37 0 .67.3.67.66v4h4a.67.67 0 1 1 0 1.34h-4v4a.67.67 0 1 1-1.34 0v-4h-4a.67.67 0 1 1 0-1.34h4v-4c0-.36.3-.66.67-.66Z" fill="currentColor"/></svg></span>添加班课</button>
-        </section>
 
-        <div class="class-toolbar">
-          <button type="button" class="class-toolbar__btn">已结课班课</button>
-        </div>
-
-        <div class="class-workspace">
-          <div class="class-list">
-          <article class="class-card is-current">
-            <div class="class-card__cover"><img src="assets/classes/cover-quota.webp" alt="" fetchpriority="high" decoding="async" width="640" height="360" /></div>
-            <div class="class-card__body">
-              <div class="class-card__head">
-                <div class="class-card__title-row">
-                <span class="class-card__tag">虚拟仿真</span>
-                <h3 class="class-card__title">BIM市政计量与计价</h3>
-                  <span class="class-card__term">（2024～2025学年秋季学期）</span>
-                </div>
-            <div class="class-card__more-wrap">
-              <button type="button" class="class-card__more" data-class-more aria-label="更多"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="6" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18" r="1.7" fill="currentColor"/></svg></span></button>
-              <div class="class-card__menu" data-class-menu hidden>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4.2 2.4h5.07c.37 0 .73.15.99.41l2.13 2.13c.26.26.41.62.41.99V13.6A1.2 1.2 0 0 1 11.6 14.8H4.4A1.2 1.2 0 0 1 3.2 13.6V3.6A1.2 1.2 0 0 1 4.4 2.4h-.2Zm.4 1.33V13.47h7V6.27L9.4 4.07H4.6Z" fill="currentColor"/></svg></span>结课</button>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 2.4 10.4 5.2H8.8v5.6h2.4L8 13.6 5.6 10.8H8V5.2H6.4L8 2.4Zm-4.4 4 2.8 1.6V6.4L2.4 8l2.8 1.6V8.4H6.4L3.6 6.4Zm12.8 0L13.6 8h1.6v1.6L16 8l-2.8-1.6v1.2Z" fill="currentColor"/></svg></span>移动</button>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M6.4 3.2h3.2v1.33H6.4A2.13 2.13 0 0 0 4.27 6.67v2.66A2.13 2.13 0 0 0 6.4 11.47h3.2v1.33H6.4A3.47 3.47 0 0 1 2.93 9.33V6.67A3.47 3.47 0 0 1 6.4 3.2Zm3.2 1.33h3.2A2.13 2.13 0 0 1 14.93 6.67v2.66a2.13 2.13 0 0 1-2.13 2.14H9.6v1.33h3.2a3.47 3.47 0 0 0 3.47-3.47V6.67A3.47 3.47 0 0 0 12.8 3.2H9.6v1.33Z" fill="currentColor"/></svg></span>解绑</button>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M6.13 3.2h3.74l.27 1.07h2.53c.37 0 .67.3.67.66s-.3.67-.67.67H3.33a.67.67 0 1 1 0-1.33h2.53L6.13 3.2Zm.54 1.07.13-.4h2.4l.13.4H6.67ZM4.4 6.93h7.2l-.4 6.14A1.2 1.2 0 0 1 10 14.13H6A1.2 1.2 0 0 1 4.8 13.07L4.4 6.93Z" fill="currentColor"/></svg></span>删除</button>
-              </div>
+          <section class="home-links">
+            <h2 class="home-hd__title">系统链接</h2>
+            <div class="home-links__list">
+              <a class="home-link" href="#sys-pv"><img class="home-link__ico" src="assets/home/logo-pv.png" alt="" />建设工程计量计价实战模拟系统</a>
+              <a class="home-link is-hot" href="#sys-gp"><img class="home-link__ico" src="assets/home/logo-gp.png" alt="" />装配式智能建造实战模拟系统</a>
+              <a class="home-link" href="#sys-cup1"><span class="home-link__cup" aria-hidden="true"></span>2025全国数字建筑创新应用大赛</a>
+              <a class="home-link" href="#sys-cup2"><span class="home-link__cup" aria-hidden="true"></span>第十一届国际高校BIM毕业设计创新大赛</a>
+              <a class="home-link" href="#sys-job">建筑人才链（招聘与就业网站）</a>
+              <a class="home-link" href="#sys-learn">广联达行业学习平台</a>
             </div>
-              </div>
-            <div class="class-card__classes">24级土建3班、24土建4班（89人）</div>
-            <div class="class-card__progress">
-                <div class="class-card__bar"><span class="class-card__bar-fill" style="width: 23.34%;"></span></div>
-                <span class="class-card__percent">23.34%</span>
-              </div>
-            <div class="class-card__stats">
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">12/200</span>
-                <span class="class-card__stat-label">课程资料</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">10/12</span>
-                <span class="class-card__stat-label">练习</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">12/34</span>
-                <span class="class-card__stat-label">单元测试</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">10/22</span>
-                <span class="class-card__stat-label">作业</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">0/4</span>
-                <span class="class-card__stat-label">考试</span>
-              </div>
-            </div>
-              <button type="button" class="class-card__cta">立即上课</button>
-            </div>
-          </article>
-          <article class="class-card">
-            <div class="class-card__cover"><img src="assets/classes/cover-install.webp" alt="" loading="lazy" decoding="async" width="640" height="360" /></div>
-            <div class="class-card__body">
-              <div class="class-card__head">
-                <div class="class-card__title-row">
-                <h3 class="class-card__title">BIM安装工程计量与计价</h3>
-                  <span class="class-card__term">（2024～2025学年春季学期）</span>
-                </div>
-            <div class="class-card__more-wrap">
-              <button type="button" class="class-card__more" data-class-more aria-label="更多"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="6" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18" r="1.7" fill="currentColor"/></svg></span></button>
-              <div class="class-card__menu" data-class-menu hidden>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4.2 2.4h5.07c.37 0 .73.15.99.41l2.13 2.13c.26.26.41.62.41.99V13.6A1.2 1.2 0 0 1 11.6 14.8H4.4A1.2 1.2 0 0 1 3.2 13.6V3.6A1.2 1.2 0 0 1 4.4 2.4h-.2Zm.4 1.33V13.47h7V6.27L9.4 4.07H4.6Z" fill="currentColor"/></svg></span>结课</button>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 2.4 10.4 5.2H8.8v5.6h2.4L8 13.6 5.6 10.8H8V5.2H6.4L8 2.4Zm-4.4 4 2.8 1.6V6.4L2.4 8l2.8 1.6V8.4H6.4L3.6 6.4Zm12.8 0L13.6 8h1.6v1.6L16 8l-2.8-1.6v1.2Z" fill="currentColor"/></svg></span>移动</button>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M6.4 3.2h3.2v1.33H6.4A2.13 2.13 0 0 0 4.27 6.67v2.66A2.13 2.13 0 0 0 6.4 11.47h3.2v1.33H6.4A3.47 3.47 0 0 1 2.93 9.33V6.67A3.47 3.47 0 0 1 6.4 3.2Zm3.2 1.33h3.2A2.13 2.13 0 0 1 14.93 6.67v2.66a2.13 2.13 0 0 1-2.13 2.14H9.6v1.33h3.2a3.47 3.47 0 0 0 3.47-3.47V6.67A3.47 3.47 0 0 0 12.8 3.2H9.6v1.33Z" fill="currentColor"/></svg></span>解绑</button>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M6.13 3.2h3.74l.27 1.07h2.53c.37 0 .67.3.67.66s-.3.67-.67.67H3.33a.67.67 0 1 1 0-1.33h2.53L6.13 3.2Zm.54 1.07.13-.4h2.4l.13.4H6.67ZM4.4 6.93h7.2l-.4 6.14A1.2 1.2 0 0 1 10 14.13H6A1.2 1.2 0 0 1 4.8 13.07L4.4 6.93Z" fill="currentColor"/></svg></span>删除</button>
-              </div>
-            </div>
-              </div>
-            <div class="class-card__classes">绑定班级</div>
-            <div class="class-card__progress">
-                <div class="class-card__bar"><span class="class-card__bar-fill is-empty" style="width: 0%;"></span></div>
-                <span class="class-card__percent">0%</span>
-              </div>
-            <div class="class-card__stats">
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">120</span>
-                <span class="class-card__stat-label">课程资料</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">10/12</span>
-                <span class="class-card__stat-label">练习</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">12/34</span>
-                <span class="class-card__stat-label">单元测试</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">10/22</span>
-                <span class="class-card__stat-label">作业</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">0/4</span>
-                <span class="class-card__stat-label">考试</span>
-              </div>
-            </div>
-              <button type="button" class="class-card__cta">立即上课</button>
-            </div>
-          </article>
-          <article class="class-card">
-            <div class="class-card__cover"><img src="assets/classes/cover-deco.webp" alt="" loading="lazy" decoding="async" width="640" height="360" /></div>
-            <div class="class-card__body">
-              <div class="class-card__head">
-                <div class="class-card__title-row">
-                <span class="class-card__tag">虚拟仿真</span>
-                <h3 class="class-card__title">BIM装饰工程计量与计价</h3>
-                  <span class="class-card__term">（2024～2025学年秋季学期）</span>
-                </div>
-            <div class="class-card__more-wrap">
-              <button type="button" class="class-card__more" data-class-more aria-label="更多"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="6" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18" r="1.7" fill="currentColor"/></svg></span></button>
-              <div class="class-card__menu" data-class-menu hidden>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4.2 2.4h5.07c.37 0 .73.15.99.41l2.13 2.13c.26.26.41.62.41.99V13.6A1.2 1.2 0 0 1 11.6 14.8H4.4A1.2 1.2 0 0 1 3.2 13.6V3.6A1.2 1.2 0 0 1 4.4 2.4h-.2Zm.4 1.33V13.47h7V6.27L9.4 4.07H4.6Z" fill="currentColor"/></svg></span>结课</button>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 2.4 10.4 5.2H8.8v5.6h2.4L8 13.6 5.6 10.8H8V5.2H6.4L8 2.4Zm-4.4 4 2.8 1.6V6.4L2.4 8l2.8 1.6V8.4H6.4L3.6 6.4Zm12.8 0L13.6 8h1.6v1.6L16 8l-2.8-1.6v1.2Z" fill="currentColor"/></svg></span>移动</button>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M6.4 3.2h3.2v1.33H6.4A2.13 2.13 0 0 0 4.27 6.67v2.66A2.13 2.13 0 0 0 6.4 11.47h3.2v1.33H6.4A3.47 3.47 0 0 1 2.93 9.33V6.67A3.47 3.47 0 0 1 6.4 3.2Zm3.2 1.33h3.2A2.13 2.13 0 0 1 14.93 6.67v2.66a2.13 2.13 0 0 1-2.13 2.14H9.6v1.33h3.2a3.47 3.47 0 0 0 3.47-3.47V6.67A3.47 3.47 0 0 0 12.8 3.2H9.6v1.33Z" fill="currentColor"/></svg></span>解绑</button>
-                <button type="button" class="class-card__menu-item"><span class="class-card__menu-icon"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M6.13 3.2h3.74l.27 1.07h2.53c.37 0 .67.3.67.66s-.3.67-.67.67H3.33a.67.67 0 1 1 0-1.33h2.53L6.13 3.2Zm.54 1.07.13-.4h2.4l.13.4H6.67ZM4.4 6.93h7.2l-.4 6.14A1.2 1.2 0 0 1 10 14.13H6A1.2 1.2 0 0 1 4.8 13.07L4.4 6.93Z" fill="currentColor"/></svg></span>删除</button>
-              </div>
-            </div>
-              </div>
-            <div class="class-card__progress">
-                <div class="class-card__bar"><span class="class-card__bar-fill" style="width: 23.34%;"></span></div>
-                <span class="class-card__percent">23.34%</span>
-              </div>
-            <div class="class-card__stats">
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">12/200</span>
-                <span class="class-card__stat-label">课程资料</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">10/12</span>
-                <span class="class-card__stat-label">练习</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">12/34</span>
-                <span class="class-card__stat-label">单元测试</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">10/22</span>
-                <span class="class-card__stat-label">作业</span>
-              </div>
-              <div class="class-card__stat">
-                <span class="class-card__stat-num">0/4</span>
-                <span class="class-card__stat-label">考试</span>
-              </div>
-            </div>
-              <button type="button" class="class-card__cta">立即上课</button>
-            </div>
-          </article>
-          </div>
-
-          <aside class="class-panel">
-            <div class="class-panel__head">
-              <h2 class="class-panel__title">班级信息</h2>
-              <button type="button" class="class-panel__create"><span class="class-panel__create-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 2.67c.37 0 .67.3.67.66v4h4a.67.67 0 1 1 0 1.34h-4v4a.67.67 0 1 1-1.34 0v-4h-4a.67.67 0 1 1 0-1.34h4v-4c0-.36.3-.66.67-.66Z" fill="currentColor"/></svg></span>创建班级</button>
-            </div>
-            <div class="class-group is-open" data-class-group>
-              <button type="button" class="class-group__head" data-class-toggle>
-                <img class="class-group__avatar" src="assets/classes/class-avatar.png" alt="" />
-                <span class="class-group__meta">
-                  <span class="class-group__name-row"><span class="class-group__name">24级土建4班</span></span>
-                  <span class="class-group__count">23人</span>
-                </span>
-                <span class="class-group__more" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="6" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18" r="1.7" fill="currentColor"/></svg></span>
-                <span class="class-group__caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 6.1a.8.8 0 0 1 1.13-.07L8 9.36l3.67-3.33a.8.8 0 1 1 1.06 1.2l-4.2 3.8a.8.8 0 0 1-1.06 0l-4.2-3.8a.8.8 0 0 1-.07-1.13Z" fill="currentColor"/></svg></span>
-              </button>
-              <div class="class-group__body">
-                <div class="class-group__tools">
-                  <label class="class-group__search"><span class="class-group__search-icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M7.2 2.4a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 1.33a3.47 3.47 0 1 0 0 6.94 3.47 3.47 0 0 0 0-6.94Zm5.04 7.2 2.36 2.36a.67.67 0 0 1-.94.95l-2.36-2.37a.67.67 0 0 1 .94-.94Z" fill="currentColor"/></svg></span><input type="search" placeholder="搜索学生" data-student-search /></label>
-                  <button type="button" class="class-group__add" aria-label="添加学生"><span aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 2.67c.37 0 .67.3.67.66v4h4a.67.67 0 1 1 0 1.34h-4v4a.67.67 0 1 1-1.34 0v-4h-4a.67.67 0 1 1 0-1.34h4v-4c0-.36.3-.66.67-.66Z" fill="currentColor"/></svg></span></button>
-                </div>
-                <div class="class-group__students">
-                  <div class="class-student" data-student="王大治（2025024698）">王大治（2025024698）<span class="class-student__phone">13619910302</span></div>
-                  <div class="class-student" data-student="夏志豪">夏志豪<span class="class-student__phone">13370898798</span></div>
-                  <div class="class-student" data-student="谢彦文">谢彦文<span class="class-student__phone">18827614005</span></div>
-                  <div class="class-student" data-student="刘翊惠">刘翊惠<span class="class-student__phone">15392830508</span></div>
-                  <div class="class-student is-active" data-student="王恩龙">王恩龙<span class="class-student__phone">18628798642</span></div>
-                  <div class="class-student" data-student="刘翊惠">刘翊惠<span class="class-student__phone">13396827528</span></div>
-                  <div class="class-student" data-student="郑伊雯">郑伊雯<span class="class-student__phone">15576592483</span></div>
-                  <div class="class-student" data-student="吴韵如">吴韵如<span class="class-student__phone">13592357387</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="class-group" data-class-group>
-              <button type="button" class="class-group__head" data-class-toggle>
-                <img class="class-group__avatar" src="assets/classes/class-avatar.png" alt="" />
-                <span class="class-group__meta">
-                  <span class="class-group__name-row"><span class="class-group__name">24级土建5班</span><span class="class-group__badge">自建</span></span>
-                  <span class="class-group__count">21人</span>
-                </span>
-                <span class="class-group__more" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="6" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18" r="1.7" fill="currentColor"/></svg></span>
-                <span class="class-group__caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 6.1a.8.8 0 0 1 1.13-.07L8 9.36l3.67-3.33a.8.8 0 1 1 1.06 1.2l-4.2 3.8a.8.8 0 0 1-1.06 0l-4.2-3.8a.8.8 0 0 1-.07-1.13Z" fill="currentColor"/></svg></span>
-              </button>
-            </div>
-            <div class="class-group" data-class-group>
-              <button type="button" class="class-group__head" data-class-toggle>
-                <img class="class-group__avatar" src="assets/classes/class-avatar.png" alt="" />
-                <span class="class-group__meta">
-                  <span class="class-group__name-row"><span class="class-group__name">24级土建6班</span></span>
-                  <span class="class-group__count">24人</span>
-                </span>
-                <span class="class-group__more" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="6" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18" r="1.7" fill="currentColor"/></svg></span>
-                <span class="class-group__caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 6.1a.8.8 0 0 1 1.13-.07L8 9.36l3.67-3.33a.8.8 0 1 1 1.06 1.2l-4.2 3.8a.8.8 0 0 1-1.06 0l-4.2-3.8a.8.8 0 0 1-.07-1.13Z" fill="currentColor"/></svg></span>
-              </button>
-            </div>
-            <div class="class-group" data-class-group>
-              <button type="button" class="class-group__head" data-class-toggle>
-                <img class="class-group__avatar" src="assets/classes/class-avatar.png" alt="" />
-                <span class="class-group__meta">
-                  <span class="class-group__name-row"><span class="class-group__name">24级土建7班</span></span>
-                  <span class="class-group__count">25人</span>
-                </span>
-                <span class="class-group__more" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="6" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18" r="1.7" fill="currentColor"/></svg></span>
-                <span class="class-group__caret" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.2 6.1a.8.8 0 0 1 1.13-.07L8 9.36l3.67-3.33a.8.8 0 1 1 1.06 1.2l-4.2 3.8a.8.8 0 0 1-1.06 0l-4.2-3.8a.8.8 0 0 1-.07-1.13Z" fill="currentColor"/></svg></span>
-              </button>
-            </div>
-          </aside>
+          </section>
         </div>
       </main>
 
@@ -425,6 +494,6 @@ M86.78627,213.61622955778807C84.789391,213.61622955778807,83.291737,215.11388875
   </div>
   <script src="js/role.js?v=20260828c" defer></script>
   <script src="js/app.js?v=20260828c" defer></script>
-  <script src="js/classes.js?v=20260828c" defer></script>
+  <script src="js/home.js?v=20260916g" defer></script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1588" height="180" viewBox="0 0 1588 180" fill="none">
+  <defs>
+    <linearGradient id="b2a" x1="0" y1="90" x2="1588" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D39C4"/>
+      <stop offset="0.45" stop-color="#2F54EB"/>
+      <stop offset="0.78" stop-color="#1890FF"/>
+      <stop offset="1" stop-color="#36CFC9"/>
+    </linearGradient>
+    <linearGradient id="b2b" x1="1180" y1="0" x2="1588" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="b2c" x1="0" y1="0" x2="0" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1588" height="180" rx="16" fill="url(#b2a)"/>
+  <rect width="1588" height="180" rx="16" fill="url(#b2c)"/>
+  <path d="M1080 0C1220 70 1220 110 1080 180H1588V0H1080Z" fill="url(#b2b)"/>
+  <path d="M1240 0C1340 55 1340 125 1240 180H1588V0H1240Z" fill="#FFFFFF" fill-opacity="0.08"/>
+  <circle cx="1410" cy="90" r="64" fill="#FFFFFF" fill-opacity="0.14"/>
+  <circle cx="1410" cy="90" r="34" fill="#FFFFFF" fill-opacity="0.1"/>
+  <circle cx="1528" cy="36" r="22" fill="#FFFFFF" fill-opacity="0.16"/>
+</svg>

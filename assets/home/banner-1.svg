@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1588" height="180" viewBox="0 0 1588 180" fill="none">
+  <defs>
+    <linearGradient id="b1a" x1="0" y1="40" x2="1588" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A4DE8"/>
+      <stop offset="0.38" stop-color="#1677FF"/>
+      <stop offset="0.72" stop-color="#3D9BFF"/>
+      <stop offset="1" stop-color="#8EC8FF"/>
+    </linearGradient>
+    <radialGradient id="b1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1320 20) rotate(90) scale(160 160)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="b1c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1480 150) rotate(90) scale(120 120)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="b1d" x1="0" y1="0" x2="0" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1588" height="180" rx="16" fill="url(#b1a)"/>
+  <rect width="1588" height="180" rx="16" fill="url(#b1d)"/>
+  <circle cx="1320" cy="20" r="140" fill="url(#b1b)"/>
+  <circle cx="1480" cy="150" r="110" fill="url(#b1c)"/>
+  <circle cx="1388" cy="96" r="52" fill="#FFFFFF" fill-opacity="0.1"/>
+  <circle cx="1248" cy="128" r="28" fill="#FFFFFF" fill-opacity="0.12"/>
+</svg>

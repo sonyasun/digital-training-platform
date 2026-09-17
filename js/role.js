@@ -6,10 +6,10 @@
 
   var ROLE_KEY = "dxtp-role";
   var LOGIN_PAGE = "login.html";
-  var TEACHER_PAGES = ["index.html", "prepare.html", "prepare-edit.html", "classes.html"];
+  var TEACHER_PAGES = ["home.html", "index.html", "prepare.html", "prepare-edit.html", "classes.html"];
   var STUDENT_PAGES = ["student-courses.html", "student-course.html", "student-ai-study.html", "student-learning-path.html", "student-node-study.html"];
   var ROLE_TARGETS = {
-    teacher: "prepare.html",
+    teacher: "home.html",
     student: "student-courses.html",
   };
   var DISPLAY_NAMES = {

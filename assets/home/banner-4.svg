@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1588" height="180" viewBox="0 0 1588 180" fill="none">
+  <defs>
+    <linearGradient id="b4a" x1="0" y1="180" x2="1588" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A52B8"/>
+      <stop offset="0.35" stop-color="#1890FF"/>
+      <stop offset="0.68" stop-color="#36CFC9"/>
+      <stop offset="1" stop-color="#87E8DE"/>
+    </linearGradient>
+    <linearGradient id="b4b" x1="1100" y1="180" x2="1588" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.26"/>
+    </linearGradient>
+    <linearGradient id="b4c" x1="0" y1="0" x2="0" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1588" height="180" rx="16" fill="url(#b4a)"/>
+  <rect width="1588" height="180" rx="16" fill="url(#b4c)"/>
+  <path d="M960 180C1120 118 1260 36 1588 -10V180H960Z" fill="#FFFFFF" fill-opacity="0.06"/>
+  <path d="M1120 180C1260 130 1380 58 1588 12V180H1120Z" fill="url(#b4b)"/>
+  <path d="M1300 180C1400 148 1490 96 1588 56V180H1300Z" fill="#FFFFFF" fill-opacity="0.12"/>
+  <ellipse cx="1418" cy="42" rx="98" ry="34" transform="rotate(-16 1418 42)" fill="#FFFFFF" fill-opacity="0.18"/>
+  <ellipse cx="1520" cy="118" rx="58" ry="22" transform="rotate(14 1520 118)" fill="#FFFFFF" fill-opacity="0.14"/>
+  <circle cx="1348" cy="132" r="16" fill="#FFFFFF" fill-opacity="0.16"/>
+</svg>

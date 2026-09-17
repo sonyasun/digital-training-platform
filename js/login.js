@@ -20,7 +20,7 @@
       setRole: function (role) {
         localStorage.setItem("dxtp-role", role === "student" ? "student" : "teacher");
       },
-      ROLE_TARGETS: { teacher: "prepare.html", student: "student-courses.html" },
+      ROLE_TARGETS: { teacher: "home.html", student: "student-courses.html" },
     };
   }
 
@@ -80,8 +80,8 @@
       var roleApi = getRoleApi();
       var role = roleApi.getRole();
       roleApi.setRole(role);
-      var targets = roleApi.ROLE_TARGETS || { teacher: "prepare.html", student: "student-courses.html" };
-      window.location.href = targets[role] || form.getAttribute("action") || "prepare.html";
+      var targets = roleApi.ROLE_TARGETS || { teacher: "home.html", student: "student-courses.html" };
+      window.location.href = targets[role] || form.getAttribute("action") || "home.html";
     });
   }
 

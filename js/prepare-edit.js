@@ -116,7 +116,7 @@
         if (!toastUndo) return;
         var fn = toastUndo;
         toastUndo = null;
-        toast.hidden = true;
+      toast.hidden = true;
         fn();
       };
     }
